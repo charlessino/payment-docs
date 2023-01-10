@@ -1,4 +1,4 @@
-# 恒盈四方支付网关文档（极简版）
+# 恒盈四方支付网关文档
 
 ### <span id="1-----">1 概要</span>
 
@@ -32,7 +32,7 @@
 
 ##### <span id="141-----">1.4.1 签名示例</span>
 
- - 1.传入参数
+ - 1.原始传入参数
 
 ```json
 {
@@ -44,7 +44,7 @@
 }
 ```
 
- - 2.参数名按字典序排列
+ - 2.参数名先按字典序排列
 
 ```json
 {
@@ -83,11 +83,11 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&outOrderI
 | 参数名      | 必选 | 类型    | 字段长度 | 例子     | 说明                     |
 | ----------- | ---- | ------- | -------- | -------- | ------------------------ |
 | appId       | 是   | string  | 32       |          | 应用ID                   |
-| channelId   | 是   | int     | 5        | 1        | 支付渠道ID，参考渠道章节 |
+| channelId   | 是   | int     | 5        | 2        | 支付渠道ID，参考[渠道列表](#31-----) |
 | actionValue | 是   | decimal | 18, 2    | 2100.10  | 申请代付的金额(元)       |
-| callbackUrl  |      | text  |       |          | 异步通知地址             |
-| returnUrl  |      | text  |       |          | 网页跳转地址             |
-| outOrderId  |      | string  | 100      |          | 第三方订单号             |
+| callbackUrl |      | text    |          |          | 异步通知地址             |
+| returnUrl   |      | text    |          |          | 网页跳转地址             |
+| outOrderId  |      | string  | 100      | RB383727 | 第三方订单号             |
 | outTips     |      | string  | 100      | 测试订单 | 第三方备注               |
 | sign        | 是   | string  | 32       |          | 参考签名章节             |
 
@@ -121,113 +121,146 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&outOrderI
 }
 ```
 
-##### <span id="214-----">2.1.4 支付渠道列表</span>
+##### <span id="214-----">2.1.4 代收回调参数</span>
 
-| ID   | 名称     |
-| ---- | -------- |
-| 1    | 微信支付 |
-| 2    | Gcash |
+回调信息将会以JSON格式发送至您请求时定义的**`callbackUrl`**，收到信息后请返回纯文本**`success`**进行确认，如果未得到确认，系统将以每分钟为频率重复回调，至多10次。
 
+| 参数名        | 类型    | 字段长度 | 例子     | 说明                             |
+| ------------- | ------- | -------- | -------- | -------------------------------- |
+| transactionId | int     | 11       | 13877272 | 系统流水号                       |
+| outOrderId    | string  | 100      | RB383727 | 第三方订单号（原样返回）         |
+| outTips       | string  | 100      | 测试订单 | 第三方备注（原样返回）           |
+| actionValue   | decimal | 18, 2    | 1000.00  | 代收金额                         |
+| status        | int     | 1        | 1        | 1=成功 0=失败 （只有这两种可能） |
+| reason        | string  | 100      | success  | 返回结果为失败时，显示失败原因   |
 
-​    
+##### <span id="215-----">2.1.5 代收回调示例</span>
 
-#### <span id="22-----">2.2 代收订单查询</span>
-
-请求地址：`{apiAddress}/payment-orders`
-
-##### <span id="231-----">2.2.1 传入参数</span>
-
-| 参数名    | 必选 | 类型     | 字段长度 | 例子 | 说明                                          |
-| --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
-| appId     | 是   | string   | 32       |      | 应用ID                                        |
-| startTime | 是   | datetime | -        |      | 搜索下单时间：开始时间(包含这一秒)            |
-| endTime   | 是   | datetime | -        |      | 搜索下单时间：结束时间(不包含这一秒)          |
-| pageId    | 否   | int      | 5        | 12   | 页码，留空则自动拉取第1页，每页最多返回1000条 |
-| sort      | 否   | string   | 4        | asc  | asc=正序，desc=倒序，留空则默认为desc         |
-| sign      | 是   | string   | 32       |      | 签名                                          |
-
-##### <span id="222-----">2.2.2 返回参数</span>
-
-| 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
-| ---------- | ------ | -------- | -------------- | ----------------------------------------- |
-| result     | int    | 1        | 0              | 调用结果，1=成功 0=失败                   |
-| data       | array  | -        |                | 订单数据，参考以下表格                    |
-| totalPages | int    | 5        | 12             | 总页数，如果大于1说明后面还有页数，需翻页 |
-| msg        | string | 100      | 开始时间为必填 | 如出错时，返回出错原因，成功时为success   |
-
-  >> data订单数据格式
-
-| 参数名      | 类型     | 字段长度 | 例子         | 说明                                                         |
-| ----------- | -------- | -------- | ------------ | ------------------------------------------------------------ |
-| appId       | string   | 32       |              |                                                              |
-| balanceId   | int      | 11       | 98126517     | 对账流水号                                                   |
-| channelId   | int      | 5        | 1            | 支付渠道ID                                                   |
-| actionValue | decimal  | 18, 2    | 1000.00      | 代收金额                                                     |
-| chargeValue | decimal  | 18, 2    | 20.00        | 手续费                                                       |
-| actualValue | decimal  | 18, 2    | 980.00       | 实际到账金额                                                 |
-| outOrderId  | string   | 100      | ES3891879987 | 第三方订单号                                                 |
-| outTips     | string   | 100      | 测试订单     | 第三方备注                                                   |
-| status      | Int      | 3        | 100          | 订单状态<br />0=待处理<br />100=成功<br />200=失败<br />300=已取消 |
-| createTime  | datetime |          |              | 创建时间                                                     |
-| updatedTime | datetime |          |              | 状态最后更新时间                                             |
-
-##### <span id="223-----">2.2.3 调用示例</span>
-
- - 传入参数
+ - 成功
 
 ```json
 {
-    "appId": "B32D954CC4E25491F99EFE42DF1CCBBF",
-    "startTime": "2021-10-01 00:00:00",
-    "endTime": "2021-10-01 23:59:59",
-    "pageId": 1,
-    "sort": "desc",
-    "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+    "transactionId": 13877272,
+    "outOrderId": "RB383727",
+    "outTips": NULL,
+    "actionValue": 1000.00,
+    "status": 1,
+    "reason": "success"
 }
 ```
 
- - 返回参数（成功）
+ - 失败
+
+```json
+{
+    "transactionId": 13877272,
+    "outOrderId": "RB383727",
+    "outTips": "测试订单",
+    "actionValue": 1000.00,
+    "status": 0,
+    "reason": "账号状态异常"
+}
+```
+
+
+
+#### <span id="22-----">2.2 代付</span>
+
+请求地址：`{apiAddress}/withdraw`
+
+##### <span id="211-----">2.2.1 传入参数</span>
+
+| 参数名      | 必选 | 类型    | 字段长度 | 例子        | 说明                                |
+| ----------- | ---- | ------- | -------- | ----------- | ----------------------------------- |
+| appId       | 是   | string  | 32       |             | 应用ID                              |
+| channelId   | 是   | int     | 5        | 2           | 支付渠道ID，参考[渠道列表](#31-----) |
+| actionValue | 是   | decimal | 18, 2    | 2100.10     | 申请代付的金额(元)                  |
+| callbackUrl |      | text    |          |             | 异步通知地址                        |
+| bankName    |      | string  | 100      | 中国银行    | 银行名                              |
+| branchName  |      | string  | 100      | 广州市分行  | 分行名                              |
+| cardNumber  | 是   | string  | 100      | 33000000000 | 卡号（账号）                        |
+| ownerName   |      | string  | 100      | 张三        | 所有者姓名                          |
+| outOrderId  |      | string  | 100      | RB383727    | 第三方订单号                        |
+| outTips     |      | string  | 100      | 测试订单    | 第三方备注                          |
+| sign        | 是   | string  | 32       |             | 参考签名章节                        |
+
+##### <span id="222-----">2.2.2 返回参数</span>
+
+| 参数名 | 类型   | 字段长度 | 例子    | 说明                                         |
+| ------ | ------ | -------- | ------- | -------------------------------------------- |
+| result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
+| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+
+##### <span id="223-----">2.2.3 返回示例</span>
+
+ - 成功
 
 ```json
 {
     "result": 1,
-    "data": [{
-        "appId": "B32D954CC4E25491F99EFE42DF1CCBBF",
-        "balanceId": 832647386,
-        "channelId": 1,
-        "actionValue": 1000.00,
-        "chargeValue": 20.00,
-        "actualValue": 980.00,
-        "outOrderId": "ESP8723687432628",
-        "outTips": NULL,
-        "status": 100,
-        "createTime": "2021-10-01 12:30:35",
-        "updatedTime": "2021-10-01 12:35:01"
-    }, {
-        "appId": "B32D954CC4E25491F99EFE42DF1CCBBF",
-        "balanceId": 832647333,
-        "channelId": 1,
-        "actionValue": 2500.00,
-        "chargeValue": 35.40,
-        "actualValue": 2464.60,
-        "outOrderId": "ESP17236836478",
-        "outTips": "测试",
-        "status": 200,
-        "createTime": "2021-10-01 11:25:20",
-        "updatedTime": "2021-10-01 12:35:01"
-    }],
-    "totalPages": 2, //还有第2页，传入参数里pageId改为2，可获取第2页内容
     "msg": "success"
 }
 ```
 
- - 返回参数（失败）
+ - 失败
 
 ```json
 {
     "result": 0,
-    "data": [],
-    "totalPages": null,
-    "msg": "页码不存在"
+    "msg": "签名不正确"
 }
 ```
+
+##### <span id="224-----">2.2.4 代付回调参数</span>
+
+回调信息将会以JSON格式发送至您请求时定义的**`callbackUrl`**，收到信息后请返回纯文本**`success`**进行确认，如果未得到确认，系统将以每分钟为频率重复回调，至多10次。
+
+| 参数名        | 类型    | 字段长度 | 例子     | 说明                             |
+| ------------- | ------- | -------- | -------- | -------------------------------- |
+| transactionId | int     | 11       | 13877272 | 系统流水号                       |
+| outOrderId    | string  | 100      | RB383727 | 第三方订单号（原样返回）         |
+| outTips       | string  | 100      | 测试订单 | 第三方备注（原样返回）           |
+| actionValue   | decimal | 18, 2    | 1000.00  | 代付金额                         |
+| status        | int     | 1        | 1        | 1=成功 0=失败 （只有这两种可能） |
+| reason        | string  | 100      | success  | 返回结果为失败时，显示失败原因   |
+
+##### <span id="215-----">2.1.5 代收回调示例</span>
+
+ - 成功
+
+```json
+{
+    "transactionId": 13877272,
+    "outOrderId": "RB383727",
+    "outTips": NULL,
+    "actionValue": 1000.00,
+    "status": 1,
+    "reason": "success"
+}
+```
+
+ - 失败
+
+```json
+{
+    "transactionId": 13877272,
+    "outOrderId": "RB383727",
+    "outTips": "测试订单",
+    "actionValue": 1000.00,
+    "status": 0,
+    "reason": "商户余额不足"
+}
+```
+
+
+
+### <span id="3-----">3 参考信息</span>
+
+​    
+
+#### <span id="31-----">3.1 渠道列表</span>
+
+| ID   | 名称     |
+| ---- | -------- |
+| 1    | 微信支付 |
+| 2    | Gcash    |
