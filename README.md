@@ -112,7 +112,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | 参数名      | 必填 | 类型    | 字段长度 | 例子     | 说明                     |
 | ----------- | ---- | ------- | -------- | -------- | ------------------------ |
 | appId       | 是   | string  | 32       |          | 应用ID                   |
-| channelId   | 是   | int     | 5        | 1        | 支付渠道ID，参考渠道章节 |
+| channelId   | 是   | int     | 5        | 1        | 通道ID，参考渠道章节 |
 | currency     | 是   | string | 10    | CNY  | 货币，参考货币列表章节       |
 | actionValue | 是   | decimal | 18, 2    | 2100.10  | 申请代收的金额 (就算是没有小数的货币，也需格式化为2位小数)       |
 | accountName | 是   | string | 100    | 张三  | 付款人姓名       |
@@ -222,7 +222,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | 是   | string   | 32       |      | 应用ID                                        |
-| channelId | 是   | int | 5       |   1   | 支付渠道ID，参考渠道章节            |
+| channelId | 是   | int | 5       |   1   | 通道ID，参考渠道章节            |
 | currency     | 是   | string | 10    | CNY  | 货币，参考货币列表章节       |
 | actionValue | 是   | decimal | 18, 2    | 2100.10  | 申请代付的金额 (就算是没有小数的货币，也需格式化为2位小数)       |
 | cardNumber      | 是   | string   | 100        | 982268716  | 卡号（账号）         |
@@ -327,7 +327,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 
 #### <span id="31-----">3.1 支付渠道列表</span>
 
-请通过商户后台系统 > 信息概览 > 支付通道，获取渠道ID及对应名称。
+请通过商户后台系统 > 信息概览 > 支付通道，获取通道ID及对应名称。
 
 #### <span id="32-----">3.2 货币列表</span>
 
