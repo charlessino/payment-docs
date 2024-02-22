@@ -215,7 +215,19 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | transaction_id    | int | 10      |         | 交易流水号 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 
-##### <span id="223-----">2.2.3 调用示例</span>
+##### <span id="223-----">2.2.3 异步回调通知参数</span>
+
+| 参数名 | 类型   | 字段长度 | 例子    | 说明                                         |
+| ------ | ------ | -------- | ------- | -------------------------------------------- |
+| transactionId    | string | 100      |    RC_10086     | 交易流水号 |
+| outOrderId | string    | 100        |        | 第三方订单号                      |
+| outTips    | string  | 100      | 测试订单 | 第三方备注 |
+| currency    | string | 10    | CNY  | 货币，参考货币列表章节 |
+| actionValue    | decimal | 18, 2    | 2100.10  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
+| status    | int | 1      | 1 | 1=代付成功 0=代付失败      |
+| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+
+##### <span id="224-----">2.2.4 请求参数示例</span>
 
  - 传入参数
 
@@ -232,6 +244,8 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
+
+##### <span id="225-----">2.2.5 返回参数示例</span>
 
  - 返回参数（成功）
 
@@ -253,6 +267,34 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 }
 ```
 
+##### <span id="226-----">2.2.6 异步回调通知参数示例</span>
+
+ - 代收成功
+
+```json
+{
+    "transactionId": "RC_10086",
+    "outOrderId": "8986327638746",
+    "outTips": "这是一个代付订单",
+    "currency": "CNY",
+    "actionValue": 4000.00,
+    "status": 1,
+    "msg": "success"
+}
+```
+
+ - 代收失败
+
+```json
+{
+    "transactionId": "RC_10086",
+    "outOrderId": "8986327638746",
+    "currency": "CNY",
+    "actionValue": 4000.00,
+    "status": 0,
+    "msg": "通道维护暂时关闭"
+}
+```
 
 ### <span id="3-----">3 附件</span>
 
