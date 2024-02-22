@@ -278,6 +278,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 #### <span id="33">3.3 银行名称列表</span>
 
 | 标准名称   |
+| ---- |
 | 工商银行 |
 | 农业银行 |
 | 中国银行 |
