@@ -323,6 +323,72 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 }
 ```
 
+
+#### <span id="23-----">2.3 代收订单查询</span>
+
+请求地址：`{apiAddress}/recharge-orders-query`
+
+##### <span id="231-----">2.3.1 传入参数</span>
+
+| 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
+| --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
+| appId     | 是   | string   | 32       |      | 应用ID                                        |
+| outOrderId     |     | string    | 100        |        | 第三方订单号                      |
+| dateTimeStart     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-起始值       |
+| dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
+| pageId      |    | int   | 10        | 3  | 每次最多返回200条记录，可本字段进行翻页，不传此参数默认为1         |
+| orderBy    |    | string      | 4        | ASC   | 顺序，ASC = 升序，DESC = 降序，不传此参数默认降序 |
+| sign      | 是   | string   | 32       |      | 签名                                          |
+
+##### <span id="232-----">2.3.2 返回参数</span>
+
+| 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
+| ---------- | ------ | -------- | -------------- | ----------------------------------------- |
+| result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
+| data    | array |       |         | 返回结果详情，格式参考以下表格 |
+| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+
+##### <span id="233-----">2.3.3 请求参数示例</span>
+
+ - 传入参数
+
+```json
+{
+    "appId": "B32D954CC4E25491F9UIETG3CCBBF",
+    "channelId": 1,
+    "currency": "CNY",
+    "actionValue": 2000.00,
+    "cardNumber": "938265716",
+    "callbackUrl": "https://aaa.bbb.ccc/port1/withdraw",
+    "outOrderId": "WE8681762354832",
+    "outTips": "测试订单",
+    "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+##### <span id="234-----">2.3.4 返回参数示例</span>
+
+ - 返回参数（成功）
+
+```json
+{
+    "result": 1,
+    "transaction_id": "87262176",
+    "msg": "success"
+}
+```
+
+ - 返回参数（失败）
+
+```json
+{
+    "result": 0,
+    "transaction_id": NULL,
+    "msg": "传入参数格式有误"
+}
+```
+
+
 ### <span id="3-----">3 附件</span>
 
 #### <span id="31-----">3.1 通道列表</span>
