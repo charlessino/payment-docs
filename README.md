@@ -193,6 +193,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
     "callbackUrl": "https://aaa.bbb.ccc/port1/withdraw",
     "outOrderId": "WE8681762354832",
     "outTips": "测试订单",
+    "nonceStr": "123456",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
@@ -205,7 +206,8 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
     "result": 1,
     "transactionId": "RC_10086",
     "url": "https://aaa.bbb.ccc/?token=lakshfksh2ui3y4723726",
-    "msg": "success"
+    "msg": "success",
+    "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
 
@@ -270,6 +272,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | callbackUrl  |      | string  | 512      |          | 商户回调地址             |
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
+| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | 签名                                          |
 
 ##### <span id="222-----">2.2.2 返回参数</span>
@@ -279,6 +282,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | transaction_id    | int | 10      |         | 交易流水号 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
 ##### <span id="223-----">2.2.3 异步回调通知参数</span>
 
@@ -307,6 +311,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
     "callbackUrl": "https://aaa.bbb.ccc/port1/withdraw",
     "outOrderId": "WE8681762354832",
     "outTips": "测试订单",
+    "nonceStr": "123456",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
@@ -319,7 +324,8 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 {
     "result": 1,
     "transaction_id": "87262176",
-    "msg": "success"
+    "msg": "success",
+    "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
 
@@ -379,6 +385,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
 | pageId      |    | int   | 10        | 3  | 每次最多返回200条记录<br>可使用本字段进行翻页<br>不传此参数默认为1         |
 | orderBy    |    | string      | 4        | ASC   | 顺序<br>ASC=升序，DESC=降序<br>不传此参数默认DESC |
+| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | 签名                                          |
 
 ##### <span id="232-----">2.3.2 返回参数</span>
@@ -388,6 +395,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | data    | array |       |         | 返回结果详情，格式参考以下示意 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
 ##### <span id="233-----">2.3.3 data格式示意</span>
 
@@ -408,6 +416,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
     "dateTimeStart": "2024-02-01 09:31:26",
     "dateTimeEnd": "2024-02-01 12:15:33",
     "pageId": 2,
+    "nonceStr": "123456",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
@@ -455,7 +464,8 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 		"totalPages": 17,
 		"totalRecords": 3752
 	},
-	"msg": "success"
+	"msg": "success",
+    	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
 
@@ -475,6 +485,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
 | pageId      |    | int   | 10        | 3  | 每次最多返回200条记录<br>可使用本字段进行翻页<br>不传此参数默认为1         |
 | orderBy    |    | string      | 4        | ASC   | 顺序<br>ASC=升序，DESC=降序<br>不传此参数默认DESC |
+| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | 签名                                          |
 
 ##### <span id="242-----">2.4.2 返回参数</span>
@@ -484,6 +495,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | data    | array |       |         | 返回结果详情，格式参考以下示意 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
 ##### <span id="243-----">2.4.3 data格式示意</span>
 
@@ -504,6 +516,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
     "dateTimeStart": "2024-02-01 09:31:26",
     "dateTimeEnd": "2024-02-01 12:15:33",
     "pageId": 2,
+    "nonceStr": "123456",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
@@ -559,7 +572,8 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 		"totalPages": 8,
 		"totalRecords": 1560
 	},
-	"msg": "success"
+	"msg": "success",
+    	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
 
@@ -574,6 +588,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | 是   | string   | 32       |      | 应用ID                                        |
+| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | 签名                                          |
 
 ##### <span id="252-----">2.5.2 返回参数</span>
@@ -583,6 +598,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | data    | array |       |     CNY: 6686.32 (人民币余额)<br>USDT: 927.92 (USDT余额)    | 以二维数组方式排列 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
 ##### <span id="253-----">2.5.3 请求参数示例</span>
 
@@ -591,6 +607,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 ```json
 {
     "appId": "B32D954CC4E25491F9UIETG3CCBBF",
+    "nonceStr": "123456",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
@@ -606,7 +623,8 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 		"CNY": "6686.32",
 		"USDT": "927.92"
 	},
-	"msg": "success"
+	"msg": "success",
+    	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
 
