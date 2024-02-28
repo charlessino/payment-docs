@@ -336,7 +336,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | outOrderId     |     | string    | 100        |        | 第三方订单号                      |
 | dateTimeStart     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-起始值       |
 | dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
-| pageId      |    | int   | 10        | 3  | 每次最多返回200条记录\n可使用本字段进行翻页\n不传此参数默认为1         |
+| pageId      |    | int   | 10        | 3  | 每次最多返回200条记录<br>可使用本字段进行翻页<br>不传此参数默认为1         |
 | orderBy    |    | string      | 4        | ASC   | 顺序，ASC = 升序，DESC = 降序，不传此参数默认降序 |
 | sign      | 是   | string   | 32       |      | 签名                                          |
 
