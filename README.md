@@ -129,6 +129,9 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 请注意，如果不传nonceStr参数，则不会返回这个sign
 
 
+
+
+
 ### <span id="2-----">2 接口列表</span>
 
 ​    
@@ -150,6 +153,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | returnUrl  |      | string  | 512      |          | 支付完成后，商户页面返回地址             |
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
+| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign        | 是   | string  | 32       |          | 参考签名章节             |
 
 ##### <span id="212-----">2.1.2 返回参数</span>
@@ -160,6 +164,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | url    | string | 255      |         | 用于跳转至支付页面的链接，请在应用中直接打开 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
 ##### <span id="213-----">2.1.3 异步回调通知参数</span>
 
@@ -604,6 +609,9 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 	"msg": "success"
 }
 ```
+
+
+
 
 
 ### <span id="3-----">3 附件</span>
