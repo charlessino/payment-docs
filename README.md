@@ -119,10 +119,10 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 
 每次请求接口，接口返回时会带着一个sign，这个sign的签名规则为：md5(nonceStr + key)
 
-举例：
-nonceStr = 123456
-key = aaabbbccc
-md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
+举例：<br>
+nonceStr = 123456<br>
+key = aaabbbccc<br>
+md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 
 4118e6a1a1d43665ba1b77f49759b130 就是返回参数的签名
 
