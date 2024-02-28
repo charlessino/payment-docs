@@ -145,8 +145,8 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | 参数名      | 必填 | 类型    | 字段长度 | 例子     | 说明                     |
 | ----------- | ---- | ------- | -------- | -------- | ------------------------ |
 | appId       | 是   | string  | 32       |          | 应用ID                   |
-| channelId   | 是   | int     | 5        | 1        | 通道ID，参考通道章节 |
-| currency     | 是   | string | 10    | CNY  | 货币，参考货币列表章节       |
+| channelId   | 是   | int     | 5        | 1        | [通道列表](#31-----) |
+| currency     | 是   | string | 10    | CNY  | [货币列表](#32-----)       |
 | actionValue | 是   | decimal | 18, 2    | 2100.10  | 申请代收的金额 (就算是没有小数的货币，也需格式化为2位小数)       |
 | accountName | 是   | string | 100    | 张三  | 付款人姓名       |
 | callbackUrl  |      | string  | 512      |          | 商户回调地址             |
@@ -154,7 +154,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign        | 是   | string  | 32       |          | 参考签名章节             |
+| sign        | 是   | string  | 32       |          | [签名](#14-----)             |
 
 ##### <span id="212-----">2.1.2 返回参数</span>
 
@@ -173,11 +173,11 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | outOrderId | string    | 100        |        | 商户订单号                      |
 | outTips    | string  | 100      | 测试订单 | 商户备注 |
-| currency    | string | 10    | CNY  | 货币，参考货币列表章节 |
+| currency    | string | 10    | CNY  | [货币列表](#32-----)  |
 | actionValue    | decimal | 18, 2    | 2100.10  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代收成功 0=代收失败      |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
-| sign    | string | 32      |  | 对以上参数进行签名的结果      |
+| sign    | string | 32      |  | [签名](#14-----)      |
 
 ##### <span id="214-----">2.1.4 请求参数示例</span>
 
@@ -262,18 +262,18 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | 是   | string   | 32       |      | 应用ID                                        |
-| channelId | 是   | int | 5       |   1   | 通道ID，参考通道章节            |
-| currency     | 是   | string | 10    | CNY  | 货币，参考货币列表章节       |
+| channelId | 是   | int | 5       |   1   | [通道列表](#31-----)            |
+| currency     | 是   | string | 10    | CNY  | [货币列表](#32-----)        |
 | actionValue | 是   | decimal | 18, 2    | 2100.10  | 申请代付的金额 (就算是没有小数的货币，也需格式化为2位小数)       |
 | cardNumber      | 是   | string   | 100        | 982268716  | 卡号（账号）         |
-| bankName    |  是  | string      | 100        | 中国建设银行   | 银行名称 |
+| bankName    |  是  | string      | 100        | 中国建设银行   | [银行名称列表](#33-----) |
 | branchName      |    | string   | 100        | 上海分行  | 分支行名称         |
 | ownerName      |  是  | string   | 100        | 张三  | 户主姓名         |
 | callbackUrl  |      | string  | 512      |          | 商户回调地址             |
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | 是   | string   | 32       |      | 签名                                          |
+| sign      | 是   | string   | 32       |      | [签名](#14-----)                             |
 
 ##### <span id="222-----">2.2.2 返回参数</span>
 
@@ -291,11 +291,11 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | outOrderId | string    | 100        |        | 商户订单号                      |
 | outTips    | string  | 100      | 测试订单 | 商户备注 |
-| currency    | string | 10    | CNY  | 货币，参考货币列表章节 |
+| currency    | string | 10    | CNY  | [货币列表](#32-----)  |
 | actionValue    | decimal | 18, 2    | 2100.10  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代付成功 0=代付失败      |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
-| sign    | string | 32      |  | 对以上参数进行签名的结果      |
+| sign    | string | 32      |  | [签名](#14-----)      |
 
 ##### <span id="224-----">2.2.4 请求参数示例</span>
 
@@ -386,7 +386,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | pageId      |    | int   | 10        | 3  | 每次最多返回200条记录<br>可使用本字段进行翻页<br>不传此参数默认为1         |
 | orderBy    |    | string      | 4        | ASC   | 顺序<br>ASC=升序，DESC=降序<br>不传此参数默认DESC |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | 是   | string   | 32       |      | 签名                                          |
+| sign      | 是   | string   | 32       |      | [签名](#14-----)                         |
 
 ##### <span id="232-----">2.3.2 返回参数</span>
 
@@ -486,7 +486,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | pageId      |    | int   | 10        | 3  | 每次最多返回200条记录<br>可使用本字段进行翻页<br>不传此参数默认为1         |
 | orderBy    |    | string      | 4        | ASC   | 顺序<br>ASC=升序，DESC=降序<br>不传此参数默认DESC |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | 是   | string   | 32       |      | 签名                                          |
+| sign      | 是   | string   | 32       |      | [签名](#14-----)                     |
 
 ##### <span id="242-----">2.4.2 返回参数</span>
 
@@ -589,7 +589,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | 是   | string   | 32       |      | 应用ID                                        |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | 是   | string   | 32       |      | 签名                                          |
+| sign      | 是   | string   | 32       |      | [签名](#14-----)                        |
 
 ##### <span id="252-----">2.5.2 返回参数</span>
 
