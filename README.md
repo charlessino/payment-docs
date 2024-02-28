@@ -369,7 +369,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 
 | 参数名    | 例子           | 说明     |
 | ---------- | ------ | -------- |
-| orderList |    transactionId -  RC_98261876 (交易流水号)<br>currency -  CNY (货币)<br>channelId -  15 (通道ID)<br>rechargeRate -  0.01 (手续费率)<br>actionValue -  3000.00 (代收金额)<br>chargeValue -  30.00 (手续费)<br>actualValue -  2970.00 (实际记账金额)<br>accountName -  张三 (付款人姓名)<br>status -  1 (状态值 1=成功 0=失败 2=处理中)<br>statusName -  成功 (状态名)<br>outOrderId -  98227863223 (商户订单号)<br>outTips -  测试的订单 (商户备注)<br>lastUpdatedTime - 2024-02-01 12:15:33 (订单更新时间)<br>createTime -  2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
+| orderList |    transactionId: RC_98261876 (交易流水号)<br>currency: CNY (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (手续费率)<br>actionValue: 3000.00 (代收金额)<br>chargeValue: 30.00 (手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: 张三 (付款人姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
 | currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
@@ -465,7 +465,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 
 | 参数名    | 例子           | 说明     |
 | ---------- | ------ | -------- |
-| orderList |    transactionId -  WD_98261876 (交易流水号)<br>currency -  CNY (货币)<br>channelId -  15 (通道ID)<br>withdrawRate -  0.01 (手续费率)<br>withdrawFixValue -  3.00 (代付固定手续费)<br>actionValue -  3000.00 (代付金额)<br>chargeValue -  33.00 (手续费)<br>actualValue -  3033.00 (实际记账金额)<br>bankName -  工商银行 (银行名称)<br>branchName -  广州市分行 (分支行名称)<br>cardNumber -  982268716 (卡号)<br>ownerName -  张三 (户主姓名)<br>status -  1 (状态值 1=成功 0=失败 2=处理中)<br>statusName -  成功 (状态名)<br>outOrderId -  98227863223 (商户订单号)<br>outTips -  测试的订单 (商户备注)<br>lastUpdatedTime - 2024-02-01 12:15:33 (订单更新时间)<br>createTime -  2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
+| orderList |    transactionId: WD_98261876 (交易流水号)<br>currency: CNY (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (手续费率)<br>withdrawFixValue: 3.00 (代付固定手续费)<br>actionValue: 3000.00 (代付金额)<br>chargeValue: 33.00 (手续费)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 张三 (户主姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
 | currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
@@ -557,7 +557,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
-| data    | array |       |     CNY -  6686.32 (人民币余额)<br>USDT -  927.92 (USDT余额)    | 以二维数组方式排列 |
+| data    | array |       |     CNY: 6686.32 (人民币余额)<br>USDT: 927.92 (USDT余额)    | 以二维数组方式排列 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 
 ##### <span id="253-----">2.5.3 请求参数示例</span>
