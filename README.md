@@ -353,47 +353,68 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | 参数名    | 例子           | 说明     |
 | ---------- | ------ | -------- |
 | orderList |    transactionId -  RC_98261876 (交易流水号)<br>currency -  CNY (货币)<br>channelId -  15 (通道ID)<br>rechargeRate -  0.01 (手续费率)<br>actionValue -  3000.00 (代收金额)<br>chargeValue -  30.00 (手续费)<br>actualValue -  2970.00 (实际记账金额)<br>accountName -  张三 (付款人姓名)<br>status -  1 (状态值 1=成功 0=失败 2=处理中)<br>statusName -  成功 (状态名)<br>outOrderId -  98227863223 (商户订单号)<br>outTips -  测试的订单 (商户备注)<br><br>lastUpdatedTime - 2024-02-01 12:15:33 (订单更新时间)<br><br>createTime -  2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
-| currentPage |    1    | 当前页码，默认为1，每页最多200条记录                      |
-| totalPages |    5    | 当前搜索结果可以翻页的总页码，例如5表示总共有5页，可以在传参时使用pageId翻页     |
+| currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
+| totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
 
-##### <span id="233-----">2.3.3 请求参数示例</span>
+##### <span id="234-----">2.3.4 请求参数示例</span>
 
  - 传入参数
 
 ```json
 {
     "appId": "B32D954CC4E25491F9UIETG3CCBBF",
-    "channelId": 1,
-    "currency": "CNY",
-    "actionValue": 2000.00,
-    "cardNumber": "938265716",
-    "callbackUrl": "https://aaa.bbb.ccc/port1/withdraw",
-    "outOrderId": "WE8681762354832",
-    "outTips": "测试订单",
+    "dateTimeStart": "2024-02-01 09:31:26",
+    "dateTimeEnd": "2024-02-01 12:15:33",
+    "pageId": 2,
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
 
 ##### <span id="234-----">2.3.4 返回参数示例</span>
 
- - 返回参数（成功）
+ - 返回参数
 
 ```json
 {
-    "result": 1,
-    "transaction_id": "87262176",
-    "msg": "success"
-}
-```
-
- - 返回参数（失败）
-
-```json
-{
-    "result": 0,
-    "transaction_id": NULL,
-    "msg": "传入参数格式有误"
+	"result": 1,
+	"data": {
+		"orderList": [{
+			"transactionId": "RC_17",
+			"currency": "CNY",
+			"channelId": "1",
+			"rechargeRate": "0.0400",
+			"actionValue": "1931.00",
+			"chargeValue": "77.24",
+			"actualValue": "1853.76",
+			"accountName": "\u5f20\u4e09",
+			"status": 1,
+			"statusName": "\u6210\u529f",
+			"outOrderId": "TT_1708203061",
+			"outTips": "\u6d4b\u8bd51",
+			"lastUpdatedTime": "2024-02-18 04:53:44",
+			"createTime": "2024-02-18 04:51:01"
+		}, {
+			"transactionId": "RC_18",
+			"currency": "CNY",
+			"channelId": "1",
+			"rechargeRate": "0.0400",
+			"actionValue": "100.00",
+			"chargeValue": "4.00",
+			"actualValue": "96.00",
+			"accountName": "\u5f20\u4e09",
+			"status": 0,
+			"statusName": "\u5931\u8d25",
+			"outOrderId": "TT_1708203901",
+			"outTips": "\u6d4b\u8bd51",
+			"lastUpdatedTime": "2024-02-18 05:05:03",
+			"createTime": "2024-02-18 05:05:01"
+		}],
+		"currentPage": 3,
+		"totalPages": 17,
+		"totalRecords": 3752
+	},
+	"msg": "success"
 }
 ```
 
