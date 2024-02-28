@@ -133,8 +133,8 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | currency     | 是   | string | 10    | CNY  | 货币，参考货币列表章节       |
 | actionValue | 是   | decimal | 18, 2    | 2100.10  | 申请代收的金额 (就算是没有小数的货币，也需格式化为2位小数)       |
 | accountName | 是   | string | 100    | 张三  | 付款人姓名       |
-| callbackUrl  |      | string  | 512      |          | 第三方回调地址             |
-| returnUrl  |      | string  | 512      |          | 支付完成后，第三方页面返回地址             |
+| callbackUrl  |      | string  | 512      |          | 商户回调地址             |
+| returnUrl  |      | string  | 512      |          | 支付完成后，商户页面返回地址             |
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | sign        | 是   | string  | 32       |          | 参考签名章节             |
@@ -159,6 +159,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | actionValue    | decimal | 18, 2    | 2100.10  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代收成功 0=代收失败      |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| sign    | string | 32      |  | 对以上参数进行签名的结果      |
 
 ##### <span id="214-----">2.1.4 请求参数示例</span>
 
@@ -212,7 +213,8 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
     "currency": "CNY",
     "actionValue": 2500.00,
     "status": 1,
-    "msg": "success"
+    "msg": "success",
+    "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
 
@@ -226,7 +228,8 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
     "currency": "CNY",
     "actionValue": 2500.00,
     "status": 0,
-    "msg": "通道维护暂时关闭"
+    "msg": "通道维护暂时关闭",
+    "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
 
@@ -246,7 +249,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | bankName    |  是  | string      | 100        | 中国建设银行   | 银行名称 |
 | branchName      |    | string   | 100        | 上海分行  | 分支行名称         |
 | ownerName      |  是  | string   | 100        | 张三  | 户主姓名         |
-| callbackUrl  |      | string  | 512      |          | 第三方回调地址             |
+| callbackUrl  |      | string  | 512      |          | 商户回调地址             |
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | sign      | 是   | string   | 32       |      | 签名                                          |
@@ -270,6 +273,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | actionValue    | decimal | 18, 2    | 2100.10  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代付成功 0=代付失败      |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| sign    | string | 32      |  | 对以上参数进行签名的结果      |
 
 ##### <span id="224-----">2.2.4 请求参数示例</span>
 
@@ -323,7 +327,8 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
     "currency": "CNY",
     "actionValue": 4000.00,
     "status": 1,
-    "msg": "success"
+    "msg": "success",
+    "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
 
@@ -336,7 +341,8 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
     "currency": "CNY",
     "actionValue": 4000.00,
     "status": 0,
-    "msg": "通道维护暂时关闭"
+    "msg": "通道维护暂时关闭",
+    "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
 
