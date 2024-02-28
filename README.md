@@ -115,7 +115,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 
 61695d4fb053b3c769205820170b9dea
 
-​##### <span id="142-----">1.4.2 返回参数签名</span>
+##### <span id="142-----">1.4.2 返回参数签名</span>
 
 每次请求接口，接口返回时会带着一个sign，这个sign的签名规则为：md5(nonceStr + key)
 
