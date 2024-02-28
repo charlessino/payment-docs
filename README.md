@@ -118,8 +118,8 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | accountName | 是   | string | 100    | 张三  | 付款人姓名       |
 | callbackUrl  |      | string  | 512      |          | 第三方回调地址             |
 | returnUrl  |      | string  | 512      |          | 支付完成后，第三方页面返回地址             |
-| outOrderId  |      | string  | 100      |          | 第三方订单号             |
-| outTips     |      | string  | 100      | 测试订单 | 第三方备注               |
+| outOrderId  |      | string  | 100      |          | 商户订单号             |
+| outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | sign        | 是   | string  | 32       |          | 参考签名章节             |
 
 ##### <span id="212-----">2.1.2 返回参数</span>
@@ -136,8 +136,8 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | 参数名 | 类型   | 字段长度 | 例子    | 说明                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
-| outOrderId | string    | 100        |        | 第三方订单号                      |
-| outTips    | string  | 100      | 测试订单 | 第三方备注 |
+| outOrderId | string    | 100        |        | 商户订单号                      |
+| outTips    | string  | 100      | 测试订单 | 商户备注 |
 | currency    | string | 10    | CNY  | 货币，参考货币列表章节 |
 | actionValue    | decimal | 18, 2    | 2100.10  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代收成功 0=代收失败      |
@@ -230,8 +230,8 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | branchName      |    | string   | 100        | 上海分行  | 分支行名称         |
 | ownerName      |  是  | string   | 100        | 张三  | 户主姓名         |
 | callbackUrl  |      | string  | 512      |          | 第三方回调地址             |
-| outOrderId  |      | string  | 100      |          | 第三方订单号             |
-| outTips     |      | string  | 100      | 测试订单 | 第三方备注               |
+| outOrderId  |      | string  | 100      |          | 商户订单号             |
+| outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | sign      | 是   | string   | 32       |      | 签名                                          |
 
 ##### <span id="222-----">2.2.2 返回参数</span>
@@ -247,8 +247,8 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | 参数名 | 类型   | 字段长度 | 例子    | 说明                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
-| outOrderId | string    | 100        |        | 第三方订单号                      |
-| outTips    | string  | 100      | 测试订单 | 第三方备注 |
+| outOrderId | string    | 100        |        | 商户订单号                      |
+| outTips    | string  | 100      | 测试订单 | 商户备注 |
 | currency    | string | 10    | CNY  | 货币，参考货币列表章节 |
 | actionValue    | decimal | 18, 2    | 2100.10  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代付成功 0=代付失败      |
@@ -333,11 +333,11 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | 是   | string   | 32       |      | 应用ID                                        |
-| outOrderId     |     | string    | 100        |        | 第三方订单号                      |
+| outOrderId     |     | string    | 100        |        | 商户订单号                      |
 | dateTimeStart     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-起始值       |
 | dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
 | pageId      |    | int   | 10        | 3  | 每次最多返回200条记录<br>可使用本字段进行翻页<br>不传此参数默认为1         |
-| orderBy    |    | string      | 4        | ASC   | 顺序，ASC = 升序，DESC = 降序，不传此参数默认降序 |
+| orderBy    |    | string      | 4        | ASC   | 顺序<br>ASC=升序，DESC=降序<br>不传此参数默认DESC |
 | sign      | 是   | string   | 32       |      | 签名                                          |
 
 ##### <span id="232-----">2.3.2 返回参数</span>
@@ -345,8 +345,17 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 | 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
-| data    | array |       |         | 返回结果详情，格式参考以下表格 |
+| data    | array |       |         | 返回结果详情，格式参考以下示意 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+
+##### <span id="233-----">2.3.3 data格式示意</span>
+
+| 参数名    | 例子           | 说明     |
+| ---------- | ------ | -------- |
+| orderList |    transactionId -  RC_98261876 (交易流水号)<br>currency -  CNY (货币)<br>channelId -  15 (通道ID)<br>rechargeRate -  0.01 (手续费率)<br>actionValue -  3000.00 (代收金额)<br>chargeValue -  30.00 (手续费)<br>actualValue -  2970.00 (实际记账金额)<br>accountName -  张三 (付款人姓名)<br>status -  1 (状态值 1=成功 0=失败 2=处理中)<br>statusName -  成功 (状态名)<br>outOrderId -  98227863223 (商户订单号)<br>outTips -  测试的订单 (商户备注)<br><br>lastUpdatedTime - 2024-02-01 12:15:33 (订单更新时间)<br><br>createTime -  2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
+| currentPage |    1    | 当前页码，默认为1，每页最多200条记录                      |
+| totalPages |    5    | 当前搜索结果可以翻页的总页码，例如5表示总共有5页，可以在传参时使用pageId翻页     |
+| totalRecords |    350    | 当前搜索结果的总纪录数                      |
 
 ##### <span id="233-----">2.3.3 请求参数示例</span>
 
