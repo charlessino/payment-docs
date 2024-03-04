@@ -154,7 +154,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 | appId       | 是   | string  | 32       |          | 应用ID                   |
 | channelId   | 是   | int     | 5        | 1        | [通道列表](#31-----) |
 | currency     | 是   | string | 10    | CNY  | [货币列表](#32-----)       |
-| actionValue | 是   | decimal | 18, 2    | 2100.10  | 申请代收的金额 (就算是没有小数的货币，也需格式化为2位小数)       |
+| actionValue | 是   | decimal | 18, 2    | 2100.00  | 申请代收的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
 | accountName | 是   | string | 100    | 张三  | 付款人姓名       |
 | callbackUrl  |      | string  | 512      |          | 商户回调地址             |
 | returnUrl  |      | string  | 512      |          | 支付完成后，商户页面返回地址             |
@@ -182,7 +182,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 | outOrderId | string    | 100        |        | 商户订单号                      |
 | outTips    | string  | 100      | 测试订单 | 商户备注 |
 | currency    | string | 10    | CNY  | [货币列表](#32-----)  |
-| actionValue    | decimal | 18, 2    | 2100.10  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
+| actionValue    | decimal | 18, 2    | 2100.00  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代收成功 0=代收失败      |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |  | [签名](#14-----)      |
@@ -272,7 +272,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 | appId     | 是   | string   | 32       |      | 应用ID                                        |
 | channelId | 是   | int | 5       |   1   | [通道列表](#31-----)            |
 | currency     | 是   | string | 10    | CNY  | [货币列表](#32-----)        |
-| actionValue | 是   | decimal | 18, 2    | 2100.10  | 申请代付的金额 (就算是没有小数的货币，也需格式化为2位小数)       |
+| actionValue | 是   | decimal | 18, 2    | 2100.00  | 申请代付的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
 | cardNumber      | 是   | string   | 100        | 982268716  | 卡号（账号）         |
 | bankName    |  是  | string      | 100        | 中国建设银行   | [银行名称列表](#33-----) |
 | branchName      |    | string   | 100        | 上海分行  | 分支行名称         |
@@ -301,7 +301,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 | outOrderId | string    | 100        |        | 商户订单号                      |
 | outTips    | string  | 100      | 测试订单 | 商户备注 |
 | currency    | string | 10    | CNY  | [货币列表](#32-----)  |
-| actionValue    | decimal | 18, 2    | 2100.10  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
+| actionValue    | decimal | 18, 2    | 2100.00  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代付成功 0=代付失败      |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |  | [签名](#14-----)      |
