@@ -175,7 +175,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 | url    | string | 255      |         | 用于跳转至支付页面的链接，returnType=1时返回此项 |
 | bankName    | string | 100      |         | 银行名称，returnType=2时返回此项 |
 | branchName    | string | 100      |         | 支行名称，returnType=2时返回此项 |
-| accountNumber    | string | 100      |         | 银行卡好，returnType=2时返回此项 |
+| accountNumber    | string | 100      |         | 银行卡号，returnType=2时返回此项 |
 | accountOwner    | string | 100      |         | 户主姓名，returnType=2时返回此项 |
 
 ##### <span id="213-----">2.1.3 异步回调通知参数</span>
