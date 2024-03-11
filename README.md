@@ -160,6 +160,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 | returnUrl  |      | string  | 512      |          | 支付完成后，商户页面返回地址             |
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
+| returnType     |      | int  | 1      | 1 | 返回类型 1=充值链接 2=银行、卡号、户名的文本信息。默认为1               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign        | 是   | string  | 32       |          | [签名](#14-----)             |
 
@@ -169,9 +170,13 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
-| url    | string | 255      |         | 用于跳转至支付页面的链接，请在应用中直接打开 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |    | [返回参数签名](#142-----)      |
+| url    | string | 255      |         | 用于跳转至支付页面的链接，returnType=1时返回此项 |
+| bankName    | string | 100      |         | 银行名称，returnType=2时返回此项 |
+| branchName    | string | 100      |         | 支行名称，returnType=2时返回此项 |
+| accountNumber    | string | 100      |         | 银行卡好，returnType=2时返回此项 |
+| accountOwner    | string | 100      |         | 户主姓名，returnType=2时返回此项 |
 
 ##### <span id="213-----">2.1.3 异步回调通知参数</span>
 收到回调时请返回success字样，详情参考[回调机制](#15-----)
