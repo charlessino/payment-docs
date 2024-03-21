@@ -146,6 +146,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 #### <span id="21-----">2.1 代收</span>
 
 请求地址：`{apiAddress}/recharge`
+Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="211-----">2.1.1 传入参数</span>
 
@@ -266,6 +267,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 #### <span id="22-----">2.2 代付</span>
 
 请求地址：`{apiAddress}/withdraw`
+Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="221-----">2.2.1 传入参数</span>
 
@@ -385,6 +387,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 #### <span id="23-----">2.3 代收订单查询</span>
 
 请求地址：`{apiAddress}/recharge-orders-query`
+Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="231-----">2.3.1 传入参数</span>
 
@@ -485,6 +488,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 #### <span id="24-----">2.4 代付订单查询</span>
 
 请求地址：`{apiAddress}/withdraw-orders-query`
+Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="241-----">2.4.1 传入参数</span>
 
@@ -593,6 +597,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 #### <span id="25-----">2.5 余额查询</span>
 
 请求地址：`{apiAddress}/balance`
+Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="251-----">2.5.1 传入参数</span>
 
