@@ -292,7 +292,7 @@ Header：Content-Type: application/json;charset=utf-8
 | 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
-| transaction_id    | int | 10      |         | 交易流水号 |
+| transactionId    | int | 10      |         | 交易流水号 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
@@ -336,7 +336,7 @@ Header：Content-Type: application/json;charset=utf-8
 ```json
 {
     "result": 1,
-    "transaction_id": "87262176",
+    "transactionId": "87262176",
     "msg": "success",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
@@ -347,7 +347,7 @@ Header：Content-Type: application/json;charset=utf-8
 ```json
 {
     "result": 0,
-    "transaction_id": NULL,
+    "transactionId": NULL,
     "msg": "传入参数格式有误"
 }
 ```
