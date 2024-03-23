@@ -156,7 +156,7 @@ Header：Content-Type: application/json;charset=utf-8
 | channelId   | 是   | int     | 5        | 1        | [通道列表](#31-----) |
 | currency     | 是   | string | 10    | CNY  | [货币列表](#32-----)       |
 | actionValue | 是   | decimal | 18, 2    | 2100.00  | 申请代收的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
-| accountName | 是   | string | 100    | 张三  | 付款人姓名，姓名中不可包含数字       |
+| accountName | 是   | string | 100    | 张三  | 付款人姓名，姓名中不可包含数字，且不可传空值       |
 | callbackUrl  |      | string  | 512      |          | 商户回调地址             |
 | returnUrl  |      | string  | 512      |          | 支付完成后，商户页面返回地址             |
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
