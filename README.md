@@ -158,12 +158,16 @@ Header：Content-Type: application/json;charset=utf-8
 | currency     | 是   | string | 10    | CNY  | [货币列表](#32-----)       |
 | actionValue | 是   | decimal | 18, 2    | 2100.00  | 申请代收的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
 | accountName | 是   | string | 100    | 张三  | 付款人姓名，姓名中不可包含数字，且不可传空值       |
+| cellphone |    | string | 100    | 01034388769  | 手机号，韩国必传，其他可不传       |
 | callbackUrl  |      | string  | 512      |          | 商户回调地址             |
 | returnUrl  |      | string  | 512      |          | 支付完成后，商户页面返回地址             |
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | returnType     |      | int  | 1      | 1 | 返回类型 1=充值链接 2=银行、卡号、户名的文本信息。默认为1               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
+| param1     |      | string  | 100      |  | 预留参数1，可不传               |
+| param2     |      | string  | 100      |  | 预留参数2，可不传               |
+| param3     |      | string  | 100      |  | 预留参数3，可不传               |
 | sign        | 是   | string  | 32       |          | [签名](#14-----)             |
 
 ##### <span id="212-----">2.1.2 返回参数</span>
