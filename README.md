@@ -168,7 +168,7 @@ Header：Content-Type: application/json;charset=utf-8
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | returnType     |      | int  | 1      | 1 | 返回类型 1=充值链接 2=银行、卡号、户名的文本信息。默认为1               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| param1     |      | string  | 100      |  | 越南通道ID5，则必传[越南代收银行名称](#333-----)               |
+| param1     |      | string  | 100      |  | 越南通道ID5，则必传[银行名称列表-越南代收](#333-----)               |
 | param2     |      | string  | 100      |  | 预留参数2，可不传               |
 | param3     |      | string  | 100      |  | 预留参数3，可不传               |
 | sign        | 是   | string  | 32       |          | [签名](#14-----)             |
