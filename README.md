@@ -170,7 +170,7 @@ Header：Content-Type: application/json;charset=utf-8
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | returnType     |      | int  | 1      | 1 | 返回类型 1=充值链接 2=银行、卡号、户名的文本信息。默认为1               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| param1     |      | string  | 100      |  | 越南通道ID5，则必传[银行名称列表-越南代收](#333-----)               |
+| param1     |      | string  | 100      |  | 越南通道ID5，则必传[银行名称列表-越南代收](#331-----)               |
 | param2     |      | string  | 100      |  | 预留参数2，可不传               |
 | param3     |      | string  | 100      |  | 预留参数3，可不传               |
 | sign        | 是   | string  | 32       |          | [签名](#14-----)             |
@@ -288,7 +288,7 @@ Header：Content-Type: application/json;charset=utf-8
 | currency     | 是   | string | 10    | CNY  | [货币列表](#32-----)        |
 | actionValue | 是   | decimal | 18, 2    | 2100.00  | 申请代付的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
 | cardNumber      | 是   | string   | 100        | 982268716  | 卡号（账号）         |
-| bankName    |  是  | string      | 100        | 中国建设银行   | [银行名称列表](#33-----) [越南代付银行名称](#334-----)|
+| bankName    |  是  | string      | 100        | 中国建设银行   | [银行名称列表-代付](#34-----)   |
 | branchName      |    | string   | 100        | 上海分行  | 分支行名称         |
 | ownerName      |  是  | string   | 100        | 张三  | 户主姓名，姓名中不可包含数字         |
 | callbackUrl  |      | string  | 512      |          | 商户回调地址             |
