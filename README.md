@@ -974,7 +974,7 @@ Header：Content-Type: application/json;charset=utf-8
 | TRC20 |
 
 
-##### <span id="343-----">3.3.3 银行名称列表-越南代付</span>
+##### <span id="343-----">3.4.3 银行名称列表-越南代付</span>
 
 | 标准名称   |
 | ---- |
