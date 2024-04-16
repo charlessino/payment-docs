@@ -44,11 +44,13 @@
   + [3 附件](#3-----)
     + [3.1 通道列表](#31-----)
     + [3.2 货币列表](#32-----)
-    + [3.3 银行名称列表](#33-----)
-    	+ [3.3.1 银行名称列表-中国](#331-----)
-    	+ [3.3.2 银行名称列表-USDT](#332-----)
-    	+ [3.3.3 银行名称列表-越南代收](#333-----)
-    	+ [3.3.4 银行名称列表-越南代付](#334-----)
+    + [3.3 银行名称列表-代收](#33-----)
+    	+ [3.3.1 银行名称列表-越南代收](#331-----)
+    + [3.4 银行名称列表-代付](#34-----)
+    	+ [3.4.1 银行名称列表-中国代付](#341-----)
+    	+ [3.4.2 银行名称列表-USDT代付](#342-----)
+    	+ [3.4.3 银行名称列表-越南代付](#343-----)
+
 
 ### <span id="1-----">1 概要</span>
 
@@ -677,9 +679,30 @@ Header：Content-Type: application/json;charset=utf-8
 | JPY    | 日元 |
 | PHP    | 菲律宾比索 |
 
-#### <span id="33-----">3.3 银行名称列表</span>
+#### <span id="33-----">3.3 银行名称列表-代收</span>
 
-##### <span id="331-----">3.3.1 银行名称列表-人民币</span>
+##### <span id="331-----">3.3.3 银行名称列表-越南代收</span>
+
+| 标准名称   |
+| ---- |
+| VP BANK |
+| ACB BANK |
+| BIDV BANK |
+| VIETTIN BANK |
+| MB BANK |
+| EXIM BANK |
+| SACOM |
+| TECHCOM BANK |
+| VIETCOM BANK |
+| DONGA BANK |
+| VIB BANK |
+| MSB BANK |
+| SHB BACNK |
+
+
+#### <span id="34-----">3.4 银行名称列表-代付</span>
+
+##### <span id="341-----">3.4.1 银行名称列表-中国代付</span>
 
 | 标准名称   |
 | ---- |
@@ -943,7 +966,7 @@ Header：Content-Type: application/json;charset=utf-8
 | 湖北省农村信用社联合社 |
 
 
-##### <span id="332-----">3.3.2 银行名称列表-USDT</span>
+##### <span id="342-----">3.4.2 银行名称列表-USDT代付</span>
 
 | 标准名称   |
 | ---- |
@@ -951,26 +974,7 @@ Header：Content-Type: application/json;charset=utf-8
 | TRC20 |
 
 
-##### <span id="333-----">3.3.3 银行名称列表-越南代收</span>
-
-| 标准名称   |
-| ---- |
-| VP BANK |
-| ACB BANK |
-| BIDV BANK |
-| VIETTIN BANK |
-| MB BANK |
-| EXIM BANK |
-| SACOM |
-| TECHCOM BANK |
-| VIETCOM BANK |
-| DONGA BANK |
-| VIB BANK |
-| MSB BANK |
-| SHB BACNK |
-
-
-##### <span id="334-----">3.3.4 银行名称列表-越南代付</span>
+##### <span id="343-----">3.3.3 银行名称列表-越南代付</span>
 
 | 标准名称   |
 | ---- |
