@@ -681,7 +681,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 #### <span id="33-----">3.3 银行名称列表-代收</span>
 
-##### <span id="331-----">3.3.3 银行名称列表-越南代收</span>
+##### <span id="331-----">3.3.1 银行名称列表-越南代收</span>
 
 | 标准名称   |
 | ---- |
