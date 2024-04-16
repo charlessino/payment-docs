@@ -364,7 +364,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="226-----">2.2.6 异步回调通知参数示例</span>
 
- - 代收成功
+ - 代付成功
 
 ```json
 {
@@ -379,7 +379,7 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
- - 代收失败
+ - 代付失败
 
 ```json
 {
