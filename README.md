@@ -678,6 +678,7 @@ Header：Content-Type: application/json;charset=utf-8
 | MXP    | 墨西哥比索 |
 | JPY    | 日元 |
 | PHP    | 菲律宾比索 |
+| KRW    | 韩元 |
 
 #### <span id="33-----">3.3 银行名称列表-代收</span>
 
