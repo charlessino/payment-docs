@@ -182,7 +182,7 @@ Header：Content-Type: application/json;charset=utf-8
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
-| sign    | string | 32      |    | [返回参数签名](#142-----)      |
+| sign    | string | 32      |    | [Return parameter signature](#142-----)      |
 | url    | string | 255      |         | 用于跳转至支付页面的链接，returnType=1时返回此项 |
 | data    | array |       |         | returnType=2时返回此项，包含以下子项：<br>bankName: 银行名称<br>branchName: 支行名称<br>accountNumber: 银行卡号<br>accountOwner: 户主姓名<br>amount: 金额 |
 
@@ -304,7 +304,7 @@ Header：Content-Type: application/json;charset=utf-8
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | transactionId    | int | 10      |         | 交易流水号 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
-| sign    | string | 32      |    | [返回参数签名](#142-----)      |
+| sign    | string | 32      |    | [Return parameter signature](#142-----)      |
 
 ##### <span id="223-----">2.2.3 Asynchronous callback notification parameters</span>
 收到回调时请返回success字样，详情参考[回调机制](#15-----)
@@ -419,7 +419,7 @@ Header：Content-Type: application/json;charset=utf-8
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | data    | array |       |         | 返回结果详情，格式参考以下示意 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
-| sign    | string | 32      |    | [返回参数签名](#142-----)      |
+| sign    | string | 32      |    | [Return parameter signature](#142-----)      |
 
 ##### <span id="233-----">2.3.3 Data format schema</span>
 
@@ -520,7 +520,7 @@ Header：Content-Type: application/json;charset=utf-8
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | data    | array |       |         | 返回结果详情，格式参考以下示意 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
-| sign    | string | 32      |    | [返回参数签名](#142-----)      |
+| sign    | string | 32      |    | [Return parameter signature](#142-----)      |
 
 ##### <span id="243-----">2.4.3 Data format schema</span>
 
@@ -624,7 +624,7 @@ Header：Content-Type: application/json;charset=utf-8
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | data    | array |       |     KRW: 6686.32 (人民币余额)<br>USDT: 927.92 (USDT余额)    | 以二维数组方式排列 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
-| sign    | string | 32      |    | [返回参数签名](#142-----)      |
+| sign    | string | 32      |    | [Return parameter signature](#142-----)      |
 
 ##### <span id="253-----">2.5.3 Example request parameters</span>
 
