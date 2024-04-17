@@ -238,7 +238,7 @@ Header：Content-Type: application/json;charset=utf-8
 {
     "result": 0,
     "url": null,
-    "msg": "签名不正确"
+    "msg": "Incorrect signature"
 }
 ```
 
