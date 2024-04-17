@@ -124,16 +124,16 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 
 ##### <span id="142-----">1.4.2 Return parameter signature</span>
 
-每次请求接口，接口返回时会带着一个sign，这个sign的签名规则为：md5(nonceStr + key)
+Each time an interface is requested, it returns with a sign, which is signed with the following rule: md5(nonceStr + key)
 
 e.g.：<br>
 nonceStr = 123456<br>
 key = aaabbbccc<br>
 md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 
-4118e6a1a1d43665ba1b77f49759b130 就是返回参数的签名
+4118e6a1a1d43665ba1b77f49759b130 is the signature of the returned parameter.
 
-请注意，如果不传nonceStr参数，则不会返回这个sign
+Note that if you don't pass the nonceStr parameter, the signature will not be returned.
 
 #### <span id="15-----">1.5 Callback mechanism</span>
 
