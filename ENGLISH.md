@@ -137,11 +137,11 @@ Note that if you don't pass the nonceStr parameter, the signature will not be re
 
 #### <span id="15-----">1.5 Callback mechanism</span>
 
-  1. 代收和代付订单在收到状态更新之后，会立即回调商户指定的回调地址
-  2. 如果收到商户返回success字样表示回调成功
-  3. 如果未收到success字样，系统会每隔一分钟尝试再次回调，最多10次，直到收到success时停止
-  4. 10次之后仍然未收到success字样，系统也不再发送回调信息
-  5. 如您需要再次回调，欢迎随时联系客服
+  1. Recharge and withdraw orders will call back to the merchant's specified callback address as soon as the status update is received.
+  2. If the merchant returns the word success, the callback is successful.
+  3. if no success is received, the system will try to call back again every minute, up to 10 times, until a success is received.
+  4. After 10 times and still do not receive the word success, the system will no longer send callback information
+  5. If you need to call back again, please feel free to contact our customer service.
 
 
 
@@ -161,12 +161,12 @@ Header：Content-Type: application/json;charset=utf-8
 | appId       | Yes   | string  | 32       |          | appId                   |
 | channelId   | Yes   | int     | 5        | 1        | [Channel List](#31-----) |
 | currency     | Yes   | string | 10    | KRW  | [List of currencies](#32-----)       |
-| actionValue | Yes   | decimal | 18, 2    | 2100.00  | 申请代收的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
-| accountName | Yes   | string | 100    | 张三  | 付款人姓名，姓名中不可包含数字，且不可传空值       |
-| cellphone |    | string | 100    | 01034388769  | 手机号，韩国必传，其他可不传       |
-| callbackUrl  |      | string  | 512      |          | 商户回调地址             |
-| returnUrl  |      | string  | 512      |          | 支付完成后，商户页面返回地址             |
-| outOrderId  |      | string  | 100      |          | 商户订单号             |
+| actionValue | Yes   | decimal | 18, 2    | 2100.00  | Amount of the requested recharge (digital currency allows decimals, fiat currencies only allow integers, even if integers need to be formatted into 2 decimal places in order to unify the rules of signature inspection)       |
+| accountName | Yes   | string | 100    | 张三  | The name of the depositor, the name can not contain numbers, and can not pass empty values       |
+| cellphone |    | string | 100    | 01034388769  | Cell phone number, Korea must be transmitted, others can not be transmitted       |
+| callbackUrl  |      | string  | 512      |          | Merchant callback address             |
+| returnUrl  |      | string  | 512      |          | Merchant page callback address after recharge completion             |
+| outOrderId  |      | string  | 100      |          | Merchant order number             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | returnType     |      | int  | 1      | 1 | 返回类型 1=充值链接 2=银行、卡号、户名的文本信息。默认为1               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
@@ -192,7 +192,7 @@ Header：Content-Type: application/json;charset=utf-8
 | Parameter | Type   | 字段长度 | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
-| outOrderId | string    | 100        |        | 商户订单号                      |
+| outOrderId | string    | 100        |        | Merchant order ID                      |
 | outTips    | string  | 100      | 测试订单 | 商户备注 |
 | currency    | string | 10    | KRW  | [List of currencies](#32-----)  |
 | actionValue    | decimal | 18, 2    | 2100.00  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
@@ -291,8 +291,8 @@ Header：Content-Type: application/json;charset=utf-8
 | bankName    |  Yes  | string      | 100        | 中国建设银行   | [银行名称列表-代付](#34-----)   |
 | branchName      |    | string   | 100        | 上海分行  | 分支行名称         |
 | ownerName      |  Yes  | string   | 100        | 张三  | 户主姓名，姓名中不可包含数字         |
-| callbackUrl  |      | string  | 512      |          | 商户回调地址             |
-| outOrderId  |      | string  | 100      |          | 商户订单号             |
+| callbackUrl  |      | string  | 512      |          | Merchant callback address             |
+| outOrderId  |      | string  | 100      |          | Merchant order ID             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | Yes   | string   | 32       |      | [签名](#14-----)                             |
@@ -312,7 +312,7 @@ Header：Content-Type: application/json;charset=utf-8
 | Parameter | Type   | 字段长度 | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
-| outOrderId | string    | 100        |        | 商户订单号                      |
+| outOrderId | string    | 100        |        | Merchant order ID                      |
 | outTips    | string  | 100      | 测试订单 | 商户备注 |
 | currency    | string | 10    | KRW  | [List of currencies](#32-----)  |
 | actionValue    | decimal | 18, 2    | 2100.00  | 实际代付金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
@@ -404,7 +404,7 @@ Header：Content-Type: application/json;charset=utf-8
 | Parameter    | Required | Type     | 字段长度 | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | Yes   | string   | 32       |      | 应用ID                                        |
-| outOrderId     |     | string    | 100        |        | 商户订单号                      |
+| outOrderId     |     | string    | 100        |        | Merchant order ID                      |
 | dateTimeStart     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-起始值       |
 | dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
 | pageId      |    | int   | 10        | 3  | 每次最多返回200条记录<br>可使用本字段进行翻页<br>不传此参数默认为1         |
@@ -425,7 +425,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
-| orderList |    transactionId: RC_98261876 (交易流水号)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (手续费率)<br>actionValue: 3000.00 (实际代收金额)<br>chargeValue: 30.00 (手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: 张三 (付款人姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
+| orderList |    transactionId: RC_98261876 (交易流水号)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (手续费率)<br>actionValue: 3000.00 (实际代收金额)<br>chargeValue: 30.00 (手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: 张三 (付款人姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (Merchant order ID)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
 | currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
