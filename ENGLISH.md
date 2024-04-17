@@ -156,18 +156,18 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="211-----">2.1.1 Incoming parameters</span>
 
-| Parameter      | Required | Type    | 字段长度 | Example     | Description                     |
+| Parameter      | Required | Type    | Field length | Example     | Description                     |
 | ----------- | ---- | ------- | -------- | -------- | ------------------------ |
 | appId       | Yes   | string  | 32       |          | appId                   |
 | channelId   | Yes   | int     | 5        | 1        | [Channel List](#31-----) |
 | currency     | Yes   | string | 10    | KRW  | [List of currencies](#32-----)       |
 | actionValue | Yes   | decimal | 18, 2    | 2100.00  | Amount of the requested recharge (digital currency allows decimals, fiat currencies only allow integers, even if integers need to be formatted into 2 decimal places in order to unify the rules of signature inspection)       |
-| accountName | Yes   | string | 100    | 张三  | The name of the depositor, the name can not contain numbers, and can not pass empty values       |
+| accountName | Yes   | string | 100    | Tom  | The name of the depositor, the name can not contain numbers, and can not pass empty values       |
 | cellphone |    | string | 100    | 01034388769  | Cell phone number, Korea must be transmitted, others can not be transmitted       |
 | callbackUrl  |      | string  | 512      |          | Merchant callback address             |
 | returnUrl  |      | string  | 512      |          | Merchant page callback address after recharge completion             |
-| outOrderId  |      | string  | 100      |          | Merchant order number             |
-| outTips     |      | string  | 100      | 测试订单 | 商户备注               |
+| outOrderId  |      | string  | 100      |          | Merchant order ID             |
+| outTips     |      | string  | 100      | test | 商户备注               |
 | returnType     |      | int  | 1      | 1 | 返回类型 1=充值链接 2=银行、卡号、户名的文本信息。默认为1               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | param1     |      | string  | 100      |  | 越南通道ID5，则必传[银行名称列表-越南代收](#331-----)               |
@@ -177,7 +177,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="212-----">2.1.2 Return parameters</span>
 
-| Parameter | Type   | 字段长度 | Example    | Description                                         |
+| Parameter | Type   | Field length | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
@@ -189,7 +189,7 @@ Header：Content-Type: application/json;charset=utf-8
 ##### <span id="213-----">2.1.3 Asynchronous callback notification parameters</span>
 收到回调时请返回success字样，详情参考[回调机制](#15-----)
 
-| Parameter | Type   | 字段长度 | Example    | Description                                         |
+| Parameter | Type   | Field length | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | outOrderId | string    | 100        |        | Merchant order ID                      |
@@ -250,7 +250,7 @@ Header：Content-Type: application/json;charset=utf-8
 {
     "transactionId": "RC_10086",
     "outOrderId": "8986327638746",
-    "outTips": "用户申请代收",
+    "outTips": "request recharge",
     "currency": "KRW",
     "actionValue": 2500.00,
     "status": 1,
@@ -265,7 +265,7 @@ Header：Content-Type: application/json;charset=utf-8
 {
     "transactionId": "RC_10086",
     "outOrderId": "8986327638746",
-    "outTips": "用户申请代收",
+    "outTips": "request recharge",
     "currency": "KRW",
     "actionValue": 2500.00,
     "status": 0,
@@ -281,7 +281,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="221-----">2.2.1 Incoming parameters</span>
 
-| Parameter    | Required | Type     | 字段长度 | Example | Description                                          |
+| Parameter    | Required | Type     | Field length | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | Yes   | string   | 32       |      | appId                                        |
 | channelId | Yes   | int | 5       |   1   | [Channel List](#31-----)            |
@@ -299,7 +299,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="222-----">2.2.2 Return parameters</span>
 
-| Parameter     | Type   | 字段长度 | Example           | Description                                      |
+| Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | transactionId    | int | 10      |         | 交易流水号 |
@@ -309,7 +309,7 @@ Header：Content-Type: application/json;charset=utf-8
 ##### <span id="223-----">2.2.3 Asynchronous callback notification parameters</span>
 收到回调时请返回success字样，详情参考[回调机制](#15-----)
 
-| Parameter | Type   | 字段长度 | Example    | Description                                         |
+| Parameter | Type   | Field length | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | outOrderId | string    | 100        |        | Merchant order ID                      |
@@ -401,9 +401,9 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="231-----">2.3.1 Incoming parameters</span>
 
-| Parameter    | Required | Type     | 字段长度 | Example | Description                                          |
+| Parameter    | Required | Type     | Field length | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
-| appId     | Yes   | string   | 32       |      | 应用ID                                        |
+| appId     | Yes   | string   | 32       |      | appID                                        |
 | outOrderId     |     | string    | 100        |        | Merchant order ID                      |
 | dateTimeStart     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-起始值       |
 | dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
@@ -414,7 +414,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="232-----">2.3.2 Return parameters</span>
 
-| Parameter     | Type   | 字段长度 | Example           | Description                                      |
+| Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | data    | array |       |         | 返回结果详情，格式参考以下示意 |
@@ -502,9 +502,9 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="241-----">2.4.1 Incoming parameters</span>
 
-| Parameter    | Required | Type     | 字段长度 | Example | Description                                          |
+| Parameter    | Required | Type     |  | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
-| appId     | Yes   | string   | 32       |      | 应用ID                                        |
+| appId     | Yes   | string   | 32       |      | appID                                        |
 | outOrderId     |     | string    | 100        |        | 商户订单号                      |
 | dateTimeStart     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-起始值       |
 | dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
@@ -515,7 +515,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="242-----">2.4.2 Return parameters</span>
 
-| Parameter     | Type   | 字段长度 | Example           | Description                                      |
+| Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | data    | array |       |         | 返回结果详情，格式参考以下示意 |
@@ -611,15 +611,15 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="251-----">2.5.1 Incoming parameters</span>
 
-| Parameter    | Required | Type     | 字段长度 | Example | Description                                          |
+| Parameter    | Required | Type     | Field length | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
-| appId     | Yes   | string   | 32       |      | 应用ID                                        |
+| appId     | Yes   | string   | 32       |      | appID                                        |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | Yes   | string   | 32       |      | [签名](#14-----)                        |
 
 ##### <span id="252-----">2.5.2 Return parameters</span>
 
-| Parameter     | Type   | 字段长度 | Example           | Description                                      |
+| Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | data    | array |       |     KRW: 6686.32 (人民币余额)<br>USDT: 927.92 (USDT余额)    | 以二维数组方式排列 |
