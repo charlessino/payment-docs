@@ -44,9 +44,9 @@
   + [3 Attachments](#3-----)
     + [3.1 Channel List](#31-----)
     + [3.2 List of currencies](#32-----)
-    + [3.3 List of Bank Names - Collection](#33-----)
+    + [3.3 List of Bank Names - Recharge](#33-----)
     	+ [3.3.1 List of Bank Names - Vietnam Recharge](#331-----)
-    + [3.4 List of Bank Names-Payment in Lieu](#34-----)
+    + [3.4 List of Bank Names-Withdraw](#34-----)
     	+ [3.4.1 List of Bank Names-China Withdraw](#341-----)
     	+ [3.4.2 List of Bank Names - USDT Withdraw](#342-----)
     	+ [3.4.3 List of Bank Names - Vietnam Withdraw](#343-----)
@@ -658,13 +658,13 @@ Header：Content-Type: application/json;charset=utf-8
 
 
 
-### <span id="3-----">3 附件</span>
+### <span id="3-----">3 Attachments</span>
 
-#### <span id="31-----">3.1 通道列表</span>
+#### <span id="31-----">3.1 Channel List</span>
 
 请通过商户后台系统 > 信息概览 > 支付通道，获取通道ID及对应名称。
 
-#### <span id="32-----">3.2 货币列表</span>
+#### <span id="32-----">3.2 List of currencies</span>
 
 | 参数   | 货币名称     |
 | ---- | -------- |
