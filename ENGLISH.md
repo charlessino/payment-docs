@@ -187,7 +187,7 @@ Header：Content-Type: application/json;charset=utf-8
 | data    | array |       |         | returnType=2时返回此项，包含以下子项：<br>bankName: 银行名称<br>branchName: 支行名称<br>accountNumber: 银行卡号<br>accountOwner: 户主姓名<br>amount: 金额 |
 
 ##### <span id="213-----">2.1.3 Asynchronous callback notification parameters</span>
-收到回调时请返回success字样，详情参考[回调机制](#15-----)
+收到回调时请返回success字样，详情参考[Callback mechanism](#15-----)
 
 | Parameter | Type   | Field length | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
