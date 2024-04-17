@@ -76,11 +76,11 @@ Request method: POST
 
 #### <span id="14-----">1.4 Signature</span>
 
-  1. 将全部传入参数（除了sign）的参数名按照字典序排列，请注意值为空的参数无需传入
-  2. 构建为链接参数格式
-  3. 在最后加上key（密钥请联系客服）
-  4. 将字符串进行md5加密
-  5. 转换为小写
+  1. Arrange the parameter names of all incoming parameters (except sign) in dictionary order, note that parameters with null values do not need to be incoming
+  2. Construct it as a link parameter
+  3. Add the key at the end (please contact customer service for the key).
+  4. encrypt the string with md5
+  5. Convert to lowercase
 
 ##### <span id="141-----">1.4.1 Signature example</span>
 
@@ -93,11 +93,11 @@ Request method: POST
     "currency": "CNY",
     "actionValue": 1200.00,
     "outOrderId": "ESP837647136232",
-    "outTips": "测试订单"
+    "outTips": "test"
 }
 ```
 
- - 2.参数名按字典序排列
+ - 2.Arrange the parameter names in dictionary order
 
 ```json
 {
@@ -106,19 +106,19 @@ Request method: POST
     "channelId": 1,
     "currency": "CNY",
     "outOrderId": "ESP837647136232",
-    "outTips": "测试订单"
+    "outTips": "test"
 }
 ```
 
- - 3.构建为链接参数格式
+ - 3.Construct it as a link parameter
 
-actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=CNY&outOrderId=ESP837647136232&outTips=测试订单
+actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=CNY&outOrderId=ESP837647136232&outTips=test
 
- - 4.在最后加上key（假设key为aaabbbccc）
+ - 4.Add the key at the end（e.g. key为aaabbbccc）
 
-actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=CNY&outOrderId=ESP837647136232&outTips=测试订单&key=aaabbbccc
+actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=CNY&outOrderId=ESP837647136232&outTips=test&key=aaabbbccc
 
- - 5.转为小写的md5，即为sign
+ - 5.Convert to lowercase md5，hich is sign
 
 61695d4fb053b3c769205820170b9dea
 
