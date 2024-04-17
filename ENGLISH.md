@@ -168,8 +168,8 @@ Header：Content-Type: application/json;charset=utf-8
 | returnUrl  |      | string  | 512      |          | Merchant page callback address after recharge completion             |
 | outOrderId  |      | string  | 100      |          | Merchant order ID             |
 | outTips     |      | string  | 100      | test | Merchant Remarks               |
-| returnType     |      | int  | 1      | 1 | 返回类型 1=充值链接 2=银行、卡号、户名的文本信息。默认为1               |
-| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
+| returnType     |      | int  | 1      | 1 | Return type 1=Recharge link 2=Text information of bank、account number、account name.Default is 1               |
+| nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
 | param1     |      | string  | 100      |  | 越南通道ID5，则必传[银行名称列表-越南代收](#331-----)               |
 | param2     |      | string  | 100      |  | 预留参数2，可不传               |
 | param3     |      | string  | 100      |  | 预留参数3，可不传               |
@@ -182,7 +182,7 @@ Header：Content-Type: application/json;charset=utf-8
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
-| sign    | string | 32      |    | [Return parameter signature](#142-----)      |
+| sign    | string | 32      |    | [Return parameter Signature](#142-----)      |
 | url    | string | 255      |         | 用于跳转至支付页面的链接，returnType=1时返回此项 |
 | data    | array |       |         | returnType=2时返回此项，包含以下子项：<br>bankName: 银行名称<br>branchName: 支行名称<br>accountNumber: 银行卡号<br>accountOwner: 户主姓名<br>amount: 金额 |
 
@@ -198,7 +198,7 @@ Header：Content-Type: application/json;charset=utf-8
 | actionValue    | decimal | 18, 2    | 2100.00  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代收成功 0=代收失败      |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
-| sign    | string | 32      |  | 除了sign之外其他所有参数都需参与签名，同请求时的[签名](#14-----)规则      |
+| sign    | string | 32      |  | 除了sign之外其他所有参数都需参与签名，同请求时的[Signature](#14-----)规则      |
 
 ##### <span id="214-----">2.1.4 Example request parameters</span>
 
@@ -294,8 +294,8 @@ Header：Content-Type: application/json;charset=utf-8
 | callbackUrl  |      | string  | 512      |          | Merchant callback address             |
 | outOrderId  |      | string  | 100      |          | Merchant order ID             |
 | outTips     |      | string  | 100      | withdraw | Merchant Remarks               |
-| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | Yes   | string   | 32       |      | [签名](#14-----)                             |
+| nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
+| sign      | Yes   | string   | 32       |      | [Signature](#14-----)                             |
 
 ##### <span id="222-----">2.2.2 Return parameters</span>
 
@@ -318,7 +318,7 @@ Header：Content-Type: application/json;charset=utf-8
 | actionValue    | decimal | 18, 2    | 2100.00  | 实际代付金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代付成功 0=代付失败      |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
-| sign    | string | 32      |  | 除了sign之外其他所有参数都需参与签名，同请求时的[签名](#14-----)规则     |
+| sign    | string | 32      |  | 除了sign之外其他所有参数都需参与签名，同请求时的[Signature](#14-----)规则     |
 
 ##### <span id="224-----">2.2.4 Example request parameters</span>
 
@@ -409,8 +409,8 @@ Header：Content-Type: application/json;charset=utf-8
 | dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
 | pageId      |    | int   | 10        | 3  | 每次最多返回200条记录<br>可使用本字段进行翻页<br>不传此参数默认为1         |
 | orderBy    |    | string      | 4        | ASC   | 顺序<br>ASC=升序，DESC=降序<br>不传此参数默认DESC |
-| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | Yes   | string   | 32       |      | [签名](#14-----)                         |
+| nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
+| sign      | Yes   | string   | 32       |      | [Signature](#14-----)                         |
 
 ##### <span id="232-----">2.3.2 Return parameters</span>
 
@@ -510,8 +510,8 @@ Header：Content-Type: application/json;charset=utf-8
 | dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
 | pageId      |    | int   | 10        | 3  | 每次最多返回200条记录<br>可使用本字段进行翻页<br>不传此参数默认为1         |
 | orderBy    |    | string      | 4        | ASC   | 顺序<br>ASC=升序，DESC=降序<br>不传此参数默认DESC |
-| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | Yes   | string   | 32       |      | [签名](#14-----)                     |
+| nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
+| sign      | Yes   | string   | 32       |      | [Signature](#14-----)                     |
 
 ##### <span id="242-----">2.4.2 Return parameters</span>
 
@@ -614,8 +614,8 @@ Header：Content-Type: application/json;charset=utf-8
 | Parameter    | Required | Type     | Field length | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | Yes   | string   | 32       |      | appID                                        |
-| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | Yes   | string   | 32       |      | [签名](#14-----)                        |
+| nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
+| sign      | Yes   | string   | 32       |      | [Signature](#14-----)                        |
 
 ##### <span id="252-----">2.5.2 Return parameters</span>
 
