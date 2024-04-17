@@ -179,9 +179,9 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter | Type   | Field length | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
-| result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
-| transactionId    | string | 100      |    RC_10086     | 交易流水号 |
-| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| result | int    | 1        | 1       | 调用结果，1=Success 0=失败                      |
+| transactionId    | string | 100      |    RC_10086     | Transaction Number |
+| msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameter Signature](#142-----)      |
 | url    | string | 255      |         | 用于跳转至支付页面的链接，returnType=1时返回此项 |
 | data    | array |       |         | returnType=2时返回此项，包含以下子项：<br>bankName: 银行名称<br>branchName: 支行名称<br>accountNumber: 银行卡号<br>accountOwner: 户主姓名<br>amount: 金额 |
@@ -191,13 +191,13 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter | Type   | Field length | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
-| transactionId    | string | 100      |    RC_10086     | 交易流水号 |
+| transactionId    | string | 100      |    RC_10086     | Transaction Number |
 | outOrderId | string    | 100        |        | Merchant order ID                      |
 | outTips    | string  | 100      | test | Merchant Remarks |
 | currency    | string | 10    | KRW  | [List of currencies](#32-----)  |
 | actionValue    | decimal | 18, 2    | 2100.00  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
-| status    | int | 1      | 1 | 1=代收成功 0=代收失败      |
-| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| status    | int | 1      | 1 | 1=Recharge Success 0=代收失败      |
+| msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |  | 除了sign之外其他所有参数都需参与签名，同请求时的[Signature](#14-----)规则      |
 
 ##### <span id="214-----">2.1.4 Example request parameters</span>
@@ -220,7 +220,7 @@ Header：Content-Type: application/json;charset=utf-8
 ```
 ##### <span id="215-----">2.1.5 Example of return parameters</span>
 
- - 返回成功
+ - Return Success
 
 ```json
 {
@@ -244,7 +244,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="216-----">2.1.6 Example of asynchronous callback notification parameters</span>
 
- - 代收成功
+ - Recharge Success
 
 ```json
 {
@@ -301,9 +301,9 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
-| result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
-| transactionId    | int | 10      |         | 交易流水号 |
-| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| result | int    | 1        | 1       | 调用结果，1=Success 0=失败                      |
+| transactionId    | int | 10      |         | Transaction Number |
+| msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameter signature](#142-----)      |
 
 ##### <span id="223-----">2.2.3 Asynchronous callback notification parameters</span>
@@ -311,13 +311,13 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter | Type   | Field length | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
-| transactionId    | string | 100      |    RC_10086     | 交易流水号 |
+| transactionId    | string | 100      |    RC_10086     | Transaction Number |
 | outOrderId | string    | 100        |        | Merchant order ID                      |
 | outTips    | string  | 100      | withdraw | Merchant Remarks |
 | currency    | string | 10    | KRW  | [List of currencies](#32-----)  |
 | actionValue    | decimal | 18, 2    | 2100.00  | 实际代付金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
-| status    | int | 1      | 1 | 1=代付成功 0=代付失败      |
-| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| status    | int | 1      | 1 | 1=Withdraw Success 0=代付失败      |
+| msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |  | 除了sign之外其他所有参数都需参与签名，同请求时的[Signature](#14-----)规则     |
 
 ##### <span id="224-----">2.2.4 Example request parameters</span>
@@ -341,7 +341,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="225-----">2.2.5 Example of return parameters</span>
 
- - 返回参数（成功）
+ - Return parameters(Success)
 
 ```json
 {
@@ -364,7 +364,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="226-----">2.2.6 Example of asynchronous callback notification parameters</span>
 
- - 代付成功
+ - Withdraw success
 
 ```json
 {
@@ -416,16 +416,16 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
-| result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
+| result | int    | 1        | 1       | 调用结果，1=Success 0=失败                      |
 | data    | array |       |         | 返回结果详情，格式参考以下示意 |
-| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameter signature](#142-----)      |
 
 ##### <span id="233-----">2.3.3 Data format schema</span>
 
 | Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
-| orderList |    transactionId: RC_98261876 (交易流水号)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (手续费率)<br>actionValue: 3000.00 (实际代收金额)<br>chargeValue: 30.00 (手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: test (付款人姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (Merchant order ID)<br>outTips: recharge(Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
+| orderList |    transactionId: RC_98261876 (Transaction Number)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (手续费率)<br>actionValue: 3000.00 (实际代收金额)<br>chargeValue: 30.00 (手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: test (付款人姓名)<br>status: 1 (状态值 1=Success 0=失败 2=处理中)<br>statusName: Success (状态名)<br>outOrderId: 98227863223 (Merchant order ID)<br>outTips: recharge(Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
 | currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
@@ -517,16 +517,16 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
-| result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
+| result | int    | 1        | 1       | 调用结果，1=Success 0=失败                      |
 | data    | array |       |         | 返回结果详情，格式参考以下示意 |
-| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameter signature](#142-----)      |
 
 ##### <span id="243-----">2.4.3 Data format schema</span>
 
 | Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
-| orderList |    transactionId: WD_98261876 (交易流水号)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (手续费率)<br>withdrawFixValue: 3.00 (代付固定手续费)<br>actionValue: 3000.00 (实际代付金额)<br>chargeValue: 33.00 (手续费)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 张三 (户主姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: withdraw (Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
+| orderList |    transactionId: WD_98261876 (Transaction Number)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (手续费率)<br>withdrawFixValue: 3.00 (代付固定手续费)<br>actionValue: 3000.00 (实际代付金额)<br>chargeValue: 33.00 (手续费)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 张三 (户主姓名)<br>status: 1 (状态值 1=Success 0=失败 2=处理中)<br>statusName: Success (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: withdraw (Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
 | currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
@@ -621,9 +621,9 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
-| result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
+| result | int    | 1        | 1       | 调用结果，1=Success 0=失败                      |
 | data    | array |       |     KRW: 6686.32 (人民币余额)<br>USDT: 927.92 (USDT余额)    | 以二维数组方式排列 |
-| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameter signature](#142-----)      |
 
 ##### <span id="253-----">2.5.3 Example request parameters</span>
