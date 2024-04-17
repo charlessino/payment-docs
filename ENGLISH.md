@@ -7,7 +7,7 @@
     - [1.3 Header Parameters](#13-----)
     - [1.4 Signature](#14-----)
       * [1.4.1 Signature example](#141-----)
-      * [1.4.2 Return parameter signature](#142-----)
+      * [1.4.2 Return parameters signature](#142-----)
     - [1.5 Callback mechanism](#15-----)
   + [2 List of interfaces](#2-----)
     + [2.1 Recharge](#21-----)
@@ -35,7 +35,7 @@
       + [2.4.2 Return parameters](#242-----)
       + [2.4.3 Data format schema](#243-----)
       + [2.4.4 Example request parameters](#244-----)
-      + [2.4.5 Return parameter example](#245-----)
+      + [2.4.5 Return parameters example](#245-----)
     + [2.5 Balance inquiry](#25-----)
       + [2.5.1 Incoming parameters](#251-----)
       + [2.5.2 Return parameters](#252-----)
@@ -122,7 +122,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 
 61695d4fb053b3c769205820170b9dea
 
-##### <span id="142-----">1.4.2 Return parameter signature</span>
+##### <span id="142-----">1.4.2 Return parameters signature</span>
 
 Each time an interface is requested, it returns with a sign, which is signed with the following rule: md5(nonceStr + key)
 
@@ -182,7 +182,7 @@ Header：Content-Type: application/json;charset=utf-8
 | result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
 | transactionId    | string | 100      |    RC_10086     | Transaction Number |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
-| sign    | string | 32      |    | [Return parameter Signature](#142-----)      |
+| sign    | string | 32      |    | [Return parameters signature](#142-----)      |
 | url    | string | 255      |         | Used to jump to the payment page of the link, returnType = 1 to return this. |
 | data    | array |       |         | ReturnType = 2 to return this，Contains the following subsections:<br>Bank Name<br>Branch Name<br>Account Number<br>Account Owner<br>Amount |
 
@@ -304,7 +304,7 @@ Header：Content-Type: application/json;charset=utf-8
 | result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
 | transactionId    | int | 10      |         | Transaction Number |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
-| sign    | string | 32      |    | [Return parameter signature](#142-----)      |
+| sign    | string | 32      |    | [Return parameters signature](#142-----)      |
 
 ##### <span id="223-----">2.2.3 Asynchronous callback notification parameters</span>
 Please return the word success when you receive the callback.For details, please refer to[Callback mechanism](#15-----)
@@ -419,7 +419,7 @@ Header：Content-Type: application/json;charset=utf-8
 | result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
 | data    | array |       |         | Returns the details of the result in the format shown in the following schematic |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
-| sign    | string | 32      |    | [Return parameter signature](#142-----)      |
+| sign    | string | 32      |    | [Return parameters signature](#142-----)      |
 
 ##### <span id="233-----">2.3.3 Data format schema</span>
 
@@ -447,7 +447,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="235-----">2.3.5 Example of return parameters</span>
 
- - 返回参数
+ - Return Parameters
 
 ```json
 {
@@ -520,7 +520,7 @@ Header：Content-Type: application/json;charset=utf-8
 | result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
 | data    | array |       |         | Returns the details of the result in the format shown in the following schematic |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
-| sign    | string | 32      |    | [Return parameter signature](#142-----)      |
+| sign    | string | 32      |    | [Return parameters signature](#142-----)      |
 
 ##### <span id="243-----">2.4.3 Data format schema</span>
 
@@ -548,7 +548,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="245-----">2.4.5 Example of return parameters</span>
 
- - 返回参数
+ - Return Parameters
 
 ```json
 {
@@ -624,7 +624,7 @@ Header：Content-Type: application/json;charset=utf-8
 | result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
 | data    | array |       |     KRW: 6686.32 (人民币余额)<br>USDT: 927.92 (USDT余额)    | 以二维数组方式排列 |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
-| sign    | string | 32      |    | [Return parameter signature](#142-----)      |
+| sign    | string | 32      |    | [Return parameters signature](#142-----)      |
 
 ##### <span id="253-----">2.5.3 Example request parameters</span>
 
@@ -640,7 +640,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="254-----">2.5.4 Example of return parameters</span>
 
- - 返回参数
+ - Return Parameters
 
 ```json
 {
@@ -666,7 +666,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 #### <span id="32-----">3.2 List of currencies</span>
 
-| 参数   | 货币名称     |
+| Parameter   | 货币名称     |
 | ---- | -------- |
 | CNY    | Renminbi |
 | USDT    | Tether |
