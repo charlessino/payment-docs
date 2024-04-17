@@ -151,7 +151,7 @@ Note that if you don't pass the nonceStr parameter, the signature will not be re
 
 #### <span id="21-----">2.1 Recharge</span>
 
-请求地址：`{apiAddress}/recharge`<br>
+Request apiAddress：`{apiAddress}/recharge`<br>
 Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="211-----">2.1.1 Incoming parameters</span>
@@ -162,7 +162,7 @@ Header：Content-Type: application/json;charset=utf-8
 | channelId   | Yes   | int     | 5        | 1        | [Channel List](#31-----) |
 | currency     | Yes   | string | 10    | KRW  | [List of currencies](#32-----)       |
 | actionValue | Yes   | decimal | 18, 2    | 2100.00  | Amount of the requested recharge (digital currency allows decimals, fiat currencies only allow integers, even if integers need to be formatted into 2 decimal places in order to unify the rules of signature inspection)       |
-| accountName | Yes   | string | 100    | Tom  | The name of the depositor, the name can not contain numbers, and can not pass empty values       |
+| accountName | Yes   | string | 100    | 박재환  | The name of the depositor, the name can not contain numbers, and can not pass empty values       |
 | cellphone |    | string | 100    | 01034388769  | Cell phone number, Korea must be transmitted, others can not be transmitted       |
 | callbackUrl  |      | string  | 512      |          | Merchant callback address             |
 | returnUrl  |      | string  | 512      |          | Merchant page callback address after recharge completion             |
@@ -198,7 +198,7 @@ Please return the word success when you receive the callback. For details, pleas
 | actionValue    | decimal | 18, 2    | 2100.00  | Actual recharge amount (even currencies with no decimals will be formatted to 2 decimal places)      |
 | status    | int | 1      | 1 | 1=Recharge Success 0=Withdraw Failure      |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
-| sign    | string | 32      |  | 除了sign之外其他所有参数都需参与签名，同请求时的[Signature](#14-----)规则      |
+| sign    | string | 32      |  | All parameters except sign are required to participate in the signature, same as the [Signature](#14-----) rule in the request.      |
 
 ##### <span id="214-----">2.1.4 Example request parameters</span>
 
@@ -210,7 +210,7 @@ Please return the word success when you receive the callback. For details, pleas
     "channelId": 1,
     "currency": "KRW",
     "actionValue": 2000.00,
-    "accountName": "TOm",
+    "accountName": "박재환",
     "callbackUrl": "https://aaa.bbb.ccc/port1/withdraw",
     "outOrderId": "WE8681762354832",
     "outTips": "test",
@@ -269,14 +269,14 @@ Please return the word success when you receive the callback. For details, pleas
     "currency": "KRW",
     "actionValue": 2500.00,
     "status": 0,
-    "msg": "通道维护暂时关闭",
+    "msg": "Channel maintenance, temporarily closed",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
 
 #### <span id="22-----">2.2 Withtraw</span>
 
-请求地址：`{apiAddress}/withdraw`<br>
+Request apiAddress：`{apiAddress}/withdraw`<br>
 Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="221-----">2.2.1 Incoming parameters</span>
@@ -286,11 +286,11 @@ Header：Content-Type: application/json;charset=utf-8
 | appId     | Yes   | string   | 32       |      | appId                                        |
 | channelId | Yes   | int | 5       |   1   | [Channel List](#31-----)            |
 | currency     | Yes   | string | 10    | KRW  | [List of currencies](#32-----)        |
-| actionValue | Yes   | decimal | 18, 2    | 2100.00  | 申请代付的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
-| cardNumber      | Yes   | string   | 100        | 982268716  | 卡号（账号）         |
-| bankName    |  Yes  | string      | 100        | 中国建设银行   | [银行名称列表-代付](#34-----)   |
-| branchName      |    | string   | 100        | 上海分行  | 分支行名称         |
-| ownerName      |  Yes  | string   | 100        | 张三  | 户主姓名，姓名中不可包含数字         |
+| actionValue | Yes   | decimal | 18, 2    | 2100.00  | Amount of the requested withdraw (digital currency allows decimals, fiat currencies only allow integers, even if integers need to be formatted into 2 decimal places in order to unify the rules of signature inspection)       |
+| cardNumber      | Yes   | string   | 100        | 982268716  | Account Number         |
+| bankName    |  Yes  | string      | 100        | Shinhan Bank   | [List of Bank Names-Withdraw](#34-----)   |
+| branchName      |    | string   | 100        | Gangnam Branch  | Branch Name         |
+| ownerName      |  Yes  | string   | 100        | 박재환  | Holder name, Numbers are not allowed in his name.         |
 | callbackUrl  |      | string  | 512      |          | Merchant callback address             |
 | outOrderId  |      | string  | 100      |          | Merchant order ID             |
 | outTips     |      | string  | 100      | withdraw | Merchant Remarks               |
@@ -318,7 +318,7 @@ Please return the word success when you receive the callback.For details, please
 | actionValue    | decimal | 18, 2    | 2100.00  | Actual withdraw amount(even currencies with no decimals will be formatted to 2 decimal places)      |
 | status    | int | 1      | 1 | 1=Withdraw Success 0=Withdraw Failure      |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
-| sign    | string | 32      |  | 除了sign之外其他所有参数都需参与签名，同请求时的[Signature](#14-----)规则     |
+| sign    | string | 32      |  | All parameters except sign are required to participate in the signature, same as the [Signature](#14-----) rule in the request.     |
 
 ##### <span id="224-----">2.2.4 Example request parameters</span>
 
@@ -358,7 +358,7 @@ Please return the word success when you receive the callback.For details, please
 {
     "result": 0,
     "transactionId": NULL,
-    "msg": "传入参数格式有误"
+    "msg": "Incorrect format of incoming parameters"
 }
 ```
 
@@ -388,7 +388,7 @@ Please return the word success when you receive the callback.For details, please
     "currency": "KRW",
     "actionValue": 4000.00,
     "status": 0,
-    "msg": "通道维护暂时关闭",
+    "msg": "Channel maintenance, temporarily closed",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
@@ -396,7 +396,7 @@ Please return the word success when you receive the callback.For details, please
 
 #### <span id="23-----">2.3 Recharge order inquiry</span>
 
-请求地址：`{apiAddress}/recharge-orders-query`<br>
+Request apiAddress：`{apiAddress}/recharge-orders-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="231-----">2.3.1 Incoming parameters</span>
@@ -405,10 +405,10 @@ Header：Content-Type: application/json;charset=utf-8
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | Yes   | string   | 32       |      | appID                                        |
 | outOrderId     |     | string    | 100        |        | Merchant order ID                      |
-| dateTimeStart     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-起始值       |
-| dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
-| pageId      |    | int   | 10        | 3  | 每次最多返回200条记录<br>可使用本字段进行翻页<br>不传此参数默认为1         |
-| orderBy    |    | string      | 4        | ASC   | 顺序<br>ASC=升序，DESC=降序<br>不传此参数默认DESC |
+| dateTimeStart     |    | datetime | 19    | 2024-01-01 10:00:00  | Order update time - start value       |
+| dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | Order update time - end value       |
+| pageId      |    | int   | 10        | 3  | Returns up to 200 records at a time<br>This field can be used for page turning<br>If this parameter is not passed, the default value is 1         |
+| orderBy    |    | string      | 4        | ASC   | Order<br>ASC = ascending, DESC = descending<br>If this parameter is not passed, the default value is DESC. |
 | nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
 | sign      | Yes   | string   | 32       |      | [Signature](#14-----)                         |
 
@@ -417,7 +417,7 @@ Header：Content-Type: application/json;charset=utf-8
 | Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
-| data    | array |       |         | 返回结果详情，格式参考以下示意 |
+| data    | array |       |         | Returns the details of the result in the format shown in the following schematic |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameter signature](#142-----)      |
 
@@ -497,7 +497,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 #### <span id="24-----">2.4 Withdraw order inquiry</span>
 
-请求地址：`{apiAddress}/withdraw-orders-query`<br>
+Request apiAddress：`{apiAddress}/withdraw-orders-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="241-----">2.4.1 Incoming parameters</span>
@@ -505,11 +505,11 @@ Header：Content-Type: application/json;charset=utf-8
 | Parameter    | Required | Type     |  | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | Yes   | string   | 32       |      | appID                                        |
-| outOrderId     |     | string    | 100        |        | 商户订单号                      |
-| dateTimeStart     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-起始值       |
-| dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
-| pageId      |    | int   | 10        | 3  | 每次最多返回200条记录<br>可使用本字段进行翻页<br>不传此参数默认为1         |
-| orderBy    |    | string      | 4        | ASC   | 顺序<br>ASC=升序，DESC=降序<br>不传此参数默认DESC |
+| outOrderId     |     | string    | 100        |        | Merchant order ID                      |
+| dateTimeStart     |    | datetime | 19    | 2024-01-01 10:00:00  | Order update time - start time       |
+| dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | Order update time - end value       |
+| pageId      |    | int   | 10        | 3  | Returns up to 200 records at a time<br>This field can be used for page turning<br>If this parameter is not passed, the default value is 1         |
+| orderBy    |    | string      | 4        | ASC   | Order<br>ASC = ascending, DESC = descending<br>If this parameter is not passed, the default value is DESC. |
 | nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
 | sign      | Yes   | string   | 32       |      | [Signature](#14-----)                     |
 
@@ -518,7 +518,7 @@ Header：Content-Type: application/json;charset=utf-8
 | Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
-| data    | array |       |         | 返回结果详情，格式参考以下示意 |
+| data    | array |       |         | Returns the details of the result in the format shown in the following schematic |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameter signature](#142-----)      |
 
@@ -526,7 +526,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
-| orderList |    transactionId: WD_98261876 (Transaction Number)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (手续费率)<br>withdrawFixValue: 3.00 (代付固定手续费)<br>actionValue: 3000.00 (Actual withdraw amount)<br>chargeValue: 33.00 (手续费)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 张三 (户主姓名)<br>status: 1 (状态值 1=Success 0=Failure 2=处理中)<br>statusName: Success (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: withdraw (Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
+| orderList |    transactionId: WD_98261876 (Transaction Number)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (手续费率)<br>withdrawFixValue: 3.00 (代付固定手续费)<br>actionValue: 3000.00 (Actual withdraw amount)<br>chargeValue: 33.00 (手续费)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 박재환 (户主姓名)<br>status: 1 (状态值 1=Success 0=Failure 2=处理中)<br>statusName: Success (状态名)<br>outOrderId: 98227863223 (Merchant order ID)<br>outTips: withdraw (Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
 | currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
@@ -606,7 +606,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 #### <span id="25-----">2.5 Balance inquiry</span>
 
-请求地址：`{apiAddress}/balance`<br>
+Request apiAddress：`{apiAddress}/balance`<br>
 Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="251-----">2.5.1 Incoming parameters</span>
