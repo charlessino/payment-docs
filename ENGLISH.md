@@ -52,13 +52,13 @@
     	+ [3.4.3 List of Bank Names - Vietnam Withdraw](#343-----)
 
 
-### <span id="1-----">1 概要</span>
+### <span id="1-----">1 Overview</span>
 
-#### <span id="11-----">1.1 接口用途</span>
+#### <span id="11-----">1.1 Interface Usage</span>
 
 本接口用于接入富国支付系统。本接口纯Restful风格，传入参数及返回参数全部为JSON格式。
 
-#### <span id="12-----">1.2 接口申请</span>
+#### <span id="12-----">1.2 Interface Application</span>
 
 请联系客服申请接口，申请通过之后您可获得以下信息：
 
@@ -66,7 +66,7 @@
     2. 应用ID(appId)
     3. 密钥(key)
 
-#### <span id="13-----">1.3 Header 参数</span>
+#### <span id="13-----">1.3 Header Parameters</span>
 
 请求方式：POST
 
@@ -74,7 +74,7 @@
 | ------------ | ---- | ---------------- | ------------ |
 | Content-Type | 是   | application/json | 请求参数类型 |
 
-#### <span id="14-----">1.4 签名</span>
+#### <span id="14-----">1.4 Signature</span>
 
   1. 将全部传入参数（除了sign）的参数名按照字典序排列，请注意值为空的参数无需传入
   2. 构建为链接参数格式
@@ -82,7 +82,7 @@
   4. 将字符串进行md5加密
   5. 转换为小写
 
-##### <span id="141-----">1.4.1 签名示例</span>
+##### <span id="141-----">1.4.1 Signature example</span>
 
  - 1.传入参数
 
@@ -122,7 +122,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 
 61695d4fb053b3c769205820170b9dea
 
-##### <span id="142-----">1.4.2 返回参数签名</span>
+##### <span id="142-----">1.4.2 Return parameter signature</span>
 
 每次请求接口，接口返回时会带着一个sign，这个sign的签名规则为：md5(nonceStr + key)
 
@@ -135,7 +135,7 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 
 请注意，如果不传nonceStr参数，则不会返回这个sign
 
-#### <span id="15-----">1.5 回调机制</span>
+#### <span id="15-----">1.5 Callback mechanism</span>
 
   1. 代收和代付订单在收到状态更新之后，会立即回调商户指定的回调地址
   2. 如果收到商户返回success字样表示回调成功
@@ -145,16 +145,16 @@ md5("123456aaabbbccc") = 4118e6a1a1d43665ba1b77f49759b130<br>
 
 
 
-### <span id="2-----">2 接口列表</span>
+### <span id="2-----">2 List of interfaces</span>
 
 ​    
 
-#### <span id="21-----">2.1 代收</span>
+#### <span id="21-----">2.1 Recharge</span>
 
 请求地址：`{apiAddress}/recharge`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="211-----">2.1.1 传入参数</span>
+##### <span id="211-----">2.1.1 Incoming parameters</span>
 
 | 参数名      | 必填 | 类型    | 字段长度 | 例子     | 说明                     |
 | ----------- | ---- | ------- | -------- | -------- | ------------------------ |
@@ -175,7 +175,7 @@ Header：Content-Type: application/json;charset=utf-8
 | param3     |      | string  | 100      |  | 预留参数3，可不传               |
 | sign        | 是   | string  | 32       |          | [签名](#14-----)             |
 
-##### <span id="212-----">2.1.2 返回参数</span>
+##### <span id="212-----">2.1.2 Return parameters</span>
 
 | 参数名 | 类型   | 字段长度 | 例子    | 说明                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
@@ -186,7 +186,7 @@ Header：Content-Type: application/json;charset=utf-8
 | url    | string | 255      |         | 用于跳转至支付页面的链接，returnType=1时返回此项 |
 | data    | array |       |         | returnType=2时返回此项，包含以下子项：<br>bankName: 银行名称<br>branchName: 支行名称<br>accountNumber: 银行卡号<br>accountOwner: 户主姓名<br>amount: 金额 |
 
-##### <span id="213-----">2.1.3 异步回调通知参数</span>
+##### <span id="213-----">2.1.3 Asynchronous callback notification parameters</span>
 收到回调时请返回success字样，详情参考[回调机制](#15-----)
 
 | 参数名 | 类型   | 字段长度 | 例子    | 说明                                         |
@@ -200,7 +200,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |  | 除了sign之外其他所有参数都需参与签名，同请求时的[签名](#14-----)规则      |
 
-##### <span id="214-----">2.1.4 请求参数示例</span>
+##### <span id="214-----">2.1.4 Example request parameters</span>
 
  - 传入参数
 
@@ -218,7 +218,7 @@ Header：Content-Type: application/json;charset=utf-8
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
-##### <span id="215-----">2.1.5 返回参数示例</span>
+##### <span id="215-----">2.1.5 Example of return parameters</span>
 
  - 返回成功
 
@@ -242,7 +242,7 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="216-----">2.1.6 异步回调通知参数示例</span>
+##### <span id="216-----">2.1.6 Example of asynchronous callback notification parameters</span>
 
  - 代收成功
 
@@ -274,12 +274,12 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-#### <span id="22-----">2.2 代付</span>
+#### <span id="22-----">2.2 Withtraw</span>
 
 请求地址：`{apiAddress}/withdraw`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="221-----">2.2.1 传入参数</span>
+##### <span id="221-----">2.2.1 Incoming parameters</span>
 
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -297,7 +297,7 @@ Header：Content-Type: application/json;charset=utf-8
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | [签名](#14-----)                             |
 
-##### <span id="222-----">2.2.2 返回参数</span>
+##### <span id="222-----">2.2.2 Return parameters</span>
 
 | 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
@@ -306,7 +306,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
-##### <span id="223-----">2.2.3 异步回调通知参数</span>
+##### <span id="223-----">2.2.3 Asynchronous callback notification parameters</span>
 收到回调时请返回success字样，详情参考[回调机制](#15-----)
 
 | 参数名 | 类型   | 字段长度 | 例子    | 说明                                         |
@@ -320,7 +320,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |  | 除了sign之外其他所有参数都需参与签名，同请求时的[签名](#14-----)规则     |
 
-##### <span id="224-----">2.2.4 请求参数示例</span>
+##### <span id="224-----">2.2.4 Example request parameters</span>
 
  - 传入参数
 
@@ -339,7 +339,7 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="225-----">2.2.5 返回参数示例</span>
+##### <span id="225-----">2.2.5 Example of return parameters</span>
 
  - 返回参数（成功）
 
@@ -362,7 +362,7 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="226-----">2.2.6 异步回调通知参数示例</span>
+##### <span id="226-----">2.2.6 Example of asynchronous callback notification parameters</span>
 
  - 代付成功
 
@@ -394,12 +394,12 @@ Header：Content-Type: application/json;charset=utf-8
 ```
 
 
-#### <span id="23-----">2.3 代收订单查询</span>
+#### <span id="23-----">2.3 Recharge order inquiry</span>
 
 请求地址：`{apiAddress}/recharge-orders-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="231-----">2.3.1 传入参数</span>
+##### <span id="231-----">2.3.1 Incoming parameters</span>
 
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -412,7 +412,7 @@ Header：Content-Type: application/json;charset=utf-8
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | [签名](#14-----)                         |
 
-##### <span id="232-----">2.3.2 返回参数</span>
+##### <span id="232-----">2.3.2 Return parameters</span>
 
 | 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
@@ -421,7 +421,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
-##### <span id="233-----">2.3.3 data格式示意</span>
+##### <span id="233-----">2.3.3 Data format schema</span>
 
 | 参数名    | 例子           | 说明     |
 | ---------- | ------ | -------- |
@@ -430,7 +430,7 @@ Header：Content-Type: application/json;charset=utf-8
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
 
-##### <span id="234-----">2.3.4 请求参数示例</span>
+##### <span id="234-----">2.3.4 Example request parameters</span>
 
  - 传入参数
 
@@ -445,7 +445,7 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="235-----">2.3.5 返回参数示例</span>
+##### <span id="235-----">2.3.5 Example of return parameters</span>
 
  - 返回参数
 
@@ -495,12 +495,12 @@ Header：Content-Type: application/json;charset=utf-8
 
 
 
-#### <span id="24-----">2.4 代付订单查询</span>
+#### <span id="24-----">2.4 Withdraw order inquiry</span>
 
 请求地址：`{apiAddress}/withdraw-orders-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="241-----">2.4.1 传入参数</span>
+##### <span id="241-----">2.4.1 Incoming parameters</span>
 
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -513,7 +513,7 @@ Header：Content-Type: application/json;charset=utf-8
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | [签名](#14-----)                     |
 
-##### <span id="242-----">2.4.2 返回参数</span>
+##### <span id="242-----">2.4.2 Return parameters</span>
 
 | 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
@@ -522,7 +522,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
-##### <span id="243-----">2.4.3 data格式示意</span>
+##### <span id="243-----">2.4.3 Data format schema</span>
 
 | 参数名    | 例子           | 说明     |
 | ---------- | ------ | -------- |
@@ -531,7 +531,7 @@ Header：Content-Type: application/json;charset=utf-8
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
 
-##### <span id="244-----">2.4.4 请求参数示例</span>
+##### <span id="244-----">2.4.4 Example request parameters</span>
 
  - 传入参数
 
@@ -546,7 +546,7 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="245-----">2.4.5 返回参数示例</span>
+##### <span id="245-----">2.4.5 Example of return parameters</span>
 
  - 返回参数
 
@@ -604,12 +604,12 @@ Header：Content-Type: application/json;charset=utf-8
 
 
 
-#### <span id="25-----">2.5 余额查询</span>
+#### <span id="25-----">2.5 Balance inquiry</span>
 
 请求地址：`{apiAddress}/balance`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="251-----">2.5.1 传入参数</span>
+##### <span id="251-----">2.5.1 Incoming parameters</span>
 
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -617,7 +617,7 @@ Header：Content-Type: application/json;charset=utf-8
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | [签名](#14-----)                        |
 
-##### <span id="252-----">2.5.2 返回参数</span>
+##### <span id="252-----">2.5.2 Return parameters</span>
 
 | 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
@@ -626,7 +626,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
-##### <span id="253-----">2.5.3 请求参数示例</span>
+##### <span id="253-----">2.5.3 Example request parameters</span>
 
  - 传入参数
 
@@ -638,7 +638,7 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="254-----">2.5.4 返回参数示例</span>
+##### <span id="254-----">2.5.4 Example of return parameters</span>
 
  - 返回参数
 
