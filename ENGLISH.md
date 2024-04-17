@@ -179,12 +179,12 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter | Type   | Field length | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
-| result | int    | 1        | 1       | 调用结果，1=Success 0=Failure                      |
+| result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
 | transactionId    | string | 100      |    RC_10086     | Transaction Number |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameter Signature](#142-----)      |
-| url    | string | 255      |         | 用于跳转至支付页面的链接，returnType=1时返回此项 |
-| data    | array |       |         | returnType=2时返回此项，包含以下子项：<br>bankName: 银行名称<br>branchName: 支行名称<br>accountNumber: 银行卡号<br>accountOwner: 户主姓名<br>amount: 金额 |
+| url    | string | 255      |         | Used to jump to the payment page of the link, returnType = 1 to return this. |
+| data    | array |       |         | ReturnType = 2 to return this，包含以下子项：<br>Bank Name<br>Branch Name<br>Account Number<br>Account Owner<br>Amount |
 
 ##### <span id="213-----">2.1.3 Asynchronous callback notification parameters</span>
 收到回调时请返回success字样，详情参考[Callback mechanism](#15-----)
@@ -301,7 +301,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
-| result | int    | 1        | 1       | 调用结果，1=Success 0=Failure                      |
+| result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
 | transactionId    | int | 10      |         | Transaction Number |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameter signature](#142-----)      |
@@ -416,7 +416,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
-| result | int    | 1        | 1       | 调用结果，1=Success 0=Failure                      |
+| result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
 | data    | array |       |         | 返回结果详情，格式参考以下示意 |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameter signature](#142-----)      |
@@ -517,7 +517,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
-| result | int    | 1        | 1       | 调用结果，1=Success 0=Failure                      |
+| result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
 | data    | array |       |         | 返回结果详情，格式参考以下示意 |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameter signature](#142-----)      |
@@ -621,7 +621,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
-| result | int    | 1        | 1       | 调用结果，1=Success 0=Failure                      |
+| result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
 | data    | array |       |     KRW: 6686.32 (人民币余额)<br>USDT: 927.92 (USDT余额)    | 以二维数组方式排列 |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameter signature](#142-----)      |
