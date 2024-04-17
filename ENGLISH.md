@@ -167,7 +167,7 @@ Header：Content-Type: application/json;charset=utf-8
 | callbackUrl  |      | string  | 512      |          | Merchant callback address             |
 | returnUrl  |      | string  | 512      |          | Merchant page callback address after recharge completion             |
 | outOrderId  |      | string  | 100      |          | Merchant order ID             |
-| outTips     |      | string  | 100      | test | 商户备注               |
+| outTips     |      | string  | 100      | test | Merchant Remarks               |
 | returnType     |      | int  | 1      | 1 | 返回类型 1=充值链接 2=银行、卡号、户名的文本信息。默认为1               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | param1     |      | string  | 100      |  | 越南通道ID5，则必传[银行名称列表-越南代收](#331-----)               |
@@ -193,7 +193,7 @@ Header：Content-Type: application/json;charset=utf-8
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | outOrderId | string    | 100        |        | Merchant order ID                      |
-| outTips    | string  | 100      | 测试订单 | 商户备注 |
+| outTips    | string  | 100      | test | Merchant Remarks |
 | currency    | string | 10    | KRW  | [List of currencies](#32-----)  |
 | actionValue    | decimal | 18, 2    | 2100.00  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代收成功 0=代收失败      |
@@ -210,10 +210,10 @@ Header：Content-Type: application/json;charset=utf-8
     "channelId": 1,
     "currency": "KRW",
     "actionValue": 2000.00,
-    "accountName": "张三",
+    "accountName": "TOm",
     "callbackUrl": "https://aaa.bbb.ccc/port1/withdraw",
     "outOrderId": "WE8681762354832",
-    "outTips": "测试订单",
+    "outTips": "test",
     "nonceStr": "123456",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
@@ -250,7 +250,7 @@ Header：Content-Type: application/json;charset=utf-8
 {
     "transactionId": "RC_10086",
     "outOrderId": "8986327638746",
-    "outTips": "request recharge",
+    "outTips": "recharge",
     "currency": "KRW",
     "actionValue": 2500.00,
     "status": 1,
@@ -265,7 +265,7 @@ Header：Content-Type: application/json;charset=utf-8
 {
     "transactionId": "RC_10086",
     "outOrderId": "8986327638746",
-    "outTips": "request recharge",
+    "outTips": "recharge",
     "currency": "KRW",
     "actionValue": 2500.00,
     "status": 0,
@@ -293,7 +293,7 @@ Header：Content-Type: application/json;charset=utf-8
 | ownerName      |  Yes  | string   | 100        | 张三  | 户主姓名，姓名中不可包含数字         |
 | callbackUrl  |      | string  | 512      |          | Merchant callback address             |
 | outOrderId  |      | string  | 100      |          | Merchant order ID             |
-| outTips     |      | string  | 100      | 测试订单 | 商户备注               |
+| outTips     |      | string  | 100      | withdraw | Merchant Remarks               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | Yes   | string   | 32       |      | [签名](#14-----)                             |
 
@@ -313,7 +313,7 @@ Header：Content-Type: application/json;charset=utf-8
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | outOrderId | string    | 100        |        | Merchant order ID                      |
-| outTips    | string  | 100      | 测试订单 | 商户备注 |
+| outTips    | string  | 100      | withdraw | Merchant Remarks |
 | currency    | string | 10    | KRW  | [List of currencies](#32-----)  |
 | actionValue    | decimal | 18, 2    | 2100.00  | 实际代付金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代付成功 0=代付失败      |
@@ -333,7 +333,7 @@ Header：Content-Type: application/json;charset=utf-8
     "cardNumber": "938265716",
     "callbackUrl": "https://aaa.bbb.ccc/port1/withdraw",
     "outOrderId": "WE8681762354832",
-    "outTips": "测试订单",
+    "outTips": "withdraw",
     "nonceStr": "123456",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
@@ -370,7 +370,7 @@ Header：Content-Type: application/json;charset=utf-8
 {
     "transactionId": "RC_10086",
     "outOrderId": "8986327638746",
-    "outTips": "这是一个代付订单",
+    "outTips": "withdraw",
     "currency": "KRW",
     "actionValue": 4000.00,
     "status": 1,
@@ -425,7 +425,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
-| orderList |    transactionId: RC_98261876 (交易流水号)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (手续费率)<br>actionValue: 3000.00 (实际代收金额)<br>chargeValue: 30.00 (手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: 张三 (付款人姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (Merchant order ID)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
+| orderList |    transactionId: RC_98261876 (交易流水号)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (手续费率)<br>actionValue: 3000.00 (实际代收金额)<br>chargeValue: 30.00 (手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: test (付款人姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (Merchant order ID)<br>outTips: recharge(Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
 | currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
@@ -526,7 +526,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
-| orderList |    transactionId: WD_98261876 (交易流水号)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (手续费率)<br>withdrawFixValue: 3.00 (代付固定手续费)<br>actionValue: 3000.00 (实际代付金额)<br>chargeValue: 33.00 (手续费)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 张三 (户主姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
+| orderList |    transactionId: WD_98261876 (交易流水号)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (手续费率)<br>withdrawFixValue: 3.00 (代付固定手续费)<br>actionValue: 3000.00 (实际代付金额)<br>chargeValue: 33.00 (手续费)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 张三 (户主姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: withdraw (Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
 | currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
