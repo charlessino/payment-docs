@@ -170,9 +170,9 @@ Header：Content-Type: application/json;charset=utf-8
 | outTips     |      | string  | 100      | test | Merchant Remarks               |
 | returnType     |      | int  | 1      | 1 | Return type 1=Recharge link 2=Text information of bank、account number、account name.Default is 1               |
 | nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
-| param1     |      | string  | 100      |  | 越南通道ID5，则必传[银行名称列表-越南代收](#331-----)               |
-| param2     |      | string  | 100      |  | 预留参数2，可不传               |
-| param3     |      | string  | 100      |  | 预留参数3，可不传               |
+| param1     |      | string  | 100      |  | Vietnam channel ID 5, then must pass [List of Bank Names - Vietnam Recharge](#331-----)               |
+| param2     |      | string  | 100      |  | Reserve parameter 2, may not be passed               |
+| param3     |      | string  | 100      |  | Reserve parameter 3, may not be passed               |
 | sign        | Yes   | string  | 32       |          | [Signature](#14-----)             |
 
 ##### <span id="212-----">2.1.2 Return parameters</span>
