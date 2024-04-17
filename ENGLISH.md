@@ -70,9 +70,9 @@ Please contact customer service to apply for the interface, after the applicatio
 
 Request method: POST
 
-| 参数名       | 必填 | 类型/参数值      | 说明         |
+| Parameter       | Required | Type/Parameter Value      | Description         |
 | ------------ | ---- | ---------------- | ------------ |
-| Content-Type | Yes   | application/json | 请求参数类型 |
+| Content-Type | Yes   | Type/json | 请求参数类型 |
 
 #### <span id="14-----">1.4 Signature</span>
 
@@ -156,7 +156,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="211-----">2.1.1 Incoming parameters</span>
 
-| 参数名      | 必填 | 类型    | 字段长度 | 例子     | 说明                     |
+| Parameter      | Required | Type    | 字段长度 | Example     | Description                     |
 | ----------- | ---- | ------- | -------- | -------- | ------------------------ |
 | appId       | Yes   | string  | 32       |          | appId                   |
 | channelId   | Yes   | int     | 5        | 1        | [Channel List](#31-----) |
@@ -177,7 +177,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="212-----">2.1.2 Return parameters</span>
 
-| 参数名 | 类型   | 字段长度 | 例子    | 说明                                         |
+| Parameter | Type   | 字段长度 | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
@@ -189,7 +189,7 @@ Header：Content-Type: application/json;charset=utf-8
 ##### <span id="213-----">2.1.3 Asynchronous callback notification parameters</span>
 收到回调时请返回success字样，详情参考[回调机制](#15-----)
 
-| 参数名 | 类型   | 字段长度 | 例子    | 说明                                         |
+| Parameter | Type   | 字段长度 | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | outOrderId | string    | 100        |        | 商户订单号                      |
@@ -281,7 +281,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="221-----">2.2.1 Incoming parameters</span>
 
-| 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
+| Parameter    | Required | Type     | 字段长度 | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | Yes   | string   | 32       |      | appId                                        |
 | channelId | Yes   | int | 5       |   1   | [Channel List](#31-----)            |
@@ -299,7 +299,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="222-----">2.2.2 Return parameters</span>
 
-| 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
+| Parameter     | Type   | 字段长度 | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | transactionId    | int | 10      |         | 交易流水号 |
@@ -309,7 +309,7 @@ Header：Content-Type: application/json;charset=utf-8
 ##### <span id="223-----">2.2.3 Asynchronous callback notification parameters</span>
 收到回调时请返回success字样，详情参考[回调机制](#15-----)
 
-| 参数名 | 类型   | 字段长度 | 例子    | 说明                                         |
+| Parameter | Type   | 字段长度 | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | outOrderId | string    | 100        |        | 商户订单号                      |
@@ -401,7 +401,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="231-----">2.3.1 Incoming parameters</span>
 
-| 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
+| Parameter    | Required | Type     | 字段长度 | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | Yes   | string   | 32       |      | 应用ID                                        |
 | outOrderId     |     | string    | 100        |        | 商户订单号                      |
@@ -414,7 +414,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="232-----">2.3.2 Return parameters</span>
 
-| 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
+| Parameter     | Type   | 字段长度 | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | data    | array |       |         | 返回结果详情，格式参考以下示意 |
@@ -423,7 +423,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="233-----">2.3.3 Data format schema</span>
 
-| 参数名    | 例子           | 说明     |
+| Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
 | orderList |    transactionId: RC_98261876 (交易流水号)<br>currency: CNY (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (手续费率)<br>actionValue: 3000.00 (实际代收金额)<br>chargeValue: 30.00 (手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: 张三 (付款人姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
 | currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
@@ -502,7 +502,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="241-----">2.4.1 Incoming parameters</span>
 
-| 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
+| Parameter    | Required | Type     | 字段长度 | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | Yes   | string   | 32       |      | 应用ID                                        |
 | outOrderId     |     | string    | 100        |        | 商户订单号                      |
@@ -515,7 +515,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="242-----">2.4.2 Return parameters</span>
 
-| 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
+| Parameter     | Type   | 字段长度 | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | data    | array |       |         | 返回结果详情，格式参考以下示意 |
@@ -524,7 +524,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="243-----">2.4.3 Data format schema</span>
 
-| 参数名    | 例子           | 说明     |
+| Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
 | orderList |    transactionId: WD_98261876 (交易流水号)<br>currency: CNY (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (手续费率)<br>withdrawFixValue: 3.00 (代付固定手续费)<br>actionValue: 3000.00 (实际代付金额)<br>chargeValue: 33.00 (手续费)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 张三 (户主姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
 | currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
@@ -611,7 +611,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="251-----">2.5.1 Incoming parameters</span>
 
-| 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
+| Parameter    | Required | Type     | 字段长度 | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | Yes   | string   | 32       |      | 应用ID                                        |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
@@ -619,7 +619,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="252-----">2.5.2 Return parameters</span>
 
-| 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
+| Parameter     | Type   | 字段长度 | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
 | data    | array |       |     CNY: 6686.32 (人民币余额)<br>USDT: 927.92 (USDT余额)    | 以二维数组方式排列 |
