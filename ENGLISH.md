@@ -56,11 +56,11 @@
 
 #### <span id="11-----">1.1 Interface Usage</span>
 
-本接口用于接入富国支付系统。本接口纯Restful风格，传入参数及返回参数全部为JSON格式。
+This interface is used to access the FuGuo Payments system. This interface is pure Restful style , the incoming parameters and return parameters are all in JSON format.
 
 #### <span id="12-----">1.2 Interface Application</span>
 
-请联系客服申请接口，申请通过之后您可获得以下信息：
+Please contact customer service to apply for the interface, after the application is approved you can get the following information:
 
     1. apiAddress
     2. appId
@@ -68,7 +68,7 @@
 
 #### <span id="13-----">1.3 Header Parameters</span>
 
-请求方式：POST
+Request method: POST
 
 | 参数名       | 必填 | 类型/参数值      | 说明         |
 | ------------ | ---- | ---------------- | ------------ |
