@@ -90,7 +90,7 @@ Request method: POST
 {
     "appId": "B32D954CC4E25491F99EFE42DF1CCBBF",
     "channelId": 1,
-    "currency": "CNY",
+    "currency": "KRW",
     "actionValue": 1200.00,
     "outOrderId": "ESP837647136232",
     "outTips": "test"
@@ -104,7 +104,7 @@ Request method: POST
     "actionValue": 1200.00,
     "appId": "B32D954CC4E25491F99EFE42DF1CCBBF",
     "channelId": 1,
-    "currency": "CNY",
+    "currency": "KRW",
     "outOrderId": "ESP837647136232",
     "outTips": "test"
 }
@@ -112,11 +112,11 @@ Request method: POST
 
  - 3.Construct it as a link parameter
 
-actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=CNY&outOrderId=ESP837647136232&outTips=test
+actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=KRW&outOrderId=ESP837647136232&outTips=test
 
  - 4.Add the key at the end（e.g. key为aaabbbccc）
 
-actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=CNY&outOrderId=ESP837647136232&outTips=test&key=aaabbbccc
+actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=KRW&outOrderId=ESP837647136232&outTips=test&key=aaabbbccc
 
  - 5.Convert to lowercase md5，hich is sign
 
@@ -160,7 +160,7 @@ Header：Content-Type: application/json;charset=utf-8
 | ----------- | ---- | ------- | -------- | -------- | ------------------------ |
 | appId       | Yes   | string  | 32       |          | appId                   |
 | channelId   | Yes   | int     | 5        | 1        | [Channel List](#31-----) |
-| currency     | Yes   | string | 10    | CNY  | [List of currencies](#32-----)       |
+| currency     | Yes   | string | 10    | KRW  | [List of currencies](#32-----)       |
 | actionValue | Yes   | decimal | 18, 2    | 2100.00  | 申请代收的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
 | accountName | Yes   | string | 100    | 张三  | 付款人姓名，姓名中不可包含数字，且不可传空值       |
 | cellphone |    | string | 100    | 01034388769  | 手机号，韩国必传，其他可不传       |
@@ -194,7 +194,7 @@ Header：Content-Type: application/json;charset=utf-8
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | outOrderId | string    | 100        |        | 商户订单号                      |
 | outTips    | string  | 100      | 测试订单 | 商户备注 |
-| currency    | string | 10    | CNY  | [List of currencies](#32-----)  |
+| currency    | string | 10    | KRW  | [List of currencies](#32-----)  |
 | actionValue    | decimal | 18, 2    | 2100.00  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代收成功 0=代收失败      |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
@@ -208,7 +208,7 @@ Header：Content-Type: application/json;charset=utf-8
 {
     "appId": "B32D954CC4E25491F9UIETG3CCBBF",
     "channelId": 1,
-    "currency": "CNY",
+    "currency": "KRW",
     "actionValue": 2000.00,
     "accountName": "张三",
     "callbackUrl": "https://aaa.bbb.ccc/port1/withdraw",
@@ -251,7 +251,7 @@ Header：Content-Type: application/json;charset=utf-8
     "transactionId": "RC_10086",
     "outOrderId": "8986327638746",
     "outTips": "用户申请代收",
-    "currency": "CNY",
+    "currency": "KRW",
     "actionValue": 2500.00,
     "status": 1,
     "msg": "success",
@@ -266,7 +266,7 @@ Header：Content-Type: application/json;charset=utf-8
     "transactionId": "RC_10086",
     "outOrderId": "8986327638746",
     "outTips": "用户申请代收",
-    "currency": "CNY",
+    "currency": "KRW",
     "actionValue": 2500.00,
     "status": 0,
     "msg": "通道维护暂时关闭",
@@ -285,7 +285,7 @@ Header：Content-Type: application/json;charset=utf-8
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | Yes   | string   | 32       |      | appId                                        |
 | channelId | Yes   | int | 5       |   1   | [Channel List](#31-----)            |
-| currency     | Yes   | string | 10    | CNY  | [List of currencies](#32-----)        |
+| currency     | Yes   | string | 10    | KRW  | [List of currencies](#32-----)        |
 | actionValue | Yes   | decimal | 18, 2    | 2100.00  | 申请代付的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
 | cardNumber      | Yes   | string   | 100        | 982268716  | 卡号（账号）         |
 | bankName    |  Yes  | string      | 100        | 中国建设银行   | [银行名称列表-代付](#34-----)   |
@@ -314,7 +314,7 @@ Header：Content-Type: application/json;charset=utf-8
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | outOrderId | string    | 100        |        | 商户订单号                      |
 | outTips    | string  | 100      | 测试订单 | 商户备注 |
-| currency    | string | 10    | CNY  | [List of currencies](#32-----)  |
+| currency    | string | 10    | KRW  | [List of currencies](#32-----)  |
 | actionValue    | decimal | 18, 2    | 2100.00  | 实际代付金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代付成功 0=代付失败      |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
@@ -328,7 +328,7 @@ Header：Content-Type: application/json;charset=utf-8
 {
     "appId": "B32D954CC4E25491F9UIETG3CCBBF",
     "channelId": 1,
-    "currency": "CNY",
+    "currency": "KRW",
     "actionValue": 2000.00,
     "cardNumber": "938265716",
     "callbackUrl": "https://aaa.bbb.ccc/port1/withdraw",
@@ -371,7 +371,7 @@ Header：Content-Type: application/json;charset=utf-8
     "transactionId": "RC_10086",
     "outOrderId": "8986327638746",
     "outTips": "这是一个代付订单",
-    "currency": "CNY",
+    "currency": "KRW",
     "actionValue": 4000.00,
     "status": 1,
     "msg": "success",
@@ -385,7 +385,7 @@ Header：Content-Type: application/json;charset=utf-8
 {
     "transactionId": "RC_10086",
     "outOrderId": "8986327638746",
-    "currency": "CNY",
+    "currency": "KRW",
     "actionValue": 4000.00,
     "status": 0,
     "msg": "通道维护暂时关闭",
@@ -425,7 +425,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
-| orderList |    transactionId: RC_98261876 (交易流水号)<br>currency: CNY (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (手续费率)<br>actionValue: 3000.00 (实际代收金额)<br>chargeValue: 30.00 (手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: 张三 (付款人姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
+| orderList |    transactionId: RC_98261876 (交易流水号)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (手续费率)<br>actionValue: 3000.00 (实际代收金额)<br>chargeValue: 30.00 (手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: 张三 (付款人姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
 | currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
@@ -455,7 +455,7 @@ Header：Content-Type: application/json;charset=utf-8
 	"data": {
 		"orderList": [{
 			"transactionId": "RC_17",
-			"currency": "CNY",
+			"currency": "KRW",
 			"channelId": "1",
 			"rechargeRate": "0.0400",
 			"actionValue": "1931.00",
@@ -470,7 +470,7 @@ Header：Content-Type: application/json;charset=utf-8
 			"createTime": "2024-02-18 04:51:01"
 		}, {
 			"transactionId": "RC_18",
-			"currency": "CNY",
+			"currency": "KRW",
 			"channelId": "1",
 			"rechargeRate": "0.0400",
 			"actionValue": "100.00",
@@ -526,7 +526,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
-| orderList |    transactionId: WD_98261876 (交易流水号)<br>currency: CNY (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (手续费率)<br>withdrawFixValue: 3.00 (代付固定手续费)<br>actionValue: 3000.00 (实际代付金额)<br>chargeValue: 33.00 (手续费)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 张三 (户主姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
+| orderList |    transactionId: WD_98261876 (交易流水号)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (手续费率)<br>withdrawFixValue: 3.00 (代付固定手续费)<br>actionValue: 3000.00 (实际代付金额)<br>chargeValue: 33.00 (手续费)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 张三 (户主姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
 | currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
@@ -556,7 +556,7 @@ Header：Content-Type: application/json;charset=utf-8
 	"data": {
 		"orderList": [{
 			"transactionId": "WD_23",
-			"currency": "CNY",
+			"currency": "KRW",
 			"channelId": "1",
 			"withdrawRate": "0.0000",
 			"withdrawFixValue": "3.00",
@@ -575,7 +575,7 @@ Header：Content-Type: application/json;charset=utf-8
 			"createTime": "2024-02-18 05:08:15"
 		}, {
 			"transactionId": "WD_24",
-			"currency": "CNY",
+			"currency": "KRW",
 			"channelId": "1",
 			"withdrawRate": "0.0000",
 			"withdrawFixValue": "3.00",
@@ -622,7 +622,7 @@ Header：Content-Type: application/json;charset=utf-8
 | Parameter     | Type   | 字段长度 | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
-| data    | array |       |     CNY: 6686.32 (人民币余额)<br>USDT: 927.92 (USDT余额)    | 以二维数组方式排列 |
+| data    | array |       |     KRW: 6686.32 (人民币余额)<br>USDT: 927.92 (USDT余额)    | 以二维数组方式排列 |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
@@ -646,7 +646,7 @@ Header：Content-Type: application/json;charset=utf-8
 {
 	"result": 1,
 	"data": {
-		"CNY": "6686.32",
+		"KRW": "6686.32",
 		"USDT": "927.92"
 	},
 	"msg": "success",
@@ -668,23 +668,23 @@ Header：Content-Type: application/json;charset=utf-8
 
 | 参数   | 货币名称     |
 | ---- | -------- |
-| CNY    | 人民币 |
-| USDT    | USDT |
-| VND    | 越南盾 |
-| INR    | 印度卢比 |
-| THB    | 泰铢 |
-| IDR    | 印度尼西亚卢比 |
-| BRL    | 巴西雷亚尔 |
-| MXP    | 墨西哥比索 |
-| JPY    | 日元 |
-| PHP    | 菲律宾比索 |
-| KRW    | 韩元 |
+| CNY    | Renminbi |
+| USDT    | Tether |
+| VND    | Vietnamese Dong |
+| INR    | Indian Rupee |
+| THB    | Thai Baht |
+| IDR    | Indonesian Rupiah |
+| BRL    | Brazilian Real |
+| MXP    | Mexican Peso |
+| JPY    | Japanese Yen |
+| PHP    | Philippine Peso |
+| KRW    | South Korean Won |
 
 #### <span id="33-----">3.3 List of Bank Names - Recharge</span>
 
 ##### <span id="331-----">3.3.1 List of Bank Names - Vietnam Recharge</span>
 
-| 标准名称   |
+| Standard name   |
 | ---- |
 | VP BANK |
 | ACB BANK |
@@ -705,7 +705,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="341-----">3.4.1 List of Bank Names-China Withdraw</span>
 
-| 标准名称   |
+| Standard name   |
 | ---- |
 | 工商银行 |
 | 农业银行 |
@@ -969,7 +969,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="342-----">3.4.2 List of Bank Names - USDT Withdraw</span>
 
-| 标准名称   |
+| Standard name   |
 | ---- |
 | ERC20 |
 | TRC20 |
@@ -977,7 +977,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="343-----">3.4.3 List of Bank Names - Vietnam Withdraw</span>
 
-| 标准名称   |
+| Standard name   |
 | ---- |
 |   VP BANK   |
 |   ACB BANK   |
