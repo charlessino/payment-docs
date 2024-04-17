@@ -187,7 +187,7 @@ Header：Content-Type: application/json;charset=utf-8
 | data    | array |       |         | ReturnType = 2 to return this，包含以下子项：<br>Bank Name<br>Branch Name<br>Account Number<br>Account Owner<br>Amount |
 
 ##### <span id="213-----">2.1.3 Asynchronous callback notification parameters</span>
-收到回调时请返回success字样，详情参考[Callback mechanism](#15-----)
+Please return the word success when you receive the callback. For details, please refer to[Callback mechanism](#15-----)
 
 | Parameter | Type   | Field length | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
@@ -307,7 +307,7 @@ Header：Content-Type: application/json;charset=utf-8
 | sign    | string | 32      |    | [Return parameter signature](#142-----)      |
 
 ##### <span id="223-----">2.2.3 Asynchronous callback notification parameters</span>
-收到回调时请返回success字样，详情参考[回调机制](#15-----)
+Please return the word success when you receive the callback.For details, please refer to[Callback mechanism](#15-----)
 
 | Parameter | Type   | Field length | Example    | Description                                         |
 | ------ | ------ | -------- | ------- | -------------------------------------------- |
