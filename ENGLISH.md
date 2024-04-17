@@ -72,7 +72,7 @@ Request method: POST
 
 | Parameter       | Required | Type/Parameter Value      | Description         |
 | ------------ | ---- | ---------------- | ------------ |
-| Content-Type | Yes   | Type/json | 请求参数类型 |
+| Content-Type | Yes   | Type/json | Request parameter type |
 
 #### <span id="14-----">1.4 Signature</span>
 
