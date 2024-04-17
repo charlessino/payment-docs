@@ -184,7 +184,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameter Signature](#142-----)      |
 | url    | string | 255      |         | Used to jump to the payment page of the link, returnType = 1 to return this. |
-| data    | array |       |         | ReturnType = 2 to return this，包含以下子项：<br>Bank Name<br>Branch Name<br>Account Number<br>Account Owner<br>Amount |
+| data    | array |       |         | ReturnType = 2 to return this，Contains the following subsections:<br>Bank Name<br>Branch Name<br>Account Number<br>Account Owner<br>Amount |
 
 ##### <span id="213-----">2.1.3 Asynchronous callback notification parameters</span>
 Please return the word success when you receive the callback. For details, please refer to[Callback mechanism](#15-----)
