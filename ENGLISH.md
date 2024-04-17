@@ -62,9 +62,9 @@
 
 请联系客服申请接口，申请通过之后您可获得以下信息：
 
-    1. 专属接口请求地址(apiAddress)
-    2. 应用ID(appId)
-    3. 密钥(key)
+    1. apiAddress
+    2. appId
+    3. key
 
 #### <span id="13-----">1.3 Header Parameters</span>
 
@@ -158,9 +158,9 @@ Header：Content-Type: application/json;charset=utf-8
 
 | 参数名      | 必填 | 类型    | 字段长度 | 例子     | 说明                     |
 | ----------- | ---- | ------- | -------- | -------- | ------------------------ |
-| appId       | Yes   | string  | 32       |          | 应用ID                   |
-| channelId   | Yes   | int     | 5        | 1        | [通道列表](#31-----) |
-| currency     | Yes   | string | 10    | CNY  | [货币列表](#32-----)       |
+| appId       | Yes   | string  | 32       |          | appId                   |
+| channelId   | Yes   | int     | 5        | 1        | [Channel List](#31-----) |
+| currency     | Yes   | string | 10    | CNY  | [List of currencies](#32-----)       |
 | actionValue | Yes   | decimal | 18, 2    | 2100.00  | 申请代收的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
 | accountName | Yes   | string | 100    | 张三  | 付款人姓名，姓名中不可包含数字，且不可传空值       |
 | cellphone |    | string | 100    | 01034388769  | 手机号，韩国必传，其他可不传       |
@@ -173,7 +173,7 @@ Header：Content-Type: application/json;charset=utf-8
 | param1     |      | string  | 100      |  | 越南通道ID5，则必传[银行名称列表-越南代收](#331-----)               |
 | param2     |      | string  | 100      |  | 预留参数2，可不传               |
 | param3     |      | string  | 100      |  | 预留参数3，可不传               |
-| sign        | Yes   | string  | 32       |          | [签名](#14-----)             |
+| sign        | Yes   | string  | 32       |          | [Signature](#14-----)             |
 
 ##### <span id="212-----">2.1.2 Return parameters</span>
 
@@ -194,7 +194,7 @@ Header：Content-Type: application/json;charset=utf-8
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | outOrderId | string    | 100        |        | 商户订单号                      |
 | outTips    | string  | 100      | 测试订单 | 商户备注 |
-| currency    | string | 10    | CNY  | [货币列表](#32-----)  |
+| currency    | string | 10    | CNY  | [List of currencies](#32-----)  |
 | actionValue    | decimal | 18, 2    | 2100.00  | 实际代收金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代收成功 0=代收失败      |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
@@ -283,9 +283,9 @@ Header：Content-Type: application/json;charset=utf-8
 
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
-| appId     | Yes   | string   | 32       |      | 应用ID                                        |
-| channelId | Yes   | int | 5       |   1   | [通道列表](#31-----)            |
-| currency     | Yes   | string | 10    | CNY  | [货币列表](#32-----)        |
+| appId     | Yes   | string   | 32       |      | appId                                        |
+| channelId | Yes   | int | 5       |   1   | [Channel List](#31-----)            |
+| currency     | Yes   | string | 10    | CNY  | [List of currencies](#32-----)        |
 | actionValue | Yes   | decimal | 18, 2    | 2100.00  | 申请代付的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
 | cardNumber      | Yes   | string   | 100        | 982268716  | 卡号（账号）         |
 | bankName    |  Yes  | string      | 100        | 中国建设银行   | [银行名称列表-代付](#34-----)   |
@@ -314,7 +314,7 @@ Header：Content-Type: application/json;charset=utf-8
 | transactionId    | string | 100      |    RC_10086     | 交易流水号 |
 | outOrderId | string    | 100        |        | 商户订单号                      |
 | outTips    | string  | 100      | 测试订单 | 商户备注 |
-| currency    | string | 10    | CNY  | [货币列表](#32-----)  |
+| currency    | string | 10    | CNY  | [List of currencies](#32-----)  |
 | actionValue    | decimal | 18, 2    | 2100.00  | 实际代付金额 (就算是没有小数的货币，也会被格式化为2位小数)      |
 | status    | int | 1      | 1 | 1=代付成功 0=代付失败      |
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
