@@ -84,7 +84,7 @@
 
 ##### <span id="141-----">1.4.1 Signature example</span>
 
- - 1.传入参数
+ - 1.Incoming parameters
 
 ```json
 {
@@ -202,7 +202,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="214-----">2.1.4 Example request parameters</span>
 
- - 传入参数
+ - Incoming parameters
 
 ```json
 {
@@ -322,7 +322,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="224-----">2.2.4 Example request parameters</span>
 
- - 传入参数
+ - Incoming parameters
 
 ```json
 {
@@ -432,7 +432,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="234-----">2.3.4 Example request parameters</span>
 
- - 传入参数
+ - Incoming parameters
 
 ```json
 {
@@ -533,7 +533,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="244-----">2.4.4 Example request parameters</span>
 
- - 传入参数
+ - Incoming parameters
 
 ```json
 {
@@ -628,7 +628,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="253-----">2.5.3 Example request parameters</span>
 
- - 传入参数
+ - Incoming parameters
 
 ```json
 {
