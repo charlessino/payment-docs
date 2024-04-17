@@ -161,7 +161,7 @@ Header：Content-Type: application/json;charset=utf-8
 | appId       | Yes   | string  | 32       |          | appId                   |
 | channelId   | Yes   | int     | 5        | 1        | [Channel List](#31-----) |
 | currency     | Yes   | string | 10    | KRW  | [List of currencies](#32-----)       |
-| actionValue | Yes   | decimal | 18, 2    | 2100.00  | Amount of the requested recharge (digital currency allows decimals, fiat currencies only allow integers, even if integers need to be formatted into 2 decimal places in order to unify the rules of signature inspection)       |
+| actionValue | Yes   | decimal | 18, 2    | 21000.00  | Amount of the requested recharge (digital currency allows decimals, fiat currencies only allow integers, even if integers need to be formatted into 2 decimal places in order to unify the rules of signature inspection)       |
 | accountName | Yes   | string | 100    | 박재환  | The name of the depositor, the name can not contain numbers, and can not pass empty values       |
 | cellphone |    | string | 100    | 01034388769  | Cell phone number, Korea must be transmitted, others can not be transmitted       |
 | callbackUrl  |      | string  | 512      |          | Merchant callback address             |
@@ -195,7 +195,7 @@ Please return the word success when you receive the callback. For details, pleas
 | outOrderId | string    | 100        |        | Merchant order ID                      |
 | outTips    | string  | 100      | test | Merchant Remarks |
 | currency    | string | 10    | KRW  | [List of currencies](#32-----)  |
-| actionValue    | decimal | 18, 2    | 2100.00  | Actual recharge amount (even currencies with no decimals will be formatted to 2 decimal places)      |
+| actionValue    | decimal | 18, 2    | 21000.00  | Actual recharge amount (even currencies with no decimals will be formatted to 2 decimal places)      |
 | status    | int | 1      | 1 | 1=Recharge Success 0=Withdraw Failure      |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |  | All parameters except sign are required to participate in the signature, same as the [Signature](#14-----) rule in the request.      |
@@ -209,7 +209,7 @@ Please return the word success when you receive the callback. For details, pleas
     "appId": "B32D954CC4E25491F9UIETG3CCBBF",
     "channelId": 1,
     "currency": "KRW",
-    "actionValue": 2000.00,
+    "actionValue": 21000.00,
     "accountName": "박재환",
     "callbackUrl": "https://aaa.bbb.ccc/port1/withdraw",
     "outOrderId": "WE8681762354832",
@@ -252,7 +252,7 @@ Please return the word success when you receive the callback. For details, pleas
     "outOrderId": "8986327638746",
     "outTips": "recharge",
     "currency": "KRW",
-    "actionValue": 2500.00,
+    "actionValue": 21000.00,
     "status": 1,
     "msg": "success",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
@@ -267,7 +267,7 @@ Please return the word success when you receive the callback. For details, pleas
     "outOrderId": "8986327638746",
     "outTips": "recharge",
     "currency": "KRW",
-    "actionValue": 2500.00,
+    "actionValue": 21000.00,
     "status": 0,
     "msg": "Channel maintenance, temporarily closed",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
@@ -286,7 +286,7 @@ Header：Content-Type: application/json;charset=utf-8
 | appId     | Yes   | string   | 32       |      | appId                                        |
 | channelId | Yes   | int | 5       |   1   | [Channel List](#31-----)            |
 | currency     | Yes   | string | 10    | KRW  | [List of currencies](#32-----)        |
-| actionValue | Yes   | decimal | 18, 2    | 2100.00  | Amount of the requested withdraw (digital currency allows decimals, fiat currencies only allow integers, even if integers need to be formatted into 2 decimal places in order to unify the rules of signature inspection)       |
+| actionValue | Yes   | decimal | 18, 2    | 21000.00  | Amount of the requested withdraw (digital currency allows decimals, fiat currencies only allow integers, even if integers need to be formatted into 2 decimal places in order to unify the rules of signature inspection)       |
 | cardNumber      | Yes   | string   | 100        | 982268716  | Account Number         |
 | bankName    |  Yes  | string      | 100        | Shinhan Bank   | [List of Bank Names-Withdraw](#34-----)   |
 | branchName      |    | string   | 100        | Gangnam Branch  | Branch Name         |
@@ -315,7 +315,7 @@ Please return the word success when you receive the callback.For details, please
 | outOrderId | string    | 100        |        | Merchant order ID                      |
 | outTips    | string  | 100      | withdraw | Merchant Remarks |
 | currency    | string | 10    | KRW  | [List of currencies](#32-----)  |
-| actionValue    | decimal | 18, 2    | 2100.00  | Actual withdraw amount(even currencies with no decimals will be formatted to 2 decimal places)      |
+| actionValue    | decimal | 18, 2    | 21000.00  | Actual withdraw amount(even currencies with no decimals will be formatted to 2 decimal places)      |
 | status    | int | 1      | 1 | 1=Withdraw Success 0=Withdraw Failure      |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |  | All parameters except sign are required to participate in the signature, same as the [Signature](#14-----) rule in the request.     |
@@ -329,7 +329,7 @@ Please return the word success when you receive the callback.For details, please
     "appId": "B32D954CC4E25491F9UIETG3CCBBF",
     "channelId": 1,
     "currency": "KRW",
-    "actionValue": 2000.00,
+    "actionValue": 21000.00,
     "cardNumber": "938265716",
     "callbackUrl": "https://aaa.bbb.ccc/port1/withdraw",
     "outOrderId": "WE8681762354832",
@@ -372,7 +372,7 @@ Please return the word success when you receive the callback.For details, please
     "outOrderId": "8986327638746",
     "outTips": "withdraw",
     "currency": "KRW",
-    "actionValue": 4000.00,
+    "actionValue": 21000.00,
     "status": 1,
     "msg": "success",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
@@ -386,7 +386,7 @@ Please return the word success when you receive the callback.For details, please
     "transactionId": "RC_10086",
     "outOrderId": "8986327638746",
     "currency": "KRW",
-    "actionValue": 4000.00,
+    "actionValue": 21000.00,
     "status": 0,
     "msg": "Channel maintenance, temporarily closed",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
@@ -458,9 +458,9 @@ Header：Content-Type: application/json;charset=utf-8
 			"currency": "KRW",
 			"channelId": "1",
 			"rechargeRate": "0.0400",
-			"actionValue": "1931.00",
-			"chargeValue": "77.24",
-			"actualValue": "1853.76",
+			"actionValue": "19310.00",
+			"chargeValue": "772.40",
+			"actualValue": "18537.60",
 			"accountName": "\u5f20\u4e09",
 			"status": 1,
 			"statusName": "\u6210\u529f",
@@ -473,9 +473,9 @@ Header：Content-Type: application/json;charset=utf-8
 			"currency": "KRW",
 			"channelId": "1",
 			"rechargeRate": "0.0400",
-			"actionValue": "100.00",
-			"chargeValue": "4.00",
-			"actualValue": "96.00",
+			"actionValue": "10000.00",
+			"chargeValue": "400.00",
+			"actualValue": "9600.00",
 			"accountName": "\u5f20\u4e09",
 			"status": 0,
 			"statusName": "\u5931\u8d25",
