@@ -622,7 +622,7 @@ Header：Content-Type: application/json;charset=utf-8
 | Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
 | result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
-| data    | array |       |     KRW: 6686.32 (人民币余额)<br>USDT: 927.92 (USDT余额)    | 以二维数组方式排列 |
+| data    | array |       |     KRW: 6686.00 (KRW balance)<br>USDT: 927.92 (USDT balance)    | Arranged as a two-dimensional array |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameters signature](#142-----)      |
 
@@ -646,7 +646,7 @@ Header：Content-Type: application/json;charset=utf-8
 {
 	"result": 1,
 	"data": {
-		"KRW": "6686.32",
+		"KRW": "6686.00",
 		"USDT": "927.92"
 	},
 	"msg": "success",
@@ -662,7 +662,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 #### <span id="31-----">3.1 Channel List</span>
 
-请通过商户后台系统 > 信息概览 > 支付通道，获取通道ID及对应名称。
+Please go through the merchant's back-office system  > Account Info > Payment Channels，get the channel ID and the name.
 
 #### <span id="32-----">3.2 List of currencies</span>
 
