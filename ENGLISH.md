@@ -425,10 +425,10 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
-| orderList |    transactionId: RC_98261876 (Transaction Number)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (手续费率)<br>actionValue: 3000.00 (Actual recharge amount)<br>chargeValue: 30.00 (手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: test (付款人姓名)<br>status: 1 (状态值 1=Success 0=Failure 2=处理中)<br>statusName: Success (状态名)<br>outOrderId: 98227863223 (Merchant order ID)<br>outTips: recharge(Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
-| currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
-| totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
-| totalRecords |    350    | 当前搜索结果的总纪录数                      |
+| orderList |    transactionId: RC_98261876 (Transaction number)<br>currency: KRW (Currency)<br>channelId: 15 (Channel ID)<br>rechargeRate: 0.01 (Recharge handling fee rate)<br>actionValue: 3000.00 (Actual recharge amount)<br>chargeValue: 30.00 (Recharge handling fee)<br>actualValue: 2970.00 (Actual amount credited to the account)<br>accountName: 박재환 (The name of the deposito)<br>status: 1 (Status value 1=Success 0=Failure 2=Processing)<br>statusName: Success (Status name)<br>outOrderId: 98227863223 (Merchant order ID)<br>outTips: recharge(Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (Order update time)<br>createTime: 2024-02-01 09:31:26 (Order creation time)   | Order details in a two-dimensional array                      |
+| currentPage |    1    | Current page number, default is 1<br>Maximum 200 records per page                      |
+| totalPages |    5    | The total number of pages that can be turned by the current search results<br>For example, 5 means there are 5 pages in total<br>Use pageId to turn pages when passing a parameter.     |
+| totalRecords |    350    | Total number of records for current search results                      |
 
 ##### <span id="234-----">2.3.4 Example request parameters</span>
 
@@ -526,10 +526,10 @@ Header：Content-Type: application/json;charset=utf-8
 
 | Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
-| orderList |    transactionId: WD_98261876 (Transaction Number)<br>currency: KRW (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (手续费率)<br>withdrawFixValue: 3.00 (代付固定手续费)<br>actionValue: 3000.00 (Actual withdraw amount)<br>chargeValue: 33.00 (手续费)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 박재환 (户主姓名)<br>status: 1 (状态值 1=Success 0=Failure 2=处理中)<br>statusName: Success (状态名)<br>outOrderId: 98227863223 (Merchant order ID)<br>outTips: withdraw (Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)   | 订单详情以二维数组方式排列                      |
-| currentPage |    1    | 当前页码，默认为1<br>每页最多200条记录                      |
-| totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
-| totalRecords |    350    | 当前搜索结果的总纪录数                      |
+| orderList |    transactionId: WD_98261876 (Transaction number)<br>currency: KRW (Currency)<br>channelId: 15 (Channel ID)<br>withdrawRate: 0.01 (Withdraw handling fee rate)<br>withdrawFixValue: 3.00 (Withdraw fixed handling fee per transaction)<br>actionValue: 3000.00 (Actual withdraw amount)<br>chargeValue: 33.00 (Withdraw handling fee)<br>actualValue: 3033.00 (Actual amount credited to the account)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 박재환 (Holder name)<br>status: 1 (Status value 1=Success 0=Failure 2=Processing)<br>statusName: Success (Status name)<br>outOrderId: 98227863223 (Merchant order ID)<br>outTips: withdraw (Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (Order update time)<br>createTime: 2024-02-01 09:31:26 (Order creation time)   | Order details in a two-dimensional array                      |
+| currentPage |    1    | Current page number, default is 1<br>Maximum 200 records per page                      |
+| totalPages |    5    | The total number of pages that can be turned by the current search results<br>For example, 5 means there are 5 pages in total<br>Use pageId to turn pages when passing a parameter.     |
+| totalRecords |    350    | Total number of records for current search results                      |
 
 ##### <span id="244-----">2.4.4 Example request parameters</span>
 
@@ -666,7 +666,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 #### <span id="32-----">3.2 List of currencies</span>
 
-| Parameter   | 货币名称     |
+| Parameter   | Currency     |
 | ---- | -------- |
 | CNY    | Renminbi |
 | USDT    | Tether |
