@@ -72,7 +72,7 @@
 
 | 参数名       | 必填 | 类型/参数值      | 说明         |
 | ------------ | ---- | ---------------- | ------------ |
-| Content-Type | 是   | application/json | 请求参数类型 |
+| Content-Type | Yes   | application/json | 请求参数类型 |
 
 #### <span id="14-----">1.4 Signature</span>
 
@@ -158,11 +158,11 @@ Header：Content-Type: application/json;charset=utf-8
 
 | 参数名      | 必填 | 类型    | 字段长度 | 例子     | 说明                     |
 | ----------- | ---- | ------- | -------- | -------- | ------------------------ |
-| appId       | 是   | string  | 32       |          | 应用ID                   |
-| channelId   | 是   | int     | 5        | 1        | [通道列表](#31-----) |
-| currency     | 是   | string | 10    | CNY  | [货币列表](#32-----)       |
-| actionValue | 是   | decimal | 18, 2    | 2100.00  | 申请代收的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
-| accountName | 是   | string | 100    | 张三  | 付款人姓名，姓名中不可包含数字，且不可传空值       |
+| appId       | Yes   | string  | 32       |          | 应用ID                   |
+| channelId   | Yes   | int     | 5        | 1        | [通道列表](#31-----) |
+| currency     | Yes   | string | 10    | CNY  | [货币列表](#32-----)       |
+| actionValue | Yes   | decimal | 18, 2    | 2100.00  | 申请代收的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
+| accountName | Yes   | string | 100    | 张三  | 付款人姓名，姓名中不可包含数字，且不可传空值       |
 | cellphone |    | string | 100    | 01034388769  | 手机号，韩国必传，其他可不传       |
 | callbackUrl  |      | string  | 512      |          | 商户回调地址             |
 | returnUrl  |      | string  | 512      |          | 支付完成后，商户页面返回地址             |
@@ -173,7 +173,7 @@ Header：Content-Type: application/json;charset=utf-8
 | param1     |      | string  | 100      |  | 越南通道ID5，则必传[银行名称列表-越南代收](#331-----)               |
 | param2     |      | string  | 100      |  | 预留参数2，可不传               |
 | param3     |      | string  | 100      |  | 预留参数3，可不传               |
-| sign        | 是   | string  | 32       |          | [签名](#14-----)             |
+| sign        | Yes   | string  | 32       |          | [签名](#14-----)             |
 
 ##### <span id="212-----">2.1.2 Return parameters</span>
 
@@ -283,19 +283,19 @@ Header：Content-Type: application/json;charset=utf-8
 
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
-| appId     | 是   | string   | 32       |      | 应用ID                                        |
-| channelId | 是   | int | 5       |   1   | [通道列表](#31-----)            |
-| currency     | 是   | string | 10    | CNY  | [货币列表](#32-----)        |
-| actionValue | 是   | decimal | 18, 2    | 2100.00  | 申请代付的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
-| cardNumber      | 是   | string   | 100        | 982268716  | 卡号（账号）         |
-| bankName    |  是  | string      | 100        | 中国建设银行   | [银行名称列表-代付](#34-----)   |
+| appId     | Yes   | string   | 32       |      | 应用ID                                        |
+| channelId | Yes   | int | 5       |   1   | [通道列表](#31-----)            |
+| currency     | Yes   | string | 10    | CNY  | [货币列表](#32-----)        |
+| actionValue | Yes   | decimal | 18, 2    | 2100.00  | 申请代付的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
+| cardNumber      | Yes   | string   | 100        | 982268716  | 卡号（账号）         |
+| bankName    |  Yes  | string      | 100        | 中国建设银行   | [银行名称列表-代付](#34-----)   |
 | branchName      |    | string   | 100        | 上海分行  | 分支行名称         |
-| ownerName      |  是  | string   | 100        | 张三  | 户主姓名，姓名中不可包含数字         |
+| ownerName      |  Yes  | string   | 100        | 张三  | 户主姓名，姓名中不可包含数字         |
 | callbackUrl  |      | string  | 512      |          | 商户回调地址             |
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | 是   | string   | 32       |      | [签名](#14-----)                             |
+| sign      | Yes   | string   | 32       |      | [签名](#14-----)                             |
 
 ##### <span id="222-----">2.2.2 Return parameters</span>
 
@@ -403,14 +403,14 @@ Header：Content-Type: application/json;charset=utf-8
 
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
-| appId     | 是   | string   | 32       |      | 应用ID                                        |
+| appId     | Yes   | string   | 32       |      | 应用ID                                        |
 | outOrderId     |     | string    | 100        |        | 商户订单号                      |
 | dateTimeStart     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-起始值       |
 | dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
 | pageId      |    | int   | 10        | 3  | 每次最多返回200条记录<br>可使用本字段进行翻页<br>不传此参数默认为1         |
 | orderBy    |    | string      | 4        | ASC   | 顺序<br>ASC=升序，DESC=降序<br>不传此参数默认DESC |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | 是   | string   | 32       |      | [签名](#14-----)                         |
+| sign      | Yes   | string   | 32       |      | [签名](#14-----)                         |
 
 ##### <span id="232-----">2.3.2 Return parameters</span>
 
@@ -504,14 +504,14 @@ Header：Content-Type: application/json;charset=utf-8
 
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
-| appId     | 是   | string   | 32       |      | 应用ID                                        |
+| appId     | Yes   | string   | 32       |      | 应用ID                                        |
 | outOrderId     |     | string    | 100        |        | 商户订单号                      |
 | dateTimeStart     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-起始值       |
 | dateTimeEnd     |    | datetime | 19    | 2024-01-01 10:00:00  | 订单更新时间-结束值       |
 | pageId      |    | int   | 10        | 3  | 每次最多返回200条记录<br>可使用本字段进行翻页<br>不传此参数默认为1         |
 | orderBy    |    | string      | 4        | ASC   | 顺序<br>ASC=升序，DESC=降序<br>不传此参数默认DESC |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | 是   | string   | 32       |      | [签名](#14-----)                     |
+| sign      | Yes   | string   | 32       |      | [签名](#14-----)                     |
 
 ##### <span id="242-----">2.4.2 Return parameters</span>
 
@@ -613,9 +613,9 @@ Header：Content-Type: application/json;charset=utf-8
 
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
-| appId     | 是   | string   | 32       |      | 应用ID                                        |
+| appId     | Yes   | string   | 32       |      | 应用ID                                        |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | 是   | string   | 32       |      | [签名](#14-----)                        |
+| sign      | Yes   | string   | 32       |      | [签名](#14-----)                        |
 
 ##### <span id="252-----">2.5.2 Return parameters</span>
 
