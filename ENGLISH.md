@@ -79,7 +79,7 @@ Request method: POST
   1. Arrange the parameter names of all input parameters (except sign) in dictionary order, note that parameters with null values do not need to be incoming
   2. Construct it as a link parameter
   3. Add the key at the end (please contact customer service for the key).
-  4. encrypt the string with md5
+  4. Encrypt the string with md5
   5. Convert to lowercase
 
 ##### <span id="141-----">1.4.1 Signature example</span>
