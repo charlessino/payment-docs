@@ -137,11 +137,11 @@ Note that if you don't pass the nonceStr parameter, the signature will not be re
 
 #### <span id="15-----">1.5 Callback mechanism</span>
 
-  1. Recharge and withdraw orders will call back to the merchant's specified callback address as soon as the status update is received.
-  2. If the merchant returns the word success, the callback is successful.
-  3. if no success is received, the system will try to call back again every minute, up to 10 times, until a success is received.
-  4. After 10 times and still do not receive the word success, the system will no longer send callback information
-  5. If you need to call back again, please feel free to contact our customer service.
+  1. ⁠When the status of the recharge/withdraw order is updated, our system will send the callback notice to your “callbackUrl” which you define in the input parameters.
+  2. Please return the word “success” if you receive our callback notice that we’ll stop sending it to you repeatedly.
+  3. ⁠If we don’t get the returned word “success” from you, our system will keep sending the callback notice to you maximum 10 times per minute until we receive the “success”.
+  4. The callback procedure will be terminated ⁠If there is still no returned word after 10 times, you’ll no longer receive it by system automatically.
+  5. ⁠⁠If you need to receive the callback notice again at anytime, feel free to contact our customer service.
 
 
 
