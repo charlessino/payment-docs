@@ -1,4 +1,4 @@
-# FuGuo Payment Gateway Documents
+# Payment Gateway Documents
 
 - Contents
   + [1 Overview](#1-----)
