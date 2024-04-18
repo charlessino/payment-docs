@@ -151,7 +151,7 @@ Note that if you don't pass the nonceStr parameter, the signature will not be re
 
 #### <span id="21-----">2.1 Recharge</span>
 
-Request apiAddress：`{apiAddress}/recharge`<br>
+Endpoint：`{apiAddress}/recharge`<br>
 Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="211-----">2.1.1 Input parameters</span>
@@ -276,7 +276,7 @@ Please return the word success when you receive the callback. For details, pleas
 
 #### <span id="22-----">2.2 Withtraw</span>
 
-Request apiAddress：`{apiAddress}/withdraw`<br>
+Endpoint：`{apiAddress}/withdraw`<br>
 Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="221-----">2.2.1 Input parameters</span>
@@ -396,7 +396,7 @@ Please return the word success when you receive the callback.For details, please
 
 #### <span id="23-----">2.3 Recharge order inquiry</span>
 
-Request apiAddress：`{apiAddress}/recharge-orders-query`<br>
+Endpoint：`{apiAddress}/recharge-orders-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="231-----">2.3.1 Input parameters</span>
@@ -497,7 +497,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 #### <span id="24-----">2.4 Withdraw order inquiry</span>
 
-Request apiAddress：`{apiAddress}/withdraw-orders-query`<br>
+Endpoint：`{apiAddress}/withdraw-orders-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="241-----">2.4.1 Input parameters</span>
@@ -606,7 +606,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 #### <span id="25-----">2.5 Balance inquiry</span>
 
-Request apiAddress：`{apiAddress}/balance`<br>
+Endpoint：`{apiAddress}/balance`<br>
 Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="251-----">2.5.1 Input parameters</span>
