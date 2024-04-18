@@ -2,14 +2,14 @@
 
 - Contents
   + [1 Overview](#1-----)
-    - [1.1 Interface Usage](#11-----)
-    - [1.2 Interface Application](#12-----)
+    - [1.1 API Usage](#11-----)
+    - [1.2 API Application](#12-----)
     - [1.3 Header Parameters](#13-----)
     - [1.4 Signature](#14-----)
       * [1.4.1 Signature example](#141-----)
       * [1.4.2 Return Parameters Signature](#142-----)
     - [1.5 Callback mechanism](#15-----)
-  + [2 List of interfaces](#2-----)
+  + [2 List of API](#2-----)
     + [2.1 Recharge](#21-----)
       + [2.1.1 Input Parameters](#211-----)
       + [2.1.2 Return Parameters](#212-----)
@@ -54,13 +54,13 @@
 
 ### <span id="1-----">1 Overview</span>
 
-#### <span id="11-----">1.1 Interface Usage</span>
+#### <span id="11-----">1.1 API Usage</span>
 
-This interface is used to access the FuGuo Payments system. This interface is pure Restful style , the input parameters and return parameters are all in JSON format.
+This API is used to access the FuGuo Payments system. This API is pure Restful style , the input parameters and return parameters are all in JSON format.
 
-#### <span id="12-----">1.2 Interface Application</span>
+#### <span id="12-----">1.2 API Application</span>
 
-Please contact customer service to apply for the interface, after the application is approved you can get the following information:
+Please contact customer service to apply for the API, after the application is approved you can get the following information:
 
     1. apiAddress
     2. appId
@@ -124,7 +124,7 @@ actionValue=1200.00&appId=B32D954CC4E25491F99EFE42DF1CCBBF&channelId=1&currency=
 
 ##### <span id="142-----">1.4.2 Return parameters signature</span>
 
-Each time an interface is requested, it returns with a sign, which is signed with the following rule: md5(nonceStr + key)
+Each time an API is requested, it returns with a sign, which is signed with the following rule: md5(nonceStr + key)
 
 e.g.：<br>
 nonceStr = 123456<br>
@@ -145,7 +145,7 @@ Note that if you don't pass the nonceStr parameter, the signature will not be re
 
 
 
-### <span id="2-----">2 List of interfaces</span>
+### <span id="2-----">2 List of API</span>
 
 ​    
 
