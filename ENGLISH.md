@@ -7,38 +7,38 @@
     - [1.3 Header Parameters](#13-----)
     - [1.4 Signature](#14-----)
       * [1.4.1 Signature example](#141-----)
-      * [1.4.2 Return parameters signature](#142-----)
+      * [1.4.2 Return Parameters Signature](#142-----)
     - [1.5 Callback mechanism](#15-----)
   + [2 List of interfaces](#2-----)
     + [2.1 Recharge](#21-----)
-      + [2.1.1 Incoming parameters](#211-----)
-      + [2.1.2 Return parameters](#212-----)
+      + [2.1.1 Input Parameters](#211-----)
+      + [2.1.2 Return Parameters](#212-----)
       + [2.1.3 Asynchronous callback notification parameters](#213-----)
       + [2.1.4 Example request parameters](#214-----)
       + [2.1.5 Example of return parameters](#215-----)
       + [2.1.6 Example of asynchronous callback notification parameters](#216-----)
     + [2.2 Withtraw](#21-----)
-      + [2.2.1 Incoming parameters](#221-----)
-      + [2.2.2 Return parameters](#222-----)
+      + [2.2.1 Input Parameters](#221-----)
+      + [2.2.2 Return Parameters](#222-----)
       + [2.2.3 Asynchronous callback notification parameters](#223-----)
       + [2.2.4 Example request parameters](#224-----)
       + [2.2.5 Example of return parameters](#225-----)
       + [2.2.6 Example of asynchronous callback notification parameters](#226-----)
     + [2.3 Recharge order inquiry](#23-----)
-      + [2.3.1 Incoming parameters](#231-----)
-      + [2.3.2 Return parameters](#232-----)
+      + [2.3.1 Input Parameters](#231-----)
+      + [2.3.2 Return Parameters](#232-----)
       + [2.3.3 Data format schema](#233-----)
       + [2.3.4 Example of request parameters](#234-----)
       + [2.3.5 Example of return parameters](#235-----)
     + [2.4 Withdraw order inquiry](#24-----)
-      + [2.4.1 Incoming parameters](#241-----)
-      + [2.4.2 Return parameters](#242-----)
+      + [2.4.1 Input Parameters](#241-----)
+      + [2.4.2 Return Parameters](#242-----)
       + [2.4.3 Data format schema](#243-----)
       + [2.4.4 Example request parameters](#244-----)
       + [2.4.5 Return parameters example](#245-----)
     + [2.5 Balance inquiry](#25-----)
-      + [2.5.1 Incoming parameters](#251-----)
-      + [2.5.2 Return parameters](#252-----)
+      + [2.5.1 Input Parameters](#251-----)
+      + [2.5.2 Return Parameters](#252-----)
       + [2.5.3 Example request parameters](#253-----)
       + [2.5.4 Example of return parameters](#254-----)
   + [3 Attachments](#3-----)
@@ -56,7 +56,7 @@
 
 #### <span id="11-----">1.1 Interface Usage</span>
 
-This interface is used to access the FuGuo Payments system. This interface is pure Restful style , the incoming parameters and return parameters are all in JSON format.
+This interface is used to access the FuGuo Payments system. This interface is pure Restful style , the input parameters and return parameters are all in JSON format.
 
 #### <span id="12-----">1.2 Interface Application</span>
 
@@ -76,7 +76,7 @@ Request method: POST
 
 #### <span id="14-----">1.4 Signature</span>
 
-  1. Arrange the parameter names of all incoming parameters (except sign) in dictionary order, note that parameters with null values do not need to be incoming
+  1. Arrange the parameter names of all input parameters (except sign) in dictionary order, note that parameters with null values do not need to be incoming
   2. Construct it as a link parameter
   3. Add the key at the end (please contact customer service for the key).
   4. encrypt the string with md5
@@ -84,7 +84,7 @@ Request method: POST
 
 ##### <span id="141-----">1.4.1 Signature example</span>
 
- - 1.Incoming parameters
+ - 1.Input parameters
 
 ```json
 {
@@ -154,7 +154,7 @@ Note that if you don't pass the nonceStr parameter, the signature will not be re
 Request apiAddress：`{apiAddress}/recharge`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="211-----">2.1.1 Incoming parameters</span>
+##### <span id="211-----">2.1.1 Input parameters</span>
 
 | Parameter      | Required | Type    | Field length | Example     | Description                     |
 | ----------- | ---- | ------- | -------- | -------- | ------------------------ |
@@ -202,7 +202,7 @@ Please return the word success when you receive the callback. For details, pleas
 
 ##### <span id="214-----">2.1.4 Example request parameters</span>
 
- - Incoming parameters
+ - Input parameters
 
 ```json
 {
@@ -279,7 +279,7 @@ Please return the word success when you receive the callback. For details, pleas
 Request apiAddress：`{apiAddress}/withdraw`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="221-----">2.2.1 Incoming parameters</span>
+##### <span id="221-----">2.2.1 Input parameters</span>
 
 | Parameter    | Required | Type     | Field length | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -322,7 +322,7 @@ Please return the word success when you receive the callback.For details, please
 
 ##### <span id="224-----">2.2.4 Example request parameters</span>
 
- - Incoming parameters
+ - Input parameters
 
 ```json
 {
@@ -358,7 +358,7 @@ Please return the word success when you receive the callback.For details, please
 {
     "result": 0,
     "transactionId": NULL,
-    "msg": "Incorrect format of incoming parameters"
+    "msg": "Incorrect format of Input parameters"
 }
 ```
 
@@ -399,7 +399,7 @@ Please return the word success when you receive the callback.For details, please
 Request apiAddress：`{apiAddress}/recharge-orders-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="231-----">2.3.1 Incoming parameters</span>
+##### <span id="231-----">2.3.1 Input parameters</span>
 
 | Parameter    | Required | Type     | Field length | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -432,7 +432,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="234-----">2.3.4 Example request parameters</span>
 
- - Incoming parameters
+ - Input parameters
 
 ```json
 {
@@ -500,7 +500,7 @@ Header：Content-Type: application/json;charset=utf-8
 Request apiAddress：`{apiAddress}/withdraw-orders-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="241-----">2.4.1 Incoming parameters</span>
+##### <span id="241-----">2.4.1 Input parameters</span>
 
 | Parameter    | Required | Type     |  | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -533,7 +533,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="244-----">2.4.4 Example request parameters</span>
 
- - Incoming parameters
+ - Input parameters
 
 ```json
 {
@@ -609,7 +609,7 @@ Header：Content-Type: application/json;charset=utf-8
 Request apiAddress：`{apiAddress}/balance`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="251-----">2.5.1 Incoming parameters</span>
+##### <span id="251-----">2.5.1 Input parameters</span>
 
 | Parameter    | Required | Type     | Field length | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -628,7 +628,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="253-----">2.5.3 Example request parameters</span>
 
- - Incoming parameters
+ - Input parameters
 
 ```json
 {
