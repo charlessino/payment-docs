@@ -17,11 +17,11 @@
       + [2.1.4 Example request parameters](#214-----)
       + [2.1.5 Example of return parameters](#215-----)
       + [2.1.6 Example of asynchronous callback notification parameters](#216-----)
-    + [2.2 Withtraw](#21-----)
+    + [2.2 Withdraw](#21-----)
       + [2.2.1 Input Parameters](#221-----)
       + [2.2.2 Return Parameters](#222-----)
       + [2.2.3 Asynchronous callback notification parameters](#223-----)
-      + [2.2.4 Example request parameters](#224-----)
+      + [2.2.4 Example of request parameters](#224-----)
       + [2.2.5 Example of return parameters](#225-----)
       + [2.2.6 Example of asynchronous callback notification parameters](#226-----)
     + [2.3 Recharge order inquiry](#23-----)
@@ -34,12 +34,12 @@
       + [2.4.1 Input Parameters](#241-----)
       + [2.4.2 Return Parameters](#242-----)
       + [2.4.3 Data format schema](#243-----)
-      + [2.4.4 Example request parameters](#244-----)
+      + [2.4.4 Example of request parameters](#244-----)
       + [2.4.5 Return parameters example](#245-----)
     + [2.5 Balance inquiry](#25-----)
       + [2.5.1 Input Parameters](#251-----)
       + [2.5.2 Return Parameters](#252-----)
-      + [2.5.3 Example request parameters](#253-----)
+      + [2.5.3 Example of request parameters](#253-----)
       + [2.5.4 Example of return parameters](#254-----)
   + [3 Attachments](#3-----)
     + [3.1 Channel List](#31-----)
@@ -200,7 +200,7 @@ Please return the word success when you receive the callback. For details, pleas
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |  | All parameters except sign are required to participate in the signature, same as the [Signature](#14-----) rule in the request.      |
 
-##### <span id="214-----">2.1.4 Example request parameters</span>
+##### <span id="214-----">2.1.4 Example of request parameters</span>
 
  - Input parameters
 
@@ -274,7 +274,7 @@ Please return the word success when you receive the callback. For details, pleas
 }
 ```
 
-#### <span id="22-----">2.2 Withtraw</span>
+#### <span id="22-----">2.2 Withdraw</span>
 
 Endpoint：`{apiAddress}/withdraw`<br>
 Header：Content-Type: application/json;charset=utf-8
@@ -320,7 +320,7 @@ Please return the word success when you receive the callback.For details, please
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |  | All parameters except sign are required to participate in the signature, same as the [Signature](#14-----) rule in the request.     |
 
-##### <span id="224-----">2.2.4 Example request parameters</span>
+##### <span id="224-----">2.2.4 Example of request parameters</span>
 
  - Input parameters
 
@@ -430,7 +430,7 @@ Header：Content-Type: application/json;charset=utf-8
 | totalPages |    5    | The total number of pages that can be turned by the current search results<br>For example, 5 means there are 5 pages in total<br>Use pageId to turn pages when passing a parameter.     |
 | totalRecords |    350    | Total number of records for current search results                      |
 
-##### <span id="234-----">2.3.4 Example request parameters</span>
+##### <span id="234-----">2.3.4 Example of request parameters</span>
 
  - Input parameters
 
@@ -531,7 +531,7 @@ Header：Content-Type: application/json;charset=utf-8
 | totalPages |    5    | The total number of pages that can be turned by the current search results<br>For example, 5 means there are 5 pages in total<br>Use pageId to turn pages when passing a parameter.     |
 | totalRecords |    350    | Total number of records for current search results                      |
 
-##### <span id="244-----">2.4.4 Example request parameters</span>
+##### <span id="244-----">2.4.4 Example of request parameters</span>
 
  - Input parameters
 
@@ -626,7 +626,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameters signature](#142-----)      |
 
-##### <span id="253-----">2.5.3 Example request parameters</span>
+##### <span id="253-----">2.5.3 Example of request parameters</span>
 
  - Input parameters
 
