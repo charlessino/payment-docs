@@ -24,23 +24,33 @@
       + [2.2.4 请求参数示例](#224-----)
       + [2.2.5 返回参数示例](#225-----)
       + [2.2.6 异步回调通知参数示例](#226-----)
-    + [2.3 代收订单查询](#23-----)
+    + [2.3 单个代收订单查询](#23-----)
       + [2.3.1 传入参数](#231-----)
       + [2.3.2 返回参数](#232-----)
-      + [2.3.3 data格式示意](#233-----)
-      + [2.3.4 请求参数示例](#234-----)
-      + [2.3.5 返回参数示例](#235-----)
-    + [2.4 代付订单查询](#24-----)
+      + [2.3.3 请求参数示例](#233-----)
+      + [2.3.4 返回参数示例](#234-----)
+    + [2.4 代收订单批量查询](#23-----)
       + [2.4.1 传入参数](#241-----)
       + [2.4.2 返回参数](#242-----)
       + [2.4.3 data格式示意](#243-----)
       + [2.4.4 请求参数示例](#244-----)
       + [2.4.5 返回参数示例](#245-----)
-    + [2.5 余额查询](#25-----)
+    + [2.5 单个代付订单查询](#25-----)
       + [2.5.1 传入参数](#251-----)
       + [2.5.2 返回参数](#252-----)
       + [2.5.3 请求参数示例](#253-----)
       + [2.5.4 返回参数示例](#254-----)
+    + [2.6 代付订单查询](#26-----)
+      + [2.6.1 传入参数](#261-----)
+      + [2.6.2 返回参数](#262-----)
+      + [2.6.3 data格式示意](#263-----)
+      + [2.6.4 请求参数示例](#264-----)
+      + [2.6.5 返回参数示例](#265-----)
+    + [2.7 余额查询](#27-----)
+      + [2.7.1 传入参数](#271-----)
+      + [2.7.2 返回参数](#272-----)
+      + [2.7.3 请求参数示例](#273-----)
+      + [2.7.4 返回参数示例](#274-----)
   + [3 附件](#3-----)
     + [3.1 通道列表](#31-----)
     + [3.2 货币列表](#32-----)
@@ -394,12 +404,75 @@ Header：Content-Type: application/json;charset=utf-8
 ```
 
 
-#### <span id="23-----">2.3 代收订单查询</span>
+#### <span id="23-----">2.3 单个代收订单查询</span>
+
+请求地址：`{apiAddress}/recharge-single-order-query`<br>
+Header：Content-Type: application/json;charset=utf-8
+
+##### <span id="231-----">2.3.1 传入参数</span>
+
+| 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
+| --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
+| appId     | 是   | string   | 32       |      | 应用ID                                        |
+| outOrderId     |  是   | string    | 100        |        | 商户订单号                      |
+| sign      | 是   | string   | 32       |      | [签名](#14-----)                         |
+
+##### <span id="232-----">2.3.2 返回参数</span>
+
+| 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
+| ---------- | ------ | -------- | -------------- | ----------------------------------------- |
+| result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
+| data    | array |       |     transactionId: RC_98261876 (交易流水号)<br>currency: CNY (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (代收手续费率)<br>actionValue: 3000.00 (实际代收金额)<br>chargeValue: 30.00 (代收手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: 张三 (付款人姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)    | 订单详情以一维数组方式呈现 |
+| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| sign    | string | 32      |    | [返回参数签名](#142-----)      |
+
+##### <span id="233-----">2.3.3 请求参数示例</span>
+
+ - 传入参数
+
+```json
+{
+    "appId": "B32D954CC4E25491F9UIETG3CCBBF",
+    "outOrderId": "ABC123456",
+    "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+##### <span id="234-----">2.3.4 返回参数示例</span>
+
+ - 返回参数
+
+```json
+{
+	"result": 1,
+	"data": {
+		"transactionId": "RC_17",
+		"currency": "CNY",
+		"channelId": "1",
+		"rechargeRate": "0.0400",
+		"actionValue": "1931.00",
+		"chargeValue": "77.24",
+		"actualValue": "1853.76",
+		"accountName": "\u5f20\u4e09",
+		"status": 1,
+		"statusName": "\u6210\u529f",
+		"outOrderId": "TT_1708203061",
+		"outTips": "\u6d4b\u8bd51",
+		"lastUpdatedTime": "2024-02-18 04:53:44",
+		"createTime": "2024-02-18 04:51:01"
+	},
+	"msg": "success",
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+
+#### <span id="24-----">2.4 代收订单批量查询</span>
 
 请求地址：`{apiAddress}/recharge-orders-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="231-----">2.3.1 传入参数</span>
+##### <span id="241-----">2.4.1 传入参数</span>
 
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -412,7 +485,7 @@ Header：Content-Type: application/json;charset=utf-8
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | [签名](#14-----)                         |
 
-##### <span id="232-----">2.3.2 返回参数</span>
+##### <span id="242-----">2.4.2 返回参数</span>
 
 | 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
@@ -421,7 +494,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
-##### <span id="233-----">2.3.3 data格式示意</span>
+##### <span id="243-----">2.4.3 data格式示意</span>
 
 | 参数名    | 例子           | 说明     |
 | ---------- | ------ | -------- |
@@ -430,7 +503,7 @@ Header：Content-Type: application/json;charset=utf-8
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
 
-##### <span id="234-----">2.3.4 请求参数示例</span>
+##### <span id="244-----">2.4.4 请求参数示例</span>
 
  - 传入参数
 
@@ -445,7 +518,7 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="235-----">2.3.5 返回参数示例</span>
+##### <span id="245-----">2.4.5 返回参数示例</span>
 
  - 返回参数
 
@@ -495,12 +568,80 @@ Header：Content-Type: application/json;charset=utf-8
 
 
 
-#### <span id="24-----">2.4 代付订单查询</span>
+#### <span id="25-----">2.5 单个代付订单查询</span>
+
+请求地址：`{apiAddress}/withdraw-single-order-query`<br>
+Header：Content-Type: application/json;charset=utf-8
+
+##### <span id="251-----">2.5.1 传入参数</span>
+
+| 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
+| --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
+| appId     | 是   | string   | 32       |      | 应用ID                                        |
+| outOrderId     |   是  | string    | 100        |        | 商户订单号                      |
+| sign      | 是   | string   | 32       |      | [签名](#14-----)                     |
+
+##### <span id="252-----">2.5.2 返回参数</span>
+
+| 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
+| ---------- | ------ | -------- | -------------- | ----------------------------------------- |
+| result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
+| data    | array |       |    transactionId: WD_98261876 (交易流水号)<br>currency: CNY (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (代付手续费率)<br>withdrawFixValue: 3.00 (代付单笔手续费)<br>actionValue: 3000.00 (实际代付金额)<br>chargeValue: 33.00 (代付手续费合计)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 张三 (户主姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)     | 订单详情以一维数组方式呈现 |
+| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| sign    | string | 32      |    | [返回参数签名](#142-----)      |
+
+##### <span id="253-----">2.5.3 请求参数示例</span>
+
+ - 传入参数
+
+```json
+{
+    "appId": "B32D954CC4E25491F9UIETG3CCBBF",
+    "outOrderId": "ABC123456",
+    "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+##### <span id="254-----">2.5.4 返回参数示例</span>
+
+ - 返回参数
+
+```json
+{
+	"result": 1,
+	"data": {
+		"transactionId": "WD_23",
+		"currency": "CNY",
+		"channelId": "1",
+		"withdrawRate": "0.0000",
+		"withdrawFixValue": "3.00",
+		"actionValue": "300.00",
+		"chargeValue": "3.00",
+		"actualValue": "303.00",
+		"bankName": "\u5de5\u5546\u94f6\u884c",
+		"branchName": null,
+		"cardNumber": "333774636229",
+		"ownerName": "\u5f20\u4e09",
+		"status": 0,
+		"statusName": "\u5931\u8d25",
+		"outOrderId": "TT_1708204095",
+		"outTips": "\u6d4b\u8bd5\u6d4b\u8bd5",
+		"lastUpdatedTime": "2024-02-18 05:08:16",
+		"createTime": "2024-02-18 05:08:15"
+	},
+	"msg": "success",
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+
+
+#### <span id="26-----">2.6 代付订单批量查询</span>
 
 请求地址：`{apiAddress}/withdraw-orders-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="241-----">2.4.1 传入参数</span>
+##### <span id="261-----">2.6.1 传入参数</span>
 
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -513,7 +654,7 @@ Header：Content-Type: application/json;charset=utf-8
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | [签名](#14-----)                     |
 
-##### <span id="242-----">2.4.2 返回参数</span>
+##### <span id="262-----">2.6.2 返回参数</span>
 
 | 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
@@ -522,7 +663,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
-##### <span id="243-----">2.4.3 data格式示意</span>
+##### <span id="263-----">2.6.3 data格式示意</span>
 
 | 参数名    | 例子           | 说明     |
 | ---------- | ------ | -------- |
@@ -531,7 +672,7 @@ Header：Content-Type: application/json;charset=utf-8
 | totalPages |    5    | 当前搜索结果可以翻页的总页码<br>例如5表示总共有5页<br>可以在传参时使用pageId翻页     |
 | totalRecords |    350    | 当前搜索结果的总纪录数                      |
 
-##### <span id="244-----">2.4.4 请求参数示例</span>
+##### <span id="264-----">2.6.4 请求参数示例</span>
 
  - 传入参数
 
@@ -546,7 +687,7 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="245-----">2.4.5 返回参数示例</span>
+##### <span id="265-----">2.6.5 返回参数示例</span>
 
  - 返回参数
 
@@ -604,12 +745,12 @@ Header：Content-Type: application/json;charset=utf-8
 
 
 
-#### <span id="25-----">2.5 余额查询</span>
+#### <span id="27-----">2.7 余额查询</span>
 
 请求地址：`{apiAddress}/balance`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="251-----">2.5.1 传入参数</span>
+##### <span id="271-----">2.7.1 传入参数</span>
 
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -617,7 +758,7 @@ Header：Content-Type: application/json;charset=utf-8
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | [签名](#14-----)                        |
 
-##### <span id="252-----">2.5.2 返回参数</span>
+##### <span id="272-----">2.7.2 返回参数</span>
 
 | 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
@@ -626,7 +767,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
-##### <span id="253-----">2.5.3 请求参数示例</span>
+##### <span id="273-----">2.7.3 请求参数示例</span>
 
  - 传入参数
 
@@ -638,7 +779,7 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="254-----">2.5.4 返回参数示例</span>
+##### <span id="274-----">2.7.4 返回参数示例</span>
 
  - 返回参数
 
