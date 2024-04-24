@@ -415,6 +415,7 @@ Header：Content-Type: application/json;charset=utf-8
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | 是   | string   | 32       |      | 应用ID                                        |
 | outOrderId     |  是   | string    | 100        |        | 商户订单号                      |
+| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | [签名](#14-----)                         |
 
 ##### <span id="232-----">2.3.2 返回参数</span>
@@ -434,6 +435,7 @@ Header：Content-Type: application/json;charset=utf-8
 {
     "appId": "B32D954CC4E25491F9UIETG3CCBBF",
     "outOrderId": "ABC123456",
+    "nonceStr": "123456",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
@@ -579,6 +581,7 @@ Header：Content-Type: application/json;charset=utf-8
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
 | appId     | 是   | string   | 32       |      | 应用ID                                        |
 | outOrderId     |   是  | string    | 100        |        | 商户订单号                      |
+| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | [签名](#14-----)                     |
 
 ##### <span id="252-----">2.5.2 返回参数</span>
@@ -598,6 +601,7 @@ Header：Content-Type: application/json;charset=utf-8
 {
     "appId": "B32D954CC4E25491F9UIETG3CCBBF",
     "outOrderId": "ABC123456",
+    "nonceStr": "123456",
     "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
