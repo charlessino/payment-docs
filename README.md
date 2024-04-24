@@ -413,7 +413,7 @@ Header：Content-Type: application/json;charset=utf-8
 请求地址：`{apiAddress}/recharge-single-order-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="231-----">2.3.1.1 传入参数</span>
+##### <span id="2311-----">2.3.1.1 传入参数</span>
 
 | 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -422,7 +422,7 @@ Header：Content-Type: application/json;charset=utf-8
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | sign      | 是   | string   | 32       |      | [签名](#14-----)                         |
 
-##### <span id="232-----">2.3.1.2 返回参数</span>
+##### <span id="2312-----">2.3.1.2 返回参数</span>
 
 | 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
@@ -431,7 +431,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |    | [返回参数签名](#142-----)      |
 
-##### <span id="233-----">2.3.1.3 请求参数示例</span>
+##### <span id="2313-----">2.3.1.3 请求参数示例</span>
 
  - 传入参数
 
@@ -444,7 +444,7 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="234-----">2.3.1.4 返回参数示例</span>
+##### <span id="2314-----">2.3.1.4 返回参数示例</span>
 
  - 返回参数
 
