@@ -410,30 +410,30 @@ Please return the word success when you receive the callback.For details, please
 
 #### <span id="231-----">2.3.1 Recharge single order inquiry</span>
 
-请求地址：`{apiAddress}/recharge-single-order-query`<br>
+Endpoint：`{apiAddress}/recharge-single-order-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="2311-----">2.3.1.1 传入参数</span>
+##### <span id="2311-----">2.3.1.1 Input parameters</span>
 
-| 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
+| Parameter    | Required | Type     | Field length | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
-| appId     | 是   | string   | 32       |      | 应用ID                                        |
-| outOrderId     |  是   | string    | 100        |        | 商户订单号                      |
-| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | 是   | string   | 32       |      | [签名](#14-----)                         |
+| appId     | Yes   | string   | 32       |      | appID                                        |
+| outOrderId     |     | string    | 100        |        | Merchant order ID                      |
+| nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
+| sign      | Yes   | string   | 32       |      | [Signature](#14-----)                         |
 
-##### <span id="2312-----">2.3.1.2 返回参数</span>
+##### <span id="2312-----">2.3.1.2 Return parameters</span>
 
-| 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
+| Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
-| result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
-| data    | array |       |     transactionId: RC_98261876 (交易流水号)<br>currency: CNY (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (代收手续费率)<br>actionValue: 3000.00 (实际代收金额)<br>chargeValue: 30.00 (代收手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: 张三 (付款人姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)    | 订单详情以一维数组方式呈现 |
-| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
-| sign    | string | 32      |    | [返回参数签名](#142-----)      |
+| result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
+| data    | array |       transactionId: RC_98261876 (Transaction number)<br>currency: KRW (Currency)<br>channelId: 15 (Channel ID)<br>rechargeRate: 0.01 (Recharge handling fee rate)<br>actionValue: 3000.00 (Actual recharge amount)<br>chargeValue: 30.00 (Recharge handling fee)<br>actualValue: 2970.00 (Actual amount credited to the account)<br>accountName: 박재환 (The name of the deposito)<br>status: 1 (Status value 1=Success 0=Failure 2=Processing)<br>statusName: Success (Status name)<br>outOrderId: 98227863223 (Merchant order ID)<br>outTips: recharge(Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (Order update time)<br>createTime: 2024-02-01 09:31:26 (Order creation time)   |Order details in a two-dimensional array                      |
+| msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
+| sign    | string | 32      |    | [Return parameters signature](#142-----)      |
 
-##### <span id="2313-----">2.3.1.3 请求参数示例</span>
+##### <span id="2313-----">2.3.1.3 Example of request parameters</span>
 
- - 传入参数
+ - Input parameters
 
 ```json
 {
@@ -444,9 +444,9 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="2314-----">2.3.1.4 返回参数示例</span>
+##### <span id="2314-----">2.3.1.4 Example of return parameters</span>
 
- - 返回参数
+ - Return parameters
 
 ```json
 {
@@ -576,32 +576,32 @@ Header：Content-Type: application/json;charset=utf-8
 
 #### <span id="24-----">2.4 Withdraw order inquiry</span>
 
-#### <span id="241-----">2.4.1 单一代付订单查询</span>
+#### <span id="241-----">2.4.1 Withdraw single order inquiry</span>
 
-请求地址：`{apiAddress}/withdraw-single-order-query`<br>
+Endpoint：`{apiAddress}/withdraw-single-order-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="2411-----">2.4.1.1 传入参数</span>
+##### <span id="2411-----">2.4.1.1 Input parameters</span>
 
-| 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
+| Parameter    | Required | Type     |  | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
-| appId     | 是   | string   | 32       |      | 应用ID                                        |
-| outOrderId     |   是  | string    | 100        |        | 商户订单号                      |
-| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| sign      | 是   | string   | 32       |      | [签名](#14-----)                     |
+| appId     | Yes   | string   | 32       |      | appID                                        |
+| outOrderId     |     | string    | 100        |        | Merchant order ID                      |
+| nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
+| sign      | Yes   | string   | 32       |      | [Signature](#14-----)                     |
 
-##### <span id="2412-----">2.4.1.2 返回参数</span>
+##### <span id="2412-----">2.4.1.2 Return parameters</span>
 
-| 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
+| Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
-| result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
-| data    | array |       |    transactionId: WD_98261876 (交易流水号)<br>currency: CNY (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (代付手续费率)<br>withdrawFixValue: 3.00 (代付单笔手续费)<br>actionValue: 3000.00 (实际代付金额)<br>chargeValue: 33.00 (代付手续费合计)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 张三 (户主姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)     | 订单详情以一维数组方式呈现 |
-| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
-| sign    | string | 32      |    | [返回参数签名](#142-----)      |
+| result | int    | 1        | 1       | Call Result,1=Success 0=Failure                      |
+| data    | array |       transactionId: WD_98261876 (Transaction number)<br>currency: KRW (Currency)<br>channelId: 15 (Channel ID)<br>withdrawRate: 0.01 (Withdraw handling fee rate)<br>withdrawFixValue: 3.00 (Withdraw fixed handling fee per transaction)<br>actionValue: 3000.00 (Actual withdraw amount)<br>chargeValue: 33.00 (Withdraw handling fee)<br>actualValue: 3033.00 (Actual amount credited to the account)<br>bankName: Shinhan Bank (Bank name)<br>branchName: Gangnam Branch (Branch name)<br>cardNumber: 982268716 (Account number)<br>ownerName: 박재환 (Holder name)<br>status: 1 (Status value 1=Success 0=Failure 2=Processing)<br>statusName: Success (Status name)<br>outOrderId: 98227863223 (Merchant order ID)<br>outTips: withdraw (Merchant Remarks)<br>lastUpdatedTime: 2024-02-01 12:15:33 (Order update time)<br>createTime: 2024-02-01 09:31:26 (Order creation time)   | Order details in a two-dimensional array                      |
+| msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
+| sign    | string | 32      |    | [Return parameters signature](#142-----)      |
 
-##### <span id="2413-----">2.4.1.3 请求参数示例</span>
+##### <span id="2413-----">2.4.1.3 Example of request parameters</span>
 
- - 传入参数
+ - Input parameters
 
 ```json
 {
@@ -612,9 +612,9 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="2414-----">2.4.1.4 返回参数示例</span>
+##### <span id="2414-----">2.4.1.4 Example of return parameters</span>
 
- - 返回参数
+ - Return parameters
 
 ```json
 {
@@ -646,7 +646,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 
 
-#### <span id="242-----">2.4.2 批量代付订单查询</span>
+#### <span id="242-----">2.4.2 Withdraw batch order inquiry</span>
 
 Endpoint：`{apiAddress}/withdraw-orders-query`<br>
 Header：Content-Type: application/json;charset=utf-8
