@@ -408,10 +408,18 @@ Please return the word success when you receive the callback.For details, please
 
 #### <span id="23-----">2.3 Recharge order inquiry</span>
 
+#### <span id="231-----">2.3.1 Recharge single order inquiry</span>
+
+
+
+
+
+#### <span id="232-----">2.3.2 Recharge batch order inquiry</span>
+
 Endpoint：`{apiAddress}/recharge-orders-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="231-----">2.3.1 Input parameters</span>
+##### <span id="2321-----">2.3.2.1 Input parameters</span>
 
 | Parameter    | Required | Type     | Field length | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -424,7 +432,7 @@ Header：Content-Type: application/json;charset=utf-8
 | nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
 | sign      | Yes   | string   | 32       |      | [Signature](#14-----)                         |
 
-##### <span id="232-----">2.3.2 Return parameters</span>
+##### <span id="2322-----">2.3.2.2 Return parameters</span>
 
 | Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
@@ -433,7 +441,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameters signature](#142-----)      |
 
-##### <span id="233-----">2.3.3 Data format schema</span>
+##### <span id="2323-----">2.3.2.3 Data format schema</span>
 
 | Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
@@ -442,7 +450,7 @@ Header：Content-Type: application/json;charset=utf-8
 | totalPages |    5    | The total number of pages that can be turned by the current search results<br>For example, 5 means there are 5 pages in total<br>Use pageId to turn pages when passing a parameter.     |
 | totalRecords |    350    | Total number of records for current search results                      |
 
-##### <span id="234-----">2.3.4 Example of request parameters</span>
+##### <span id="2324-----">2.3.2.4 Example of request parameters</span>
 
  - Input parameters
 
@@ -457,7 +465,7 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="235-----">2.3.5 Example of return parameters</span>
+##### <span id="2325-----">2.3.2.5 Example of return parameters</span>
 
  - Return Parameters
 
