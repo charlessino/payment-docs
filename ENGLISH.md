@@ -410,8 +410,67 @@ Please return the word success when you receive the callback.For details, please
 
 #### <span id="231-----">2.3.1 Recharge single order inquiry</span>
 
+请求地址：`{apiAddress}/recharge-single-order-query`<br>
+Header：Content-Type: application/json;charset=utf-8
 
+##### <span id="2311-----">2.3.1.1 传入参数</span>
 
+| 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
+| --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
+| appId     | 是   | string   | 32       |      | 应用ID                                        |
+| outOrderId     |  是   | string    | 100        |        | 商户订单号                      |
+| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
+| sign      | 是   | string   | 32       |      | [签名](#14-----)                         |
+
+##### <span id="2312-----">2.3.1.2 返回参数</span>
+
+| 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
+| ---------- | ------ | -------- | -------------- | ----------------------------------------- |
+| result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
+| data    | array |       |     transactionId: RC_98261876 (交易流水号)<br>currency: CNY (货币)<br>channelId: 15 (通道ID)<br>rechargeRate: 0.01 (代收手续费率)<br>actionValue: 3000.00 (实际代收金额)<br>chargeValue: 30.00 (代收手续费)<br>actualValue: 2970.00 (实际记账金额)<br>accountName: 张三 (付款人姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)    | 订单详情以一维数组方式呈现 |
+| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| sign    | string | 32      |    | [返回参数签名](#142-----)      |
+
+##### <span id="2313-----">2.3.1.3 请求参数示例</span>
+
+ - 传入参数
+
+```json
+{
+    "appId": "B32D954CC4E25491F9UIETG3CCBBF",
+    "outOrderId": "ABC123456",
+    "nonceStr": "123456",
+    "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+##### <span id="2314-----">2.3.1.4 返回参数示例</span>
+
+ - 返回参数
+
+```json
+{
+	"result": 1,
+	"data": {
+		"transactionId": "RC_17",
+		"currency": "CNY",
+		"channelId": "1",
+		"rechargeRate": "0.0400",
+		"actionValue": "1931.00",
+		"chargeValue": "77.24",
+		"actualValue": "1853.76",
+		"accountName": "\u5f20\u4e09",
+		"status": 1,
+		"statusName": "\u6210\u529f",
+		"outOrderId": "TT_1708203061",
+		"outTips": "\u6d4b\u8bd51",
+		"lastUpdatedTime": "2024-02-18 04:53:44",
+		"createTime": "2024-02-18 04:51:01"
+	},
+	"msg": "success",
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
 
 
 #### <span id="232-----">2.3.2 Recharge batch order inquiry</span>
