@@ -576,10 +576,82 @@ Header：Content-Type: application/json;charset=utf-8
 
 #### <span id="24-----">2.4 Withdraw order inquiry</span>
 
+#### <span id="241-----">2.4.1 单一代付订单查询</span>
+
+请求地址：`{apiAddress}/withdraw-single-order-query`<br>
+Header：Content-Type: application/json;charset=utf-8
+
+##### <span id="2411-----">2.4.1.1 传入参数</span>
+
+| 参数名    | 必填 | 类型     | 字段长度 | 例子 | 说明                                          |
+| --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
+| appId     | 是   | string   | 32       |      | 应用ID                                        |
+| outOrderId     |   是  | string    | 100        |        | 商户订单号                      |
+| nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
+| sign      | 是   | string   | 32       |      | [签名](#14-----)                     |
+
+##### <span id="2412-----">2.4.1.2 返回参数</span>
+
+| 参数名     | 类型   | 字段长度 | 例子           | 说明                                      |
+| ---------- | ------ | -------- | -------------- | ----------------------------------------- |
+| result | int    | 1        | 1       | 调用结果，1=成功 0=失败                      |
+| data    | array |       |    transactionId: WD_98261876 (交易流水号)<br>currency: CNY (货币)<br>channelId: 15 (通道ID)<br>withdrawRate: 0.01 (代付手续费率)<br>withdrawFixValue: 3.00 (代付单笔手续费)<br>actionValue: 3000.00 (实际代付金额)<br>chargeValue: 33.00 (代付手续费合计)<br>actualValue: 3033.00 (实际记账金额)<br>bankName: 工商银行 (银行名称)<br>branchName: 广州市分行 (分支行名称)<br>cardNumber: 982268716 (卡号)<br>ownerName: 张三 (户主姓名)<br>status: 1 (状态值 1=成功 0=失败 2=处理中)<br>statusName: 成功 (状态名)<br>outOrderId: 98227863223 (商户订单号)<br>outTips: 测试的订单 (商户备注)<br>lastUpdatedTime: 2024-02-01 12:15:33 (订单更新时间)<br>createTime: 2024-02-01 09:31:26 (订单生成时间)     | 订单详情以一维数组方式呈现 |
+| msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
+| sign    | string | 32      |    | [返回参数签名](#142-----)      |
+
+##### <span id="2413-----">2.4.1.3 请求参数示例</span>
+
+ - 传入参数
+
+```json
+{
+    "appId": "B32D954CC4E25491F9UIETG3CCBBF",
+    "outOrderId": "ABC123456",
+    "nonceStr": "123456",
+    "sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+##### <span id="2414-----">2.4.1.4 返回参数示例</span>
+
+ - 返回参数
+
+```json
+{
+	"result": 1,
+	"data": {
+		"transactionId": "WD_23",
+		"currency": "CNY",
+		"channelId": "1",
+		"withdrawRate": "0.0000",
+		"withdrawFixValue": "3.00",
+		"actionValue": "300.00",
+		"chargeValue": "3.00",
+		"actualValue": "303.00",
+		"bankName": "\u5de5\u5546\u94f6\u884c",
+		"branchName": null,
+		"cardNumber": "333774636229",
+		"ownerName": "\u5f20\u4e09",
+		"status": 0,
+		"statusName": "\u5931\u8d25",
+		"outOrderId": "TT_1708204095",
+		"outTips": "\u6d4b\u8bd5\u6d4b\u8bd5",
+		"lastUpdatedTime": "2024-02-18 05:08:16",
+		"createTime": "2024-02-18 05:08:15"
+	},
+	"msg": "success",
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+
+
+#### <span id="242-----">2.4.2 批量代付订单查询</span>
+
 Endpoint：`{apiAddress}/withdraw-orders-query`<br>
 Header：Content-Type: application/json;charset=utf-8
 
-##### <span id="241-----">2.4.1 Input parameters</span>
+##### <span id="2421-----">2.4.2.1 Input parameters</span>
 
 | Parameter    | Required | Type     |  | Example | Description                                          |
 | --------- | ---- | -------- | -------- | ---- | --------------------------------------------- |
@@ -592,7 +664,7 @@ Header：Content-Type: application/json;charset=utf-8
 | nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
 | sign      | Yes   | string   | 32       |      | [Signature](#14-----)                     |
 
-##### <span id="242-----">2.4.2 Return parameters</span>
+##### <span id="2422-----">2.4.2.2 Return parameters</span>
 
 | Parameter     | Type   | Field length | Example           | Description                                      |
 | ---------- | ------ | -------- | -------------- | ----------------------------------------- |
@@ -601,7 +673,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameters signature](#142-----)      |
 
-##### <span id="243-----">2.4.3 Data format schema</span>
+##### <span id="2423-----">2.4.2.3 Data format schema</span>
 
 | Parameter    | Example           | Description     |
 | ---------- | ------ | -------- |
@@ -610,7 +682,7 @@ Header：Content-Type: application/json;charset=utf-8
 | totalPages |    5    | The total number of pages that can be turned by the current search results<br>For example, 5 means there are 5 pages in total<br>Use pageId to turn pages when passing a parameter.     |
 | totalRecords |    350    | Total number of records for current search results                      |
 
-##### <span id="244-----">2.4.4 Example of request parameters</span>
+##### <span id="2424-----">2.4.2.4 Example of request parameters</span>
 
  - Input parameters
 
@@ -625,7 +697,7 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-##### <span id="245-----">2.4.5 Example of return parameters</span>
+##### <span id="2425-----">2.4.2.5 Example of return parameters</span>
 
  - Return Parameters
 
