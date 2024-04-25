@@ -29,7 +29,7 @@
         + [2.3.1.1 Input Parameters](#2311-----)
         + [2.3.1.2 Return Parameters](#2312-----)
         + [2.3.1.3 Example of request parameters](#2313-----)
-        + [2.3.1.3 Example of return parameters](#2314-----)     
+        + [2.3.1.4 Example of return parameters](#2314-----)     
       + [2.3.2 Recharge batch order inquiry](#231-----)
         + [2.3.2.1 Input Parameters](#2321-----)
         + [2.3.2.2 Return Parameters](#2322-----)
