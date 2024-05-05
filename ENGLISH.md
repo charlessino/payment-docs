@@ -174,7 +174,7 @@ Header：Content-Type: application/json;charset=utf-8
 | channelId   | Yes   | int     | 5        | 1        | [Channel List](#31-----) |
 | currency     | Yes   | string | 10    | KRW  | [List of currencies](#32-----)       |
 | actionValue | Yes   | decimal | 18, 2    | 21000.00  | Amount of the requested recharge (digital currency allows decimals, fiat currencies only allow integers, even if integers need to be formatted into 2 decimal places in order to unify the rules of signature inspection)       |
-| accountName | Yes   | string | 100    | 박재환  | The name of the depositor, the name can not contain numbers, and can not pass empty values       |
+| accountName | Yes   | string | 100    | 박재환  | The name of the depositor, it can't contain numbers, and can't pass empty values. When the currency is USDT this parameter can be excluded.      |
 | cellphone |    | string | 100    | 01034388769  | Cell phone number, Korea must be transmitted, others can not be transmitted       |
 | callbackUrl  |      | string  | 512      |          | Merchant callback address             |
 | returnUrl  |      | string  | 512      |          | Merchant page callback address after recharge completion             |
@@ -302,7 +302,7 @@ Header：Content-Type: application/json;charset=utf-8
 | cardNumber      | Yes   | string   | 100        | 982268716  | Account Number         |
 | bankName    |  Yes  | string      | 100        | Shinhan Bank   | [List of Bank Names-Withdraw](#34-----)   |
 | branchName      |    | string   | 100        | Gangnam Branch  | Branch Name         |
-| ownerName      |  Yes  | string   | 100        | 박재환  | Holder name, Numbers are not allowed in his name.         |
+| ownerName      |  Yes  | string   | 100        | 박재환  | Holder name, Numbers are not allowed in his name. When the currency is USDT this parameter can be excluded.          |
 | callbackUrl  |      | string  | 512      |          | Merchant callback address             |
 | outOrderId  |      | string  | 100      |          | Merchant order ID             |
 | outTips     |      | string  | 100      | withdraw | Merchant Remarks               |
