@@ -63,7 +63,8 @@
     	+ [3.4.2 银行名称列表-USDT代付](#342-----)
     	+ [3.4.3 银行名称列表-越南代付](#343-----)
     	+ [3.4.4 银行名称列表-韩国代付](#344-----)
-
+    	+ [3.4.5 银行名称列表-菲律宾代付](#345-----)
+     
 ### <span id="1-----">1 概要</span>
 
 #### <span id="11-----">1.1 接口用途</span>
@@ -1225,3 +1226,21 @@ Header：Content-Type: application/json;charset=utf-8
 |   웰컴저축은행   |
 |   카카오페이증권   |
 |   토스뱅크   |
+
+
+##### <span id="345-----">3.4.5 银行名称列表-菲律宾代付</span>
+| 标准名称   |   全称   |
+| ---- | ---- |
+|     GCash   |     GCash   |
+|     AUB     |     Asia United Bank Corporation     |
+|     BDO     |     Banco de Oro Unibank INC     |
+|     BOC     |     Bank of Commerce     |
+|     BPI     |     Bank of the Philippine Island      |
+|     Chinabank     |     China Banking Corporation     |
+|     DBP     |     Development Bank of the Philippines     |
+|     EastWest     |     East West Banking Corporation     |
+|     LBP     |     Land Bank of the Philippines     |
+|     Metrobank     |     Metropolitan Bank and Trust Co.     |
+|     PNB     |     Philippine National Bank     |
+|     SecurityBank     |     Security Bank Corporation     |
+|     PNB     |     Philippine National Bank     |
