@@ -1,4 +1,4 @@
-![image](https://github.com/charlessino/payment-docs/assets/167008867/cc9cc44a-041e-471e-b3db-7e5b7ec394cd)![image](https://github.com/charlessino/payment-docs/assets/167008867/e9687977-c1cb-4006-b70d-c3e40c540de7)# Payment Gateway Documents
+# Payment Gateway Documents
 
 - Contents
   + [1 Overview](#1-----)
