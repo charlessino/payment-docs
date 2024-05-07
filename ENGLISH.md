@@ -63,6 +63,7 @@
     	+ [3.4.2 List of Bank Names - USDT Withdraw](#342-----)
     	+ [3.4.3 List of Bank Names - Vietnam Withdraw](#343-----)
     	+ [3.4.4 List of Bank Names - Korea Withdraw](#344-----)
+    	+ [3.4.5 List of Bank Names - Philippines Withdraw](#345-----)
 
 ### <span id="1-----">1 Overview</span>
 
@@ -1225,3 +1226,7 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 |   웰컴저축은행   |
 |   카카오페이증권   |
 |   토스뱅크   |
+
+
+##### <span id="345-----">3.4.5 List of Bank Names - Philippines Withdraw</span>
+| Standard name   |  Full name   |
