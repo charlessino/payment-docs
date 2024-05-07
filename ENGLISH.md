@@ -1,4 +1,4 @@
-![image](https://github.com/charlessino/payment-docs/assets/167008867/e9687977-c1cb-4006-b70d-c3e40c540de7)# Payment Gateway Documents
+![image](https://github.com/charlessino/payment-docs/assets/167008867/cc9cc44a-041e-471e-b3db-7e5b7ec394cd)![image](https://github.com/charlessino/payment-docs/assets/167008867/e9687977-c1cb-4006-b70d-c3e40c540de7)# Payment Gateway Documents
 
 - Contents
   + [1 Overview](#1-----)
@@ -1231,4 +1231,16 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 ##### <span id="345-----">3.4.5 List of Bank Names - Philippines Withdraw</span>
 | Standard name   |  Full name   |
 | ---- | ---- |
-| GCash   |  GCash   |
+|     GCash   |     GCash   |
+|     AUB     |     Asia United Bank Corporation     |
+|     BDO     |     Banco de Oro Unibank INC     |
+|     BOC     |     Bank of Commerce     |
+|     BPI     |     Bank of the Philippine Island      |
+|     Chinabank     |     China Banking Corporation     |
+|     DBP     |     Development Bank of the Philippines     |
+|     EastWest     |     East West Banking Corporation     |
+|     LBP     |     Land Bank of the Philippines     |
+|     Metrobank     |     Metropolitan Bank and Trust Co.     |
+|     PNB     |     Philippine National Bank     |
+|     SecurityBank     |     Security Bank Corporation     |
+|     PNB     |     Philippine National Bank     |
