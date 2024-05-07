@@ -1230,4 +1230,5 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 
 ##### <span id="345-----">3.4.5 List of Bank Names - Philippines Withdraw</span>
 | Standard name   |  Full name   |
+| ---- |
 | GCash   |  GCash   |
