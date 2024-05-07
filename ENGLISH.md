@@ -1,4 +1,4 @@
-# Payment Gateway Documents
+![image](https://github.com/charlessino/payment-docs/assets/167008867/e9687977-c1cb-4006-b70d-c3e40c540de7)# Payment Gateway Documents
 
 - Contents
   + [1 Overview](#1-----)
@@ -1230,3 +1230,4 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 
 ##### <span id="345-----">3.4.5 List of Bank Names - Philippines Withdraw</span>
 | Standard name   |  Full name   |
+| GCash   |  GCash   |
