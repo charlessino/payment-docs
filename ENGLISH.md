@@ -1232,6 +1232,7 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 | Standard name   |  Full name   |
 | ---- | ---- |
 |     GCash   |     GCash   |
+|     PayMaya   |     PayMaya   |
 |     AUB     |     Asia United Bank Corporation     |
 |     BDO     |     Banco de Oro Unibank INC     |
 |     BOC     |     Bank of Commerce     |
