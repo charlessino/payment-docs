@@ -447,7 +447,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="2314-----">2.3.1.4 Example of return parameters</span>
 
- - Return parameters
+ - Return parameters(Success)
 
 ```json
 {
@@ -473,6 +473,15 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
+ - Return parameters(Failure)
+```json
+{
+	"result": 0,
+	"data": {},
+	"msg": "Order record can't be found.",
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
 
 #### <span id="232-----">2.3.2 Recharge batch order inquiry</span>
 
@@ -527,7 +536,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="2325-----">2.3.2.5 Example of return parameters</span>
 
- - Return Parameters
+ - Return Parameters(Success)
 
 ```json
 {
@@ -573,7 +582,20 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-
+ - Return Parameters(Failure)
+```json
+{
+	"result": 0,
+	"data": {
+		"orderList": {}, 
+		"currentPage": 0,
+		"totalPages": 0,
+		"totalRecords": 0
+	},
+	"msg": "Order record can't be found.",
+    	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
 
 #### <span id="24-----">2.4 Withdraw order inquiry</span>
 
@@ -615,7 +637,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="2414-----">2.4.1.4 Example of return parameters</span>
 
- - Return parameters
+ - Return parameters(Success)
 
 ```json
 {
@@ -645,7 +667,15 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-
+ - Return parameters(Failure)
+```json
+{
+	"result": 0,
+	"data": {},
+	"msg": "Order record can't be found.",
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
 
 #### <span id="242-----">2.4.2 Withdraw batch order inquiry</span>
 
@@ -754,7 +784,20 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-
+ - Return Parameters(Failure)
+```json
+{
+	"result": 0,
+	"data": {
+		"orderList": {}, 
+		"currentPage": 0,
+		"totalPages": 0,
+		"totalRecords": 0
+	},
+	"msg": "Order record can't be found.",
+    	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
 
 #### <span id="25-----">2.5 Balance inquiry</span>
 
