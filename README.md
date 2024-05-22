@@ -447,7 +447,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="2314-----">2.3.1.4 返回参数示例</span>
 
- - 返回参数
+ - 返回参数（成功）
 
 ```json
 {
@@ -473,6 +473,15 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
+ - 返回参数（失败）
+```json
+{
+	"result": 0,
+	"data": {},
+	"msg": "找不到订单记录",
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
 
 #### <span id="232-----">2.3.2 批量代收订单查询</span>
 
@@ -527,7 +536,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="2325-----">2.3.2.5 返回参数示例</span>
 
- - 返回参数
+ - 返回参数（成功）
 
 ```json
 {
@@ -573,7 +582,20 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-
+ - 返回参数（失败）
+```json
+{
+	"result": 0,
+	"data": {
+		"orderList": {}, 
+		"currentPage": 0,
+		"totalPages": 0,
+		"totalRecords": 0
+	},
+	"msg": "找不到订单记录",
+    	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
 
 #### <span id="24-----">2.4 代付订单查询</span>
 
@@ -615,7 +637,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="2414-----">2.4.1.4 返回参数示例</span>
 
- - 返回参数
+ - 返回参数（成功）
 
 ```json
 {
@@ -645,7 +667,15 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-
+ - 返回参数（失败）
+```json
+{
+	"result": 0,
+	"data": {},
+	"msg": "找不到订单记录",
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
 
 #### <span id="242-----">2.4.2 批量代付订单查询</span>
 
@@ -700,7 +730,7 @@ Header：Content-Type: application/json;charset=utf-8
 
 ##### <span id="2425-----">2.4.2.5 返回参数示例</span>
 
- - 返回参数
+ - 返回参数（成功）
 
 ```json
 {
@@ -754,7 +784,20 @@ Header：Content-Type: application/json;charset=utf-8
 }
 ```
 
-
+ - 返回参数（失败）
+```json
+{
+	"result": 0,
+	"data": {
+		"orderList": {}, 
+		"currentPage": 0,
+		"totalPages": 0,
+		"totalRecords": 0
+	},
+	"msg": "找不到订单记录",
+    	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
 
 #### <span id="25-----">2.5 余额查询</span>
 
