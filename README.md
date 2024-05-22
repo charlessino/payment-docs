@@ -1232,6 +1232,7 @@ Header：Content-Type: application/json;charset=utf-8
 | 标准名称   |   全称   |
 | ---- | ---- |
 |     GCash   |     GCash   |
+|     PayMaya   |     PayMaya   |
 |     AUB     |     Asia United Bank Corporation     |
 |     BDO     |     Banco de Oro Unibank INC     |
 |     BOC     |     Bank of Commerce     |
