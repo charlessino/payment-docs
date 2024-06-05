@@ -64,6 +64,7 @@
     	+ [3.4.3 银行名称列表-越南代付](#343-----)
     	+ [3.4.4 银行名称列表-韩国代付](#344-----)
     	+ [3.4.5 银行名称列表-菲律宾代付](#345-----)
+    	+ [3.4.6 银行名称列表-印度代付](#346-----)
      
 ### <span id="1-----">1 概要</span>
 
@@ -1288,3 +1289,7 @@ Header：Content-Type: application/json;charset=utf-8
 |     PNB     |     Philippine National Bank     |
 |     SecurityBank     |     Security Bank Corporation     |
 |     PNB     |     Philippine National Bank     |
+
+
+##### <span id="346-----">3.4.6 银行名称列表-印度代付</span>
+标准名称为银行英文简称，分行所传内容请参考印度金融系统代码 (IFSC)。
