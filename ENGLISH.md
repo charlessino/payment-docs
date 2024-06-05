@@ -64,6 +64,7 @@
     	+ [3.4.3 List of Bank Names - Vietnam Withdraw](#343-----)
     	+ [3.4.4 List of Bank Names - Korea Withdraw](#344-----)
     	+ [3.4.5 List of Bank Names - Philippines Withdraw](#345-----)
+    	+ [3.4.6 List of Bank Names - India Withdraw](#346-----)
 
 ### <span id="1-----">1 Overview</span>
 
@@ -1288,3 +1289,7 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 |     PNB     |     Philippine National Bank     |
 |     SecurityBank     |     Security Bank Corporation     |
 |     PNB     |     Philippine National Bank     |
+
+
+##### <span id="346-----">3.4.6 List of Bank Names - India Withdraw</span>
+The standard name is the abbreviation of the bank in English. Please refer to the Indian Financial System Code (IFSC) for the branch name.
