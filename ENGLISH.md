@@ -309,6 +309,9 @@ Header：Content-Type: application/json;charset=utf-8
 | outOrderId  |      | string  | 100      |          | Merchant order ID             |
 | outTips     |      | string  | 100      | withdraw | Merchant Remarks               |
 | nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
+| param1     |      | string  | 100      |  | Reserve parameter 1, may not be passed               |
+| param2     |      | string  | 100      |  | Reserve parameter 2, may not be passed               |
+| param3     |      | string  | 100      |  | Reserve parameter 3, may not be passed               |
 | sign      | Yes   | string   | 32       |      | [Signature](#14-----)                             |
 
 ##### <span id="222-----">2.2.2 Return parameters</span>
