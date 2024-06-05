@@ -309,6 +309,9 @@ Header：Content-Type: application/json;charset=utf-8
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
+| param1     |      | string  | 100      |  | 预留参数1，可不传               |
+| param2     |      | string  | 100      |  | 预留参数2，可不传               |
+| param3     |      | string  | 100      |  | 预留参数3，可不传               |
 | sign      | 是   | string   | 32       |      | [签名](#14-----)                             |
 
 ##### <span id="222-----">2.2.2 返回参数</span>
