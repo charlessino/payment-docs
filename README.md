@@ -302,7 +302,7 @@ Header：Content-Type: application/json;charset=utf-8
 | actionValue | 是   | decimal | 18, 2    | 2100.00  | 申请代付的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
 | cardNumber      | 是   | string   | 100        | 982268716  | 卡号（账号）         |
 | bankName    |  是  | string      | 100        | 中国建设银行   | [银行名称列表-代付](#34-----)，标准名称   |
-| branchName      |    | string   | 100        | 上海分行  | 分支行名称         |
+| branchName      |    | string   | 100        | 上海分行  | 分支行名称。当货币为INR时此处必传银行名称所对应的IFSC编码。         |
 | ownerName      |  是  | string   | 100        | 张三  | 收款人姓名，姓名中不可包含数字。当货币为USDT时可不传此参数。中国卡卡和银联通道务必传送实名注册姓名。         |
 | callbackUrl  |      | string  | 512      |          | 商户回调地址             |
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
