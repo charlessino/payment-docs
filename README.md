@@ -1,4 +1,4 @@
-![image](https://github.com/charlessino/payment-docs/assets/167008867/67af6101-00b4-4bae-a130-8b16f09cad97)# 支付网关文档
+# 支付网关文档
 
 - 目录
   + [1 概要](#1-----)
