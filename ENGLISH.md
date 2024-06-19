@@ -177,7 +177,7 @@ Header：Content-Type: application/json;charset=utf-8
 | channelId   | Yes   | int     | 5        | 1        | [Channel List](#31-----) |
 | currency     | Yes   | string | 10    | KRW  | [List of currencies](#32-----)       |
 | actionValue | Yes   | decimal | 18, 2    | 21000.00  | Amount of the requested recharge (digital currency allows decimals, fiat currencies only allow integers, even if integers need to be formatted into 2 decimal places in order to unify the rules of signature inspection)       |
-| accountName | Yes   | string | 100    | 박재환  | The name of the depositor, it can't contain numbers, and can't pass empty values. When the currency is USDT this parameter can be excluded.      |
+| accountName | Yes   | string | 100    | 박재환  | The name of the depositor, it can't contain numbers, and can't pass empty values. When the currency is USDT this parameter can be excluded. When the currency is Japanese yen, must post the words is Japanese.     |
 | cellphone |    | string | 100    | 01034388769  | Cell phone number, Korea and Philippines must be transmitted, others can not be transmitted       |
 | callbackUrl  |      | string  | 512      |          | Merchant callback address             |
 | returnUrl  |      | string  | 512      |          | Merchant page callback address after recharge completion             |
