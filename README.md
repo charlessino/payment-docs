@@ -1292,6 +1292,7 @@ Header：Content-Type: application/json;charset=utf-8
 |     Metrobank     |     Metropolitan Bank and Trust Co.     |
 |     PNB     |     Philippine National Bank     |
 |     SecurityBank     |     Security Bank Corporation     |
+|     UBP     |     Union Bank of the Philippines     |
 
 
 ##### <span id="346-----">3.4.6 银行名称列表-印度代付</span>
