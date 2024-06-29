@@ -1292,6 +1292,7 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 |     Metrobank     |     Metropolitan Bank and Trust Co.     |
 |     PNB     |     Philippine National Bank     |
 |     SecurityBank     |     Security Bank Corporation     |
+|     UBP     |     Union Bank of the Philippines     |
 
 
 ##### <span id="346-----">3.4.6 List of Bank Names - India Withdraw</span>
