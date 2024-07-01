@@ -71,7 +71,7 @@
 
 #### <span id="11-----">1.1 API Usage</span>
 
-This API is used to access the FuGuo Payments system. This API is pure Restful style , the input parameters and return parameters are all in JSON format.
+This API is used to access the Payments system. This API is pure Restful style , the input parameters and return parameters are all in JSON format.
 
 #### <span id="12-----">1.2 API Application</span>
 
