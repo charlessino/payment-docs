@@ -1184,7 +1184,7 @@ Header：Content-Type: application/json;charset=utf-8
 |   BIDV BANK   |
 |   VIETTIN BANK   |
 |   MB BANK   |
-|   VP BANK   |
+|   SACOM BANK   |
 |   TECHCOM BANK   |
 |   VIETCOM BANK   |
 |   DONGA BANK   |
