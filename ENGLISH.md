@@ -1179,36 +1179,35 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 
 | Standard name   |
 | ---- |
-|   VP BANK   |
-|   ACB BANK   |
-|   BIDV BANK   |
-|   VIETTIN BANK   |
-|   MB BANK   |
-|   SACOM BANK   |
-|   TECHCOM BANK   |
-|   VIETCOM BANK   |
-|   DONGA BANK   |
-|   VIB BANK   |
-|   MSB BANK   |
-|   SHB BACNK   |
-|   EXIM BANK   |
-|   IBK HCM   |
-|   AGRI BANK   |
-|   NHB HN   |
-|   PVCOMBANK   |
-|   OCEANBANK   |
 |   ABBANK   |
-|   NAMABANK   |
+|   ACBBANK   |
+|   AGRIBANK   |
+|   BACABANK   |
+|   BAOVIETBANK   |
+|   BIDVBANK   |
+|   BVBANK   |
+|   DONGABANK   |
+|   EXIMBANK   |
+|   HDBANK   |
 |   KIENLONGBANK   |
-|   SEABANK   |
-|   VIETCAPITAL BANK   |
+|   LPBANK   |
+|   MBBANK   |
+|   MSBBANK   |
+|   NAMABANK   |
+|   OCEANBANK   |
+|   PGBANK   |
+|   PVCOMBANK   |
 |   SAIGONBANK   |
+|   SACOMBANK   |
+|   SEABANK   |
+|   SHBBACNK   |
+|   TECHCOMBANK   |
 |   TPBANK   |
+|   VIBBANK   |
 |   VIETBANK   |
-|   PG BANK   |
-|   VIET NAM   |
-|   PBVN   |
-|   WOORIBANK   |
+|   VIETCOMBANK   |
+|   VIETTINBANK   |
+|   VPBANK   |
 
 
 ##### <span id="344-----">3.4.4 List of Bank Names - Korea Withdraw</span>
