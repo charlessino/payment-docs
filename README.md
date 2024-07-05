@@ -1,4 +1,4 @@
-# 支付网关文档
+![image](https://github.com/charlessino/payment-docs/assets/167008867/b1ab548b-9854-4859-9258-0ced9b828add)# 支付网关文档
 
 - 目录
   + [1 概要](#1-----)
@@ -1179,36 +1179,35 @@ Header：Content-Type: application/json;charset=utf-8
 
 | 标准名称   |
 | ---- |
-|   VP BANK   |
-|   ACB BANK   |
-|   BIDV BANK   |
-|   VIETTIN BANK   |
-|   MB BANK   |
-|   SACOM BANK   |
-|   TECHCOM BANK   |
-|   VIETCOM BANK   |
-|   DONGA BANK   |
-|   VIB BANK   |
-|   MSB BANK   |
-|   SHB BACNK   |
-|   EXIM BANK   |
-|   IBK HCM   |
-|   AGRI BANK   |
-|   NHB HN   |
-|   PVCOMBANK   |
-|   OCEANBANK   |
 |   ABBANK   |
-|   NAMABANK   |
+|   ACBBANK   |
+|   AGRIBANK   |
+|   BACABANK   |
+|   BAOVIETBANK   |
+|   BIDVBANK   |
+|   BVBANK   |
+|   DONGABANK   |
+|   EXIMBANK   |
+|   HDBANK   |
 |   KIENLONGBANK   |
-|   SEABANK   |
-|   VIETCAPITAL BANK   |
+|   LPBANK   |
+|   MBBANK   |
+|   MSBBANK   |
+|   NAMABANK   |
+|   OCEANBANK   |
+|   PGBANK   |
+|   PVCOMBANK   |
 |   SAIGONBANK   |
+|   SACOMBANK   |
+|   SEABANK   |
+|   SHBBACNK   |
+|   TECHCOMBANK   |
 |   TPBANK   |
+|   VIBBANK   |
 |   VIETBANK   |
-|   PG BANK   |
-|   VIET NAM   |
-|   PBVN   |
-|   WOORIBANK   |
+|   VIETCOMBANK   |
+|   VIETTINBANK   |
+|   VPBANK   |
 
 
 ##### <span id="344-----">3.4.4 银行名称列表-韩国代付</span>
