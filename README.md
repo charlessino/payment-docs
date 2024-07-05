@@ -892,7 +892,7 @@ Header：Content-Type: application/json;charset=utf-8
 | VIETTIN BANK |
 | MB BANK |
 | EXIM BANK |
-| SACOM |
+| SACOM BANK |
 | TECHCOM BANK |
 | VIETCOM BANK |
 | DONGA BANK |
