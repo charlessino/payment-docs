@@ -1456,3 +1456,5 @@ The standard name is the abbreviation of the bank in English. Please refer to th
 |     ひまわり農協   |
 |     みえなか農協   |
 |     レーク滋賀農協   |
+|     茨木市農協   |
+|     鹿本農協   |
