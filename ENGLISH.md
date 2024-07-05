@@ -1184,7 +1184,7 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 |   BIDV BANK   |
 |   VIETTIN BANK   |
 |   MB BANK   |
-|   VP BANK   |
+|   SACOM BANK   |
 |   TECHCOM BANK   |
 |   VIETCOM BANK   |
 |   DONGA BANK   |
