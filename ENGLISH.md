@@ -892,7 +892,7 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 | VIETTIN BANK |
 | MB BANK |
 | EXIM BANK |
-| SACOM |
+| SACOM BANK |
 | TECHCOM BANK |
 | VIETCOM BANK |
 | DONGA BANK |
