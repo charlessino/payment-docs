@@ -1285,10 +1285,12 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 |     BOC     |     Bank of Commerce     |
 |     BPI     |     Bank of the Philippine Island      |
 |     Chinabank     |     China Banking Corporation     |
+|     CIMB     |     CIMB Bank Philippines Inc.     |
 |     DBP     |     Development Bank of the Philippines     |
 |     EastWest     |     East West Banking Corporation     |
 |     LBP     |     Land Bank of the Philippines     |
 |     Metrobank     |     Metropolitan Bank and Trust Co.     |
+|     Netbank     |     Netbank (Community Rural Bank of Romblon)    |
 |     PNB     |     Philippine National Bank     |
 |     SecurityBank     |     Security Bank Corporation     |
 |     UBP     |     Union Bank of the Philippines     |
