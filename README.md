@@ -1285,6 +1285,7 @@ Header：Content-Type: application/json;charset=utf-8
 |     BOC     |     Bank of Commerce     |
 |     BPI     |     Bank of the Philippine Island      |
 |     Chinabank     |     China Banking Corporation     |
+|     CIMB     |     CIMB Bank Philippines Inc.     |
 |     DBP     |     Development Bank of the Philippines     |
 |     EastWest     |     East West Banking Corporation     |
 |     LBP     |     Land Bank of the Philippines     |
