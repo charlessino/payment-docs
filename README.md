@@ -1289,6 +1289,7 @@ Header：Content-Type: application/json;charset=utf-8
 |     EastWest     |     East West Banking Corporation     |
 |     LBP     |     Land Bank of the Philippines     |
 |     Metrobank     |     Metropolitan Bank and Trust Co.     |
+|     Netbank     |     Netbank (Community Rural Bank of Romblon)    |
 |     PNB     |     Philippine National Bank     |
 |     SecurityBank     |     Security Bank Corporation     |
 |     UBP     |     Union Bank of the Philippines     |
