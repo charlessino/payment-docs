@@ -66,6 +66,7 @@
     	+ [3.4.5 List of Bank Names - Philippines Withdraw](#345-----)
     	+ [3.4.6 List of Bank Names - India Withdraw](#346-----)
     	+ [3.4.7 List of Bank Names - Japan Withdraw](#347-----)
+    	+ [3.4.8 List of Bank Names - Thailand Withdraw](#348-----)
 
 ### <span id="1-----">1 Overview</span>
 
@@ -1459,3 +1460,25 @@ The standard name is the abbreviation of the bank in English. Please refer to th
 |     レーク滋賀農協   |
 |     茨木市農協   |
 |     鹿本農協   |
+
+
+##### <span id="348-----">3.4.8 List of Bank Names - Thailand Withdraw</span>
+| Standard name   |
+| ---- |
+|    KASIKORN BANK    |
+|    KRUNG THAI BANK    |
+|    SIAM COMMERCIAL BANK    |
+|    BANGKOK BANK    |
+|    TMB THANACHART BANK    |
+|    CITIBANK    |
+|    STANDARD CHARTERED BANK (THAI)    |
+|    CIMB THAI BANK    |
+|    UNITED OVERSEAS BANK (THAI)    |
+|    BANK OF AYUDHYA    |
+|    GOVERNMENT SAVINGS BANK    |
+|    THE GOVERNMENT HOUSING BANK    |
+|    BANK FOR AGRICULTURE AND AGRICULTURAL BANK OF CHINA (THAI)    |
+|    ISLAMIC BANK OF THAILAND    |
+|    KIATNAKIN PHATRA BANK    |
+|    INDUSTRIAL AND COMMERCIAL BANK OF CHINA LAND AND HOUSES BANK    |
+|    KRUNGSRI BANK     |
