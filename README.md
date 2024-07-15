@@ -66,6 +66,7 @@
     	+ [3.4.5 银行名称列表-菲律宾代付](#345-----)
     	+ [3.4.6 银行名称列表-印度代付](#346-----)
     	+ [3.4.7 银行名称列表-日本代付](#347-----)
+    	+ [3.4.8 银行名称列表-泰国代付](#348-----)
      
 ### <span id="1-----">1 概要</span>
 
@@ -1459,3 +1460,25 @@ Header：Content-Type: application/json;charset=utf-8
 |     レーク滋賀農協   |
 |     茨木市農協   |
 |     鹿本農協   |
+
+
+##### <span id="348-----">3.4.8 银行名称列表-泰国代付</span>
+| 标准名称   |
+| ---- |
+|    KASIKORN BANK    |
+|    KRUNG THAI BANK    |
+|    SIAM COMMERCIAL BANK    |
+|    BANGKOK BANK    |
+|    TMB THANACHART BANK    |
+|    CITIBANK    |
+|    STANDARD CHARTERED BANK (THAI)    |
+|    CIMB THAI BANK    |
+|    UNITED OVERSEAS BANK (THAI)    |
+|    BANK OF AYUDHYA    |
+|    GOVERNMENT SAVINGS BANK    |
+|    THE GOVERNMENT HOUSING BANK    |
+|    BANK FOR AGRICULTURE AND AGRICULTURAL BANK OF CHINA (THAI)    |
+|    ISLAMIC BANK OF THAILAND    |
+|    KIATNAKIN PHATRA BANK    |
+|    INDUSTRIAL AND COMMERCIAL BANK OF CHINA LAND AND HOUSES BANK    |
+|    KRUNGSRI BANK     |
