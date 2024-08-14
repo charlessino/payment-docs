@@ -200,7 +200,7 @@ Header：Content-Type: application/json;charset=utf-8
 | msg    | string | 200      | success | 如出错时，返回出错原因，成功时为success      |
 | sign    | string | 32      |    | [返回参数签名](#142-----)      |
 | url    | string | 255      |         | 用于跳转至支付页面的链接，returnType=1时返回此项 |
-| data    | array |       |         | returnType=2时返回此项，包含以下子项：<br>bankName: 银行名称<br>branchName: 支行名称<br>accountNumber: 银行卡号<br>accountOwner: 户主姓名<br>amount: 金额 |
+| data    | array |       |         | returnType=2时返回此项，包含以下子项：<br>bankName: 银行名称<br>branchName: 支行名称<br>accountNumber: 银行卡号<br>accountOwner: 户主姓名<br>amount: 金额<br>randomString: 转账备注 |
 
 ##### <span id="213-----">2.1.3 异步回调通知参数</span>
 收到回调时请返回success字样，详情参考[回调机制](#15-----)
