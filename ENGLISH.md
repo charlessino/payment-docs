@@ -890,7 +890,7 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 | VP BANK |
 | ACB BANK |
 | BIDV BANK |
-| VIETTIN BANK |
+| VIETIN BANK |
 | MB BANK |
 | EXIM BANK |
 | SACOM BANK |
@@ -1207,7 +1207,7 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 |   VIBBANK   |
 |   VIETBANK   |
 |   VIETCOMBANK   |
-|   VIETTINBANK   |
+|   VIETINBANK   |
 |   VPBANK   |
 
 
