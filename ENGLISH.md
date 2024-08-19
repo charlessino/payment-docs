@@ -899,7 +899,7 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 | DONGA BANK |
 | VIB BANK |
 | MSB BANK |
-| SHB BACNK |
+| SHB BANK |
 
 
 #### <span id="34-----">3.4 List of Bank Names-Withdraw</span>
@@ -1201,7 +1201,7 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 |   SAIGONBANK   |
 |   SACOMBANK   |
 |   SEABANK   |
-|   SHBBACNK   |
+|   SHBBANK   |
 |   TECHCOMBANK   |
 |   TPBANK   |
 |   VIBBANK   |
