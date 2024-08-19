@@ -899,7 +899,7 @@ Header：Content-Type: application/json;charset=utf-8
 | DONGA BANK |
 | VIB BANK |
 | MSB BANK |
-| SHB BACNK |
+| SHB BANK |
 
 
 #### <span id="34-----">3.4 银行名称列表-代付</span>
@@ -1201,7 +1201,7 @@ Header：Content-Type: application/json;charset=utf-8
 |   SAIGONBANK   |
 |   SACOMBANK   |
 |   SEABANK   |
-|   SHBBACNK   |
+|   SHBBANK   |
 |   TECHCOMBANK   |
 |   TPBANK   |
 |   VIBBANK   |
