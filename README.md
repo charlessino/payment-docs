@@ -890,7 +890,7 @@ Header：Content-Type: application/json;charset=utf-8
 | VP BANK |
 | ACB BANK |
 | BIDV BANK |
-| VIETTIN BANK |
+| VIETIN BANK |
 | MB BANK |
 | EXIM BANK |
 | SACOM BANK |
@@ -1207,7 +1207,7 @@ Header：Content-Type: application/json;charset=utf-8
 |   VIBBANK   |
 |   VIETBANK   |
 |   VIETCOMBANK   |
-|   VIETTINBANK   |
+|   VIETINBANK   |
 |   VPBANK   |
 
 
