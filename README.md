@@ -314,7 +314,7 @@ Header：Content-Type: application/json;charset=utf-8
 | param1     |      | string  | 100      |  | 预留参数1，可不传               |
 | param2     |      | string  | 100      |  | 预留参数2，可不传               |
 | param3     |      | string  | 100      |  | 预留参数3，可不传               |
-| sign      | 是   | string   | 32       |      | [签名](#14-----)                             |
+| sign      | 是   | string   | 32       |      | [签名](#14-----)  将全部传入参数（除了sign）的参数名按照字典序排列，请注意值为空的参数无需传入。                           |
 
 ##### <span id="222-----">2.2.2 返回参数</span>
 
