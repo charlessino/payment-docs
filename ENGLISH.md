@@ -1186,7 +1186,6 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 |   BACABANK   |
 |   BAOVIETBANK   |
 |   BIDVBANK   |
-|   BVBANK   |
 |   DONGABANK   |
 |   EXIMBANK   |
 |   HDBANK   |
