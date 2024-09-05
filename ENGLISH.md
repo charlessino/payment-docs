@@ -1190,7 +1190,6 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 |   EXIMBANK   |
 |   HDBANK   |
 |   KIENLONGBANK   |
-|   LPBANK   |
 |   MBBANK   |
 |   MSBBANK   |
 |   NAMABANK   |
