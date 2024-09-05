@@ -1186,7 +1186,6 @@ Header：Content-Type: application/json;charset=utf-8
 |   BACABANK   |
 |   BAOVIETBANK   |
 |   BIDVBANK   |
-|   BVBANK   |
 |   DONGABANK   |
 |   EXIMBANK   |
 |   HDBANK   |
