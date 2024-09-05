@@ -1190,7 +1190,6 @@ Header：Content-Type: application/json;charset=utf-8
 |   EXIMBANK   |
 |   HDBANK   |
 |   KIENLONGBANK   |
-|   LPBANK   |
 |   MBBANK   |
 |   MSBBANK   |
 |   NAMABANK   |
