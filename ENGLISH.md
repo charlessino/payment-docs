@@ -199,8 +199,9 @@ Header：Content-Type: application/json;charset=utf-8
 | transactionId    | string | 100      |    RC_10086     | Transaction Number |
 | msg    | string | 200      | success | If an error occurs, the reason for the error is returned, and success is success.      |
 | sign    | string | 32      |    | [Return parameters signature](#142-----)      |
+| outOrderId    | string | 100      |         | Merchant order ID |
 | url    | string | 255      |         | Used to jump to the payment page of the link, returnType = 1 to return this. |
-| data    | array |       |         | ReturnType = 2 to return this，Contains the following subsections:<br>Bank Name<br>Branch Name<br>Account Number<br>Account Owner<br>Amount<br>randomString: Remarks on transfers |
+| data    | array |       |         | ReturnType = 2 to return this，Contains the following subsections:<br>Bank Name<br>Branch Name<br>Account Number<br>Account Owner<br>Amount<br>randomString: Remarks on transfers<br>qrCode: QR Code Image (Base64 Encryped), show it in HTML directly, for instance: <img src="qr_image_base64"> |
 
 ##### <span id="213-----">2.1.3 Asynchronous callback notification parameters</span>
 Please return the word success when you receive the callback. For details, please refer to[Callback mechanism](#15-----)
