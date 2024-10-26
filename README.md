@@ -888,20 +888,19 @@ Header：Content-Type: application/json;charset=utf-8
 
 | 标准名称   |
 | ---- |
-| VP BANK |
-| ACB BANK |
-| BIDV BANK |
-| VIETIN BANK |
-| MB BANK |
-| EXIM BANK |
-| SACOM BANK |
-| TECHCOM BANK |
-| VIETCOM BANK |
-| DONGA BANK |
-| VIB BANK |
-| MSB BANK |
-| SHB BANK |
-
+| ACB |
+| BIDV  |
+| DONGABANK |
+| EXIMBANK |
+| MB |
+| MSB  |
+| SACOMBANK |
+| SHB  |
+| TCB |
+| VCB |
+| VIB  |
+| VIETINBANK |
+| VPBANK |
 
 #### <span id="34-----">3.4 银行名称列表-代付</span>
 
@@ -1182,17 +1181,17 @@ Header：Content-Type: application/json;charset=utf-8
 | 标准名称   |
 | ---- |
 |   ABBANK   |
-|   ACBBANK   |
+|   ACB   |
 |   AGRIBANK   |
 |   BACABANK   |
 |   BAOVIETBANK   |
-|   BIDVBANK   |
+|   BIDV   |
 |   DONGABANK   |
 |   EXIMBANK   |
 |   HDBANK   |
 |   KIENLONGBANK   |
-|   MBBANK   |
-|   MSBBANK   |
+|   MB   |
+|   MSB   |
 |   NAMABANK   |
 |   OCEANBANK   |
 |   PGBANK   |
@@ -1200,15 +1199,14 @@ Header：Content-Type: application/json;charset=utf-8
 |   SAIGONBANK   |
 |   SACOMBANK   |
 |   SEABANK   |
-|   SHBBANK   |
-|   TECHCOMBANK   |
+|   SHB   |
+|   TCB   |
 |   TPBANK   |
-|   VIBBANK   |
+|   VCB   |
+|   VIB   |
 |   VIETBANK   |
-|   VIETCOMBANK   |
 |   VIETINBANK   |
 |   VPBANK   |
-
 
 ##### <span id="344-----">3.4.4 银行名称列表-韩国代付</span>
 | 标准名称   |
