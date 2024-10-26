@@ -888,20 +888,19 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 
 | Standard name   |
 | ---- |
-| VP BANK |
-| ACB BANK |
-| BIDV BANK |
-| VIETIN BANK |
-| MB BANK |
-| EXIM BANK |
-| SACOM BANK |
-| TECHCOM BANK |
-| VIETCOM BANK |
-| DONGA BANK |
-| VIB BANK |
-| MSB BANK |
-| SHB BANK |
-
+| ACB |
+| BIDV  |
+| DONGABANK |
+| EXIMBANK |
+| MB |
+| MSB  |
+| SACOMBANK |
+| SHB  |
+| TCB |
+| VCB |
+| VIB  |
+| VIETINBANK |
+| VPBANK |
 
 #### <span id="34-----">3.4 List of Bank Names-Withdraw</span>
 
@@ -1182,17 +1181,17 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 | Standard name   |
 | ---- |
 |   ABBANK   |
-|   ACBBANK   |
+|   ACB   |
 |   AGRIBANK   |
 |   BACABANK   |
 |   BAOVIETBANK   |
-|   BIDVBANK   |
+|   BIDV   |
 |   DONGABANK   |
 |   EXIMBANK   |
 |   HDBANK   |
 |   KIENLONGBANK   |
-|   MBBANK   |
-|   MSBBANK   |
+|   MB   |
+|   MSB   |
 |   NAMABANK   |
 |   OCEANBANK   |
 |   PGBANK   |
@@ -1200,15 +1199,14 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 |   SAIGONBANK   |
 |   SACOMBANK   |
 |   SEABANK   |
-|   SHBBANK   |
-|   TECHCOMBANK   |
+|   SHB   |
+|   TCB   |
 |   TPBANK   |
-|   VIBBANK   |
+|   VCB   |
+|   VIB   |
 |   VIETBANK   |
-|   VIETCOMBANK   |
 |   VIETINBANK   |
 |   VPBANK   |
-
 
 ##### <span id="344-----">3.4.4 List of Bank Names - Korea Withdraw</span>
 | Standard name   |
