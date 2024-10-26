@@ -67,6 +67,7 @@
     	+ [3.4.6 List of Bank Names - India Withdraw](#346-----)
     	+ [3.4.7 List of Bank Names - Japan Withdraw](#347-----)
     	+ [3.4.8 List of Bank Names - Thailand Withdraw](#348-----)
+    	+ [3.4.9 List of Bank Names - Brazil Withdraw](#349-----)
 
 ### <span id="1-----">1 Overview</span>
 
@@ -1458,7 +1459,6 @@ The standard name is the abbreviation of the bank in English. Please refer to th
 |     茨木市農協   |
 |     鹿本農協   |
 
-
 ##### <span id="348-----">3.4.8 List of Bank Names - Thailand Withdraw</span>
 | Standard name   |
 | ---- |
@@ -1479,3 +1479,8 @@ The standard name is the abbreviation of the bank in English. Please refer to th
 |    KIATNAKIN PHATRA BANK    |
 |    INDUSTRIAL AND COMMERCIAL BANK OF CHINA LAND AND HOUSES BANK    |
 |    KRUNGSRI BANK     |
+
+##### <span id="349-----">3.4.9 List of Bank Names - Brazil Withdraw</span>
+| Standard name   |
+| ---- |
+|    PIX    |
