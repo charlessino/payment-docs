@@ -67,7 +67,8 @@
     	+ [3.4.6 银行名称列表-印度代付](#346-----)
     	+ [3.4.7 银行名称列表-日本代付](#347-----)
     	+ [3.4.8 银行名称列表-泰国代付](#348-----)
-     
+        + [3.4.9 银行名称列表-巴西代付](#349-----)
+
 ### <span id="1-----">1 概要</span>
 
 #### <span id="11-----">1.1 接口用途</span>
@@ -1458,7 +1459,6 @@ Header：Content-Type: application/json;charset=utf-8
 |     茨木市農協   |
 |     鹿本農協   |
 
-
 ##### <span id="348-----">3.4.8 银行名称列表-泰国代付</span>
 | 标准名称   |
 | ---- |
@@ -1479,3 +1479,8 @@ Header：Content-Type: application/json;charset=utf-8
 |    KIATNAKIN PHATRA BANK    |
 |    INDUSTRIAL AND COMMERCIAL BANK OF CHINA LAND AND HOUSES BANK    |
 |    KRUNGSRI BANK     |
+
+##### <span id="349-----">3.4.9 银行名称列表-巴西代付</span>
+| 标准名称   |
+| ---- |
+|    PIX    |
