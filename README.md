@@ -1278,20 +1278,17 @@ Header：Content-Type: application/json;charset=utf-8
 | 标准名称   |   全称   |
 | ---- | ---- |
 |     GCash   |     GCash   |
-|     PayMaya   |     PayMaya   |
 |     AUB     |     Asia United Bank Corporation     |
 |     BDO     |     Banco de Oro Unibank INC     |
 |     BOC     |     Bank of Commerce     |
 |     BPI     |     Bank of the Philippine Island      |
 |     Chinabank     |     China Banking Corporation     |
-|     CIMB     |     CIMB Bank Philippines Inc.     |
 |     DBP     |     Development Bank of the Philippines     |
 |     EastWest     |     East West Banking Corporation     |
 |     LBP     |     Land Bank of the Philippines     |
 |     Metrobank     |     Metropolitan Bank and Trust Co.     |
 |     Netbank     |     Netbank (Community Rural Bank of Romblon)    |
 |     PNB     |     Philippine National Bank     |
-|     SecurityBank     |     Security Bank Corporation     |
 |     UBP     |     UnionBank of the Philippines     |
 
 
