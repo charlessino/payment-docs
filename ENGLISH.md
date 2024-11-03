@@ -314,7 +314,7 @@ Header：Content-Type: application/json;charset=utf-8
 | outTips     |      | string  | 100      | withdraw | Merchant Remarks               |
 | nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
 | param1     |      | string  | 100      |  | Reserve parameter 1, may not be passed               |
-| param2     |      | string  | 100      |  | Reserve parameter 2. For Brazilian PIX, the ID number is a required item.               |
+| param2     |      | string  | 100      |  | For Brazilian PIX, the ID number is a required item.               |
 | param3     |      | string  | 100      |  | Reserve parameter 3, may not be passed               |
 | sign      | Yes   | string   | 32       |      | [Signature](#14-----)                             |
 
