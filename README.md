@@ -179,8 +179,8 @@ Header：Content-Type: application/json;charset=utf-8
 | channelId   | 是   | int     | 5        | 1        | [通道列表](#31-----) |
 | currency     | 是   | string | 10    | CNY  | [货币列表](#32-----)       |
 | actionValue | 是   | decimal | 18, 2    | 2100.00  | 申请代收的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
-| accountName | 是   | string | 100    | 张三  | 转账人姓名，姓名中不可包含数字，且不可传空值。当货币为USDT时可不传此参数。中国卡卡通道务必传送实名注册姓名。当货币为日元时务必传送片假文。       |
-| cellphone |    | string | 100    | 01034388769  | 手机号，韩国、菲律宾必传，其他可不传       |
+| accountName | 是   | string | 100    | 张三  | 转账人姓名，姓名中不可包含数字，且不可传空值。当货币为USDT时可不传此参数。中国卡卡通道务必传送实名注册姓名。当货币为日元时务必传送片假文。当货币为韩元时，必传姓名和卡号后四位，格式为“姓名-2841”。       |
+| cellphone |    | string | 100    | 01034388769  | 手机号，菲律宾必传，其他可不传       |
 | callbackUrl  |      | string  | 512      |          | 商户回调地址             |
 | returnUrl  |      | string  | 512      |          | 支付完成后，商户页面返回地址             |
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
@@ -188,7 +188,7 @@ Header：Content-Type: application/json;charset=utf-8
 | returnType     |      | int  | 1      | 1 | 返回类型 1=充值链接 2=银行、卡号、户名的文本信息。默认为1               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | param1     |      | string  | 100      |  | 越南通道ID5，则必传[银行名称列表-越南代收](#331-----)               |
-| param2     |      | string  | 100      |  | 预留参数2，可不传               |
+| param2     |      | string  | 100      |  | 韩国通道ID48，则必传玩家ID。               |
 | param3     |      | string  | 100      |  | 预留参数3，可不传               |
 | sign        | 是   | string  | 32       |          | [签名](#14-----)             |
 
@@ -313,7 +313,7 @@ Header：Content-Type: application/json;charset=utf-8
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| param1     |      | string  | 100      |  | 预留参数1，可不传               |
+| param1     |      | string  | 100      |  | 韩国通道ID48，则必传玩家ID。               |
 | param2     |      | string  | 100      |  | 如为巴西PIX，身份证号为必传项。               |
 | param3     |      | string  | 100      |  | 预留参数3，可不传               |
 | sign      | 是   | string   | 32       |      | [签名](#14-----)                            |
