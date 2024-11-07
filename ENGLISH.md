@@ -188,7 +188,7 @@ Header：Content-Type: application/json;charset=utf-8
 | returnType     |      | int  | 1      | 1 | Return type 1=Recharge link 2=Text information of bank、account number、account name.Default is 1               |
 | nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
 | param1     |      | string  | 100      |  | Vietnam channel ID 5, must pass [List of Bank Names - Vietnam Recharge](#331-----)               |
-| param2     |      | string  | 100      |  | Korea channel ID 48, must pass player ID.              |
+| param2     |      | string  | 100      |  | Korea recharge, must pass player ID.              |
 | param3     |      | string  | 100      |  | Reserve parameter 3, may not be passed               |
 | sign        | Yes   | string  | 32       |          | [Signature](#14-----)             |
 
