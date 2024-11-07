@@ -179,16 +179,16 @@ Header：Content-Type: application/json;charset=utf-8
 | channelId   | Yes   | int     | 5        | 1        | [Channel List](#31-----) |
 | currency     | Yes   | string | 10    | KRW  | [List of currencies](#32-----)       |
 | actionValue | Yes   | decimal | 18, 2    | 21000.00  | Amount of the requested recharge (digital currency allows decimals, fiat currencies only allow integers, even if integers need to be formatted into 2 decimal places in order to unify the rules of signature inspection)       |
-| accountName | Yes   | string | 100    | 박재환  | The name of the depositor, it can't contain numbers, and can't pass empty values. When the currency is USDT this parameter can be excluded. When the currency is Japanese yen, must post the words is Japanese.     |
-| cellphone |    | string | 100    | 01034388769  | Cell phone number, Korea and Philippines must be transmitted, others can not be transmitted       |
+| accountName | Yes   | string | 100    | 박재환  | The name of the depositor, it can't contain numbers, and can't pass empty values. When the currency is USDT this parameter can be excluded. When the currency is Japanese yen, must post the words is Japanese. When the currency is Korean Won, the name and the last four digits of the card number must be transmitted in the format of "Name-2841".    |
+| cellphone |    | string | 100    | 01034388769  | Cell phone number, Philippines must be transmitted, others can not be transmitted       |
 | callbackUrl  |      | string  | 512      |          | Merchant callback address             |
 | returnUrl  |      | string  | 512      |          | Merchant page callback address after recharge completion             |
 | outOrderId  |      | string  | 100      |          | Merchant order ID             |
 | outTips     |      | string  | 100      | test | Merchant Remarks               |
 | returnType     |      | int  | 1      | 1 | Return type 1=Recharge link 2=Text information of bank、account number、account name.Default is 1               |
 | nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
-| param1     |      | string  | 100      |  | Vietnam channel ID 5, then must pass [List of Bank Names - Vietnam Recharge](#331-----)               |
-| param2     |      | string  | 100      |  | Reserve parameter 2, may not be passed               |
+| param1     |      | string  | 100      |  | Vietnam channel ID 5, must pass [List of Bank Names - Vietnam Recharge](#331-----)               |
+| param2     |      | string  | 100      |  | Korea channel ID 48, must pass player ID.              |
 | param3     |      | string  | 100      |  | Reserve parameter 3, may not be passed               |
 | sign        | Yes   | string  | 32       |          | [Signature](#14-----)             |
 
@@ -313,7 +313,7 @@ Header：Content-Type: application/json;charset=utf-8
 | outOrderId  |      | string  | 100      |          | Merchant order ID             |
 | outTips     |      | string  | 100      | withdraw | Merchant Remarks               |
 | nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
-| param1     |      | string  | 100      |  | Reserve parameter 1, may not be passed               |
+| param1     |      | string  | 100      |  | For Korean withdraw, must pass player ID.               |
 | param2     |      | string  | 100      |  | For Brazilian PIX, the ID number is a required item.               |
 | param3     |      | string  | 100      |  | Reserve parameter 3, may not be passed               |
 | sign      | Yes   | string   | 32       |      | [Signature](#14-----)                             |
