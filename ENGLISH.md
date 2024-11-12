@@ -1484,6 +1484,8 @@ The standard name is the abbreviation of the bank in English. Please refer to th
 |    PIX    |
 
 ##### <span id="3410-----">3.4.10 List of Bank Names - Indonesia Withdraw</span>
+| Standard name   |
+| ---- |
 |ACEH|
 |ACEH SYARIAH|
 |ALADIN SYARIAH|
