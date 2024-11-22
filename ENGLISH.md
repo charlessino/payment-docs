@@ -1458,25 +1458,32 @@ The standard name is the abbreviation of the bank in English. Please refer to th
 |     鹿本農協   |
 
 ##### <span id="348-----">3.4.8 List of Bank Names - Thailand Withdraw</span>
-| Standard name   |
-| ---- |
-|    KASIKORN BANK    |
-|    KRUNG THAI BANK    |
-|    SIAM COMMERCIAL BANK    |
-|    BANGKOK BANK    |
-|    TMB THANACHART BANK    |
-|    CITIBANK    |
-|    STANDARD CHARTERED BANK (THAI)    |
-|    CIMB THAI BANK    |
-|    UNITED OVERSEAS BANK (THAI)    |
-|    BANK OF AYUDHYA    |
-|    GOVERNMENT SAVINGS BANK    |
-|    THE GOVERNMENT HOUSING BANK    |
-|    BANK FOR AGRICULTURE AND AGRICULTURAL BANK OF CHINA (THAI)    |
-|    ISLAMIC BANK OF THAILAND    |
-|    KIATNAKIN PHATRA BANK    |
-|    INDUSTRIAL AND COMMERCIAL BANK OF CHINA LAND AND HOUSES BANK    |
-|    KRUNGSRI BANK     |
+| Standard name   |  Full name   |
+| ---- | ---- |
+| SCB	|    SIAM COMMERCIAL BANK PUBLIC COMPANY LTD   | 
+| BAY	|    BANK OF AYUDHYA PUBLIC COMPANY LTD   | 
+| KTB	|    KRUNG THAI BANK PUBLIC COMPANY LTD   | 
+| BBL	|    BANGKOK BANK PUBLIC COMPANY LTD   | 
+| GSB	|    GOVERNMENT SAVINGS BANK   | 
+| TTB	|    TMBTHANACHART BANK PUBLIC COMPANY LIMITED   | 
+| BAAC	|    BANK FOR AGRICULTURE AND AGRICULTURAL COOPERATIVES   | 
+| KKP	|    KIATNAKIN PHATRA BANK PUBLIC COMPANY LIMITED   | 
+| KBANK	|    KASIKORNBANK PUBLIC COMPANY LIMITED   | 
+| ANZ	|    AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED   | 
+| BOC	|    BANK OF CHINA (THAI) PUBLIC COMPANY LIMITED   | 
+| CIMBTB|    	CIMB THAI BANK Public Company Limited   | 
+| CITIB	|    Citibank Thailand   | 
+| EXIM	|    EXPORT-IMPORT BANK OF THAILAND   | 
+| GHB	|    THE GOVERNMENT HOUSING BANK   | 
+| ICBCB	|    ICBC Bank   | 
+| IBT	|    ISLAMIC BANK OF THAILAND   | 
+| LHB	|    LH Bank   | 
+| SMEDB	|    SME Development Bank   | 
+| SCTB	|    STANDARD CHARTERED BANK (THAI) PUBLIC COMPANY LIMITED   | 
+| SMTB	|    SUMITOMO MITSUI BANKING CORPORATION   | 
+| TCRB	|    Thai Credit Retail Bank   | 
+| TISCO	|    TISCO BANK PUBLIC COMPANY LIMITED   | 
+| UOB	|    UNITED OVERSEAS BANK (THAI) PUBLIC COMPANY LIMITED   | 
 
 ##### <span id="349-----">3.4.9 List of Bank Names - Brazil Withdraw</span>
 | Standard name   |
