@@ -883,6 +883,7 @@ Please go through the merchant's back-office system  > Account Info > Payment Ch
 | JPY    | Japanese Yen |
 | PHP    | Philippine Peso |
 | KRW    | South Korean Won |
+| EB    | EB |
 
 #### <span id="33-----">3.3 List of Bank Names - Recharge</span>
 
