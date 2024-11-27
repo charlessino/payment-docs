@@ -883,6 +883,7 @@ Header：Content-Type: application/json;charset=utf-8
 | JPY    | 日元 |
 | PHP    | 菲律宾比索 |
 | KRW    | 韩元 |
+| EB    | EB |
 
 #### <span id="33-----">3.3 银行名称列表-代收</span>
 
