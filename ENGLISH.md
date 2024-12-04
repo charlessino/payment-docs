@@ -308,7 +308,7 @@ Header：Content-Type: application/json;charset=utf-8
 | actionValue | Yes   | decimal | 18, 2    | 21000.00  | Amount of the requested withdraw (digital currency allows decimals, fiat currencies only allow integers, even if integers need to be formatted into 2 decimal places in order to unify the rules of signature inspection)       |
 | cardNumber      | Yes   | string   | 100        | 982268716  | Account Number         |
 | bankName    |  Yes  | string      | 100        | Shinhan Bank   | [List of Bank Names-Withdraw](#34-----), standard name  |
-| branchName      |    | string   | 100        | Gangnam Branch  | Branch Name. When the currency is INR, the IFSC code corresponding to the bank name must be transmitted here.         |
+| branchName      |    | string   | 100        | Gangnam Branch  | Branch Name. When the currency is INR, the IFSC code corresponding to the bank name must be transmitted here. When the currency is JPY, this must be passed. The number and name are connected by &, for example "209&リズム彀店".        |
 | ownerName      |  Yes  | string   | 100        | 박재환  | Holder name, Numbers are not allowed in his name. When the currency is USDT this parameter can be excluded.          |
 | callbackUrl  |      | string  | 512      |          | Merchant callback address             |
 | outOrderId  |      | string  | 100      |          | Merchant order ID             |
