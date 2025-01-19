@@ -181,7 +181,7 @@ Header：Content-Type: application/json;charset=utf-8
 | currency     | 是   | string | 10    | CNY  | [货币列表](#32-----)       |
 | actionValue | 是   | decimal | 18, 2    | 2100.00  | 申请代收的金额 (数字货币允许有小数，法币仅允许整数，就算是整数也需格式化为2位小数以便统一验签规则)       |
 | accountName | 是   | string | 100    | 张三  | 转账人姓名，姓名中不可包含数字，且不可传空值。当货币为USDT时可不传此参数。中国卡卡通道务必传送实名注册姓名。当货币为日元时务必传送片假文。       |
-| cellphone |    | string | 100    | 01034388769  | 手机号，菲律宾和韩国必传，其他可不传       |
+| cellphone |    | string | 100    | 01034388769  | 手机号，菲律宾、韩国和印度必传，其他可不传       |
 | callbackUrl  |      | string  | 512      |          | 商户回调地址             |
 | returnUrl  |      | string  | 512      |          | 支付完成后，商户页面返回地址             |
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
@@ -190,7 +190,7 @@ Header：Content-Type: application/json;charset=utf-8
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
 | param1     |      | string  | 100      |  | 越南通道ID5，则必传[银行名称列表-越南代收](#331-----)               |
 | param2     |      | string  | 100      |  | 韩国代收通道，则必传玩家ID。               |
-| param3     |      | string  | 100      |  | 预留参数3，可不传               |
+| param3     |      | string  | 100      |  | 印度代收通道，则必传玩家邮箱。               |
 | sign        | 是   | string  | 32       |          | [签名](#14-----)             |
 
 ##### <span id="212-----">2.1.2 返回参数</span>
@@ -314,9 +314,9 @@ Header：Content-Type: application/json;charset=utf-8
 | outOrderId  |      | string  | 100      |          | 商户订单号             |
 | outTips     |      | string  | 100      | 测试订单 | 商户备注               |
 | nonceStr     |      | string  | 100      | 123456 | 随机数，用于获得返回参数签名，可不传               |
-| param1     |      | string  | 100      |  | 如为韩国代付，则必传玩家ID。               |
-| param2     |      | string  | 100      |  | 如为巴西PIX，身份证号为必传项。               |
-| param3     |      | string  | 100      |  | 预留参数3，可不传               |
+| param1     |      | string  | 100      |  | 韩国代付，则必传玩家ID。               |
+| param2     |      | string  | 100      |  | 巴西PIX，则必传身份证号。印度代付，则必传玩家手机号码。               |
+| param3     |      | string  | 100      |  | 印度代付，则必传玩家邮箱。               |
 | sign      | 是   | string   | 32       |      | [签名](#14-----)                            |
 
 ##### <span id="222-----">2.2.2 返回参数</span>
