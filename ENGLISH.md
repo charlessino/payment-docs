@@ -181,7 +181,7 @@ Header：Content-Type: application/json;charset=utf-8
 | currency     | Yes   | string | 10    | KRW  | [List of currencies](#32-----)       |
 | actionValue | Yes   | decimal | 18, 2    | 21000.00  | Amount of the requested recharge (digital currency allows decimals, fiat currencies only allow integers, even if integers need to be formatted into 2 decimal places in order to unify the rules of signature inspection)       |
 | accountName | Yes   | string | 100    | 박재환  | The name of the depositor, it can't contain numbers, and can't pass empty values. When the currency is USDT this parameter can be excluded. When the currency is Japanese yen, must post the words is Japanese.    |
-| cellphone |    | string | 100    | 01034388769  | Cell phone number, Philippines and Korea must be transmitted, others can not be transmitted       |
+| cellphone |    | string | 100    | 01034388769  | Cell phone number, Philippines and Korea and India must be transmitted, others can not be transmitted       |
 | callbackUrl  |      | string  | 512      |          | Merchant callback address             |
 | returnUrl  |      | string  | 512      |          | Merchant page callback address after recharge completion             |
 | outOrderId  |      | string  | 100      |          | Merchant order ID             |
@@ -190,7 +190,7 @@ Header：Content-Type: application/json;charset=utf-8
 | nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
 | param1     |      | string  | 100      |  | Vietnam channel ID 5, must pass [List of Bank Names - Vietnam Recharge](#331-----)               |
 | param2     |      | string  | 100      |  | Korea recharge, must pass player ID.              |
-| param3     |      | string  | 100      |  | Reserve parameter 3, may not be passed               |
+| param3     |      | string  | 100      |  | India recharge, must pass player's email.               |
 | sign        | Yes   | string  | 32       |          | [Signature](#14-----)             |
 
 ##### <span id="212-----">2.1.2 Return parameters</span>
@@ -315,8 +315,8 @@ Header：Content-Type: application/json;charset=utf-8
 | outTips     |      | string  | 100      | withdraw | Merchant Remarks               |
 | nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
 | param1     |      | string  | 100      |  | For Korean withdraw, must pass player ID.               |
-| param2     |      | string  | 100      |  | For Brazilian PIX, the ID number is a required item.               |
-| param3     |      | string  | 100      |  | Reserve parameter 3, may not be passed               |
+| param2     |      | string  | 100      |  | For Brazilian PIX, the ID number is a required item. For India withdraw, must pass player's cellphone number.              |
+| param3     |      | string  | 100      |  | For India withdraw, must pass player's email.               |
 | sign      | Yes   | string   | 32       |      | [Signature](#14-----)                             |
 
 ##### <span id="222-----">2.2.2 Return parameters</span>
