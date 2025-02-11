@@ -69,6 +69,7 @@
     	+ [3.4.8 List of Bank Names - Thailand Withdraw](#348-----)
     	+ [3.4.9 List of Bank Names - Brazil Withdraw](#349-----)
     	+ [3.4.10 List of Bank Names - Indonesia Withdraw](#3410-----)
+    	+ [3.4.11 List of Bank Names - Bangladesh Withdraw](#3411-----)
 
 ### <span id="1-----">1 Overview</span>
 
@@ -1564,3 +1565,33 @@ The standard name is the abbreviation of the bank in English. Please refer to th
 |WONDR BY BNI|
 |WOORI INDONESIA|
 |YUDHABHAKTI|
+
+##### <span id="3411-----">3.4.11 List of Bank Names - Bangladesh Withdraw</span>
+| Standard name   |
+| ---- |
+|Agranl Bank|
+|AB Bank Limited|
+|Bangladesh Development Bank|
+|The Premler Bank PLC|
+|BKash|
+|BRAC Bank|
+|Community Bank Bangladesh|
+|CB BANK|
+|City Bank|
+|DHAKA BANK LIMTED|
+|Eastern Bank Ltd.|
+|First Security lslami Bank PLC|
+|IFIC BANK PLC|
+|Midland Bank Limlted|
+|Mutual Trust Bank Ltd|
+|Nagad|
+|NRBC Bank PLC|
+|Pubali Bank PLC|
+|PVcomBank|
+|Rajshahi Krishi Unnayan Bank|
+|Rocket|
+|Southeast Bank Limited|
+|Social lslami Bank PLC|
+|Sonali Bank|
+|UPay|
+|YOLO digital banking|
