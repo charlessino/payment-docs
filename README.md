@@ -69,6 +69,7 @@
     	+ [3.4.8 银行名称列表-泰国代付](#348-----)
         + [3.4.9 银行名称列表-巴西代付](#349-----)
         + [3.4.10 银行名称列表-印度尼西亚代付](#3410-----)
+        + [3.4.11 银行名称列表-孟加拉代付](#3411-----)
 
 ### <span id="1-----">1 概要</span>
 
@@ -1564,3 +1565,33 @@ Header：Content-Type: application/json;charset=utf-8
 |WONDR BY BNI|
 |WOORI INDONESIA|
 |YUDHABHAKTI|
+
+##### <span id="3411-----">3.4.11 银行名称列表-孟加拉代付</span>
+| 标准名称   |
+| ---- |
+|Agranl Bank|
+|AB Bank Limited|
+|Bangladesh Development Bank|
+|The Premler Bank PLC|
+|BKash|
+|BRAC Bank|
+|Community Bank Bangladesh|
+|CB BANK|
+|City Bank|
+|DHAKA BANK LIMTED|
+|Eastern Bank Ltd.|
+|First Security lslami Bank PLC|
+|IFIC BANK PLC|
+|Midland Bank Limlted|
+|Mutual Trust Bank Ltd|
+|Nagad|
+|NRBC Bank PLC|
+|Pubali Bank PLC|
+|PVcomBank|
+|Rajshahi Krishi Unnayan Bank|
+|Rocket|
+|Southeast Bank Limited|
+|Social lslami Bank PLC|
+|Sonali Bank|
+|UPay|
+|YOLO digital banking|
