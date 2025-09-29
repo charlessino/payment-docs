@@ -1,4 +1,4 @@
-# 支付网关文档
+<img width="66" height="2065" alt="image" src="https://github.com/user-attachments/assets/4f93ba2c-5e28-41b3-b485-20cadc6b8adf" /># 支付网关文档
 
 - 目录
   + [1 概要](#1-----)
@@ -1397,174 +1397,135 @@ Header：Content-Type: application/json;charset=utf-8
 ##### <span id="3410-----">3.4.10 银行名称列表-印度尼西亚代付</span>
 | 标准名称   |
 | ---- |
-|ACEH|
-|ACEH SYARIAH|
-|ALADIN SYARIAH|
-|ALLO BANK|
-|AMAR BANK|
-|ARTHA GRAHA INTERNASIONAL|
-|BANK ANTARDAERAH|
-|BANK BISNIS|
-|BANK BJB|
-|BANK BPD BALI|
-|BANK CNB|
-|BANK DKI|
-|BANK GANESHA|
-|BANK HAGAKITA|
-|BANK HARMONI|
-|BANK IBK|
-|BANK ICBC|
-|BANK IFI|
-|BANK INA|
-|Bank Ina Perdana|
-|BANK JASA JAKARTA|
-|BANK JATENG|
-|BANK JATIM|
-|BANK KALBAR|
-|BANK KALSEL|
-|BANK LAMPUNG|
-|BANK MALUKU MALUT|
-|BANK MASPION|
-|BANK MAYAPADA|
-|BANK MEGA|
-|BANK MESTIKA DHARMA|
-|BANK MNC|
-|BANK NAGARI|
-|Bank Neo Commerce|
-|Bank Neo Commerce|
-|BANK NTB|
-|BANK NUSANTARA PARAHYANGAN|
-|BANK OF INDIA|
-|BANK QNB|
-|BANK RAYA|
-|BANK RIAU KEPRI|
-|BANK SBI|
-|BANK SHINHAN|
-|BANK SINARMAS|
-|BANK SULSELBA|
-|BANK SULTENG|
-|BANK SULUTGO|
-|BANK SUMSEL BABEL|
-|BANK SUMUT|
-|Bank Syariah Indonesia|
-|BANK TABUNGAN NEGARA|
-|BANK WINDU|
-|BANK WOORI SAUDARA|
-|BANKALTIMTARA|
-|BANKANZ|
-|BANKKEBHANA|
-|BCA|
-|BCA|
-|BCA DIGITAL|
-|BCA MERCHANT|
-|BCA SYARIAH|
-|BENGKULU|
-|BITPIE|
-|BJB SYARIAH|
-|BNI|
-|BNI SYARIAH|
-|BNP PARIBAS|
-|BPD DIY|
-|BPD DIY SYARIAH|
-|BPD JAMBI|
-|BPD KALTENG|
-|BPR SRI PARTHA|
-|BPR SUPRA|
-|BRI|
-|BRI AGRO|
-|BRK SYARIAH|
-|BTN SYARIAH|
-|BTPN|
-|BTPN SYARIAH|
-|BUMI ARTA|
-|CAPITAL|
-|CCB INDONESIA|
-|CIMB|
-|CIMN NIAGA SYARIAH|
-|CITIBANK|
-|CNB|
-|COMMONWEALTH BANK|
-|CTBC BANK|
-|DANA|
-|DANAMON|
-|DANAMON SYARAIAH|
-|DBS|
-|DINAR|
-|DKI SYARIAH|
-|DOKU|
-|FAMA BANK|
-|GOJEK|
-|GOPAY|
-|HAGA BANK|
-|HIBANK|
-|HSBC Indonesia|
-|INA SYARIAH|
-|INDEX BANK|
-|INDOSAT DOMPETKU|
-|J TRUST BANK|
-|JAGO|
-|JATENG SYARIAH|
-|JATIM SYARIAH|
-|JENIUS|
-|KALBAR SYARIAH|
-|KALSEL SYARIAH|
-|KALTENG|
-|KALTIMTARA SYARIAH|
-|KB BUKOPIN|
-|KB BUKOPIN SYARIAH|
-|KEPPEL TATLEE BUANA|
-|LAZ HARFA|
-|LinkAja|
-|MANDIRI|
-|MANDIRI_ENT|
-|MASBANK|
-|MAYBANK|
-|MAYBANKSYARIAH|
-|MAYORA BANK|
-|MEGA SYARIAH|
-|MUAMALAT|
-|MUFG|
-|NAGARI SYARIAH|
-|NATIONAL ASSOCIATION|
-|NATIONALNOBU BANK|
-|NTT|
-|OCBC|
-|OCBC NISP SYARIAH|
-|ONE WALLET|
-|OVO|
-|PANIN|
-|PANIN SYARIAH|
-|PAPUA|
-|PAYTMBANK|
-|PERMATA|
-|PERMATA SYARIAH|
-|PRIMA BANK|
-|PT Bank Kesejahteraan Ekonom|
-|QRIS|
-|QRIS|
-|QRIS|
-|RESONA PERDANIA|
-|RIAU SYARIAH|
-|ROYAL BANK|
-|SAHABAT BANK|
-|SAHABAT SYARIAH|
-|Sakuku|
-|SAMPOERNA BANK|
-|SEABANK|
-|ShopeePay|
-|SINARMAS SYARIAH|
-|STANDARD CHARTERED BANK|
-|SULSELBAR|
-|SULSELBAR SYARIAH|
-|SULTRA|
-|SUMSEL BABEL SYARIAH|
-|SUMUT SYARIAH|
-|UOB|
-|VICTORIA BANK|
-|VICTORIA SYARIAH|
-|WONDR BY BNI|
-|WOORI INDONESIA|
-|YUDHABHAKTI|
+|Bank Agroniaga|
+| Amar|
+| Bank ANZ|
+| Bank Artha Graha|
+| Bank Jawa Barat|
+| Bank Jawa Barat Syariah|
+| Bank BNI Syariah|
+| Bank BNP Paribas|
+| Bank Bukopin|
+| Bank Bumi Arta|
+| Bank Capital Indonesia|
+| Bank BCA|
+| Bank BCA Syariah|
+| Bank CIMB Niaga|
+| Bank Cimb Niaga Syariah|
+| Bank Commonwealth|
+| Bank Danamon|
+| Bank Danamon Syariah|
+| BANK DBS|
+| Bank DKI|
+| Bank DKI Syariah|
+| Bank Ganesha|
+| Bank Hana|
+| Allo Bank|
+| Bank ICBC Indonesia|
+| Bank Ina Perdana|
+| Bank Jasa Jakarta|
+| Bank J Trust Bank|
+| Bank Mandiri|
+| Bank Maspion|
+| Bank Mayapada|
+| Bank Maybank|
+| Bank Maybank Syariah Indon|
+| Bank Mayora|
+| Bank Mega|
+| Bank Mestika|
+| Bank Mizuho Indonesia|
+| Bank MNC|
+| Bank Muamalat|
+| Bank Nobubank|
+| Bank BNI|
+| Bank Nusantara Parahyangan|
+| Bank OCBC NISP|
+| Bank OCBC NISP Syariah|
+| Bank of America|
+| Bank of China Limited|
+| Bank of India|
+| Bank of Tokyo Mitsubishi U|
+| Bank Panin|
+| Bank Panin Syariah|
+| Bank Permata|
+| Bank Permata Syariah|
+| Bank QNB|
+| Bank Rabobank Internationa|
+| Bank BRI|
+| Bank Resona Perdania|
+| Bank BCA Digital|
+| Bank Sahabat Sampoerna|
+| Bank SBI Indonesia|
+| Bank Shinhan|
+| Bank Sinarmas|
+| Bank Sinarmas Syariah|
+| Bank BRI Syariah|
+| Bank Bukopin Syariah|
+| Bank Syariah Mandiri|
+| Bank MEGA Syariah|
+| Bank BTN|
+| Bank BTN Syariah|
+| Bank BTPN|
+| Bank UOB Buana|
+| Bank Victoria|
+| Bank Victoria Syariah|
+| Bank Woori Indonesia|
+| Bank Woori Saudara|
+| Bank Yudha Bhakti|
+| Bank BPD Aceh|
+| Bank BPD Aceh Syariah|
+| Bank BPD Banten|
+| Bank BPD Bengkulu|
+| Bank BPD Yogyakarta|
+| Bank BPD Jambi|
+| Bank BPD Jambi Syariah|
+| Bank jateng|
+| Bank BPD Jateng Syariah|
+| Bank BPD Jatim|
+| Bank BPD Jatim Syariah|
+| Bank Kalbar|
+| Bank Kalbar Syariah|
+| Bank Kalsel|
+| Bank Kalsel Syariah|
+| Bank Kalteng|
+| Bank Kaltim|
+| Bank Kaltim Syariah|
+| Bank Lampung|
+| Bank Maluku|
+| Bank NTB|
+| Bank NTB Syariah|
+| Bank NTT|
+| Bank Papua|
+| Bank RIAU Kepri|
+| Bank RIAU Kepri Syariah|
+| Bank Sulteng|
+| Bank Sultra|
+| Bank Sulselbar|
+| Bank Sulselbar Syariah|
+| Bank SulutGO|
+| Bank Sumsel Babel|
+| Bank Sumsel Babel Syariah|
+| Bank Sumut|
+| Bank Sumut Syariah|
+| Centratama Nasional Bank|
+| Bank CCB|
+| Bank Citibank|
+| Bank HSBC Syariah|
+| Bank HSBC|
+| Bank Mandiri Taspen|
+| Standard Chartered Bank|
+| Bank Syariah Indonesia|
+| Dana|
+| Gopay|
+| LinkAja|
+| OVO|
+| ShopeePay|
+|DANAWD|
+| SeaBank Indonesia|
+| Bank BNI|
+| Bank Jago|
+| Bank BJB|
+| Bank BPD DIY|
 
 ##### <span id="3411-----">3.4.11 银行名称列表-孟加拉代付</span>
 | 标准名称   |
