@@ -1,5 +1,3 @@
-<img width="66" height="2065" alt="image" src="https://github.com/user-attachments/assets/c2f399ea-5014-48ad-8774-6ad326e8ccbd" /># Payment Gateway Documents
-
 - Contents
   + [1 Overview](#1-----)
     - [1.1 API Usage](#11-----)
