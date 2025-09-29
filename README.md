@@ -1,5 +1,3 @@
-<img width="66" height="2065" alt="image" src="https://github.com/user-attachments/assets/4f93ba2c-5e28-41b3-b485-20cadc6b8adf" /># 支付网关文档
-
 - 目录
   + [1 概要](#1-----)
     - [1.1 接口用途](#11-----)
