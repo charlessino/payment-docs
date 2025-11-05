@@ -187,7 +187,7 @@ Header：Content-Type: application/json;charset=utf-8
 | outTips     |      | string  | 100      | test | Merchant Remarks               |
 | returnType     |      | int  | 1      | 1 | Return type 1=Recharge link 2=Text information of bank、account number、account name.Default is 1               |
 | nonceStr     |      | string  | 100      | 123456 | Random number, used to get the signature of the returned parameter, may not be passed.               |
-| param1     |      | string  | 100      |  | Vietnam channel ID 5, must pass [List of Bank Names - Vietnam Recharge](#331-----)               |
+| param1     |      | string  | 100      |  | Vietnam channel ID 5, must pass [List of Bank Names - Vietnam Recharge](#331-----); for the Thailand channel, the last four digits of the recharge card number must be provided.               |
 | param2     |      | string  | 100      |  | Korea recharge, must pass player ID.              |
 | param3     |      | string  | 100      |  | India recharge, must pass player's email.               |
 | sign        | Yes   | string  | 32       |          | [Signature](#14-----)             |
